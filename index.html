@@ -20,8 +20,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
+    <div class="cosmic-dust"></div>
 
     <section class="hero">
+        <div class="numerology-grid" style="position: absolute; top: 50%; left: 50%; width: min(1000px, 150vw); aspect-ratio: 1/1; transform: translate(-50%, -50%); opacity: 0.05; z-index: 0; pointer-events: none;"></div>
+        <div class="star-sparkle" style="top: 15%; left: 10%;"></div>
+        <div class="star-sparkle" style="top: 40%; right: 15%;"></div>
+        <div class="star-sparkle" style="bottom: 20%; left: 20%;"></div>
         <img src="assets/celestial-left.png" alt="" class="celestial-bg celestial-left">
         <img src="assets/celestial-right.png" alt="" class="celestial-bg celestial-right">
         <div class="container">
@@ -30,6 +35,7 @@
             <h1>Get Your Personalised<br><span class="highlight">Month-by-Month Roadmap</span> for Money, Career, Relationships, Health & Family.</h1>
             
             <div class="hero-image reveal">
+                <div class="hero-cosmos-bg"></div>
                 <img src="assets/hero-report.png" alt="2026 Numerology Roadmap Report Mockup" class="report-mockup">
             </div>
 
@@ -112,7 +118,10 @@
     </section>
 
     <!-- Inside Section -->
-    <section class="inside" id="inside">
+    <section class="inside" id="inside" style="position: relative; overflow: hidden;">
+        <div class="numerology-grid" style="bottom: -100px; left: -100px; width: 450px; height: 450px; opacity: 0.5;"></div>
+        <div class="star-sparkle" style="top: 10%; right: 5%;"></div>
+        <div class="star-sparkle" style="bottom: 15%; left: 8%;"></div>
         <div class="container">
             <h2 class="section-title">What’s Inside Your 80+ Page Report?</h2>
             
@@ -188,10 +197,191 @@
                 </div>
             </div>
         </div>
+
+          <!-- 3D Book Viewer -->
+                <div class="report-mockup-showcase reveal" style="padding-top: 50px;
+    padding-bottom: 100px;">
+                    <div class="mockup-layers">
+                        <img src="assets/report_mockup_1.png" alt="Report Cover" class="mockup-img main-mockup">
+                        <img src="assets/report_mockup_2.png" alt="Report Interior" class="mockup-img interior-mockup">
+                        <div class="glamour-glow"></div>
+                        <div class="mockup-badge">
+                            <span class="badge-text">80+ PAGES</span>
+                            <span class="badge-sub">OF PERSONALIZED INSIGHTS</span>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    
+    <!-- Report Preview Section -->
+    <section class="report-preview" id="preview">
+        <div class="preview-bg-wrapper" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; z-index: 0;">
+            <div class="number-constellation" style="top: 50%; right: -10%; width: 500px; height: 500px; opacity: 0.4;"></div>
+        </div>
+        <div class="container">
+            <div class="preview-header reveal">
+                <h2 class="section-title">Your Personalised Report Preview</h2>
+                <p class="section-subtitle">A glimpse into the cosmic wisdom waiting for you.</p>
+            </div>
+
+            <div class="timeline-container reveal">
+                <div class="timeline-header">
+                    <h3>Your 2026 Cosmic Timeline</h3>
+                    <p>Month-by-month energy forecast and action windows for optimal results</p>
+                </div>
+
+                <div class="month-selector-wrapper">
+                    <div class="month-selector" id="monthSelector">
+                        <button class="month-btn active" data-month="Jan">
+                            <i class="fas fa-rocket"></i>
+                            <span class="m-name">Jan</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">New Beginnings</span>
+                        </button>
+                        <button class="month-btn" data-month="Feb">
+                            <i class="fas fa-moon"></i>
+                            <span class="m-name">Feb</span>
+                            <span class="m-status moderate">Moderate</span>
+                            <span class="m-desc">Planning</span>
+                        </button>
+                        <button class="month-btn" data-month="Mar">
+                            <i class="fas fa-bolt"></i>
+                            <span class="m-name">Mar</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">Breakthrough</span>
+                        </button>
+                        <button class="month-btn" data-month="Apr">
+                            <i class="fas fa-tree"></i>
+                            <span class="m-name">Apr</span>
+                            <span class="m-status stable">Stable</span>
+                            <span class="m-desc">Growth</span>
+                        </button>
+                        <button class="month-btn" data-month="May">
+                            <i class="fas fa-magic"></i>
+                            <span class="m-name">May</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">Manifestation</span>
+                        </button>
+                        <button class="month-btn" data-month="Jun">
+                            <i class="fas fa-water"></i>
+                            <span class="m-name">Jun</span>
+                            <span class="m-status moderate">Moderate</span>
+                            <span class="m-desc">Reflection</span>
+                        </button>
+                        <button class="month-btn" data-month="Jul">
+                            <i class="fas fa-fire"></i>
+                            <span class="m-name">Jul</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">Expansion</span>
+                        </button>
+                        <button class="month-btn" data-month="Aug">
+                            <i class="fas fa-crown"></i>
+                            <span class="m-name">Aug</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">Recognition</span>
+                        </button>
+                        <button class="month-btn" data-month="Sep">
+                            <i class="fas fa-leaf"></i>
+                            <span class="m-name">Sep</span>
+                            <span class="m-status moderate">Moderate</span>
+                            <span class="m-desc">Harvest</span>
+                        </button>
+                        <button class="month-btn" data-month="Oct">
+                            <i class="fas fa-anchor"></i>
+                            <span class="m-name">Oct</span>
+                            <span class="m-status stable">Stable</span>
+                            <span class="m-desc">Focus</span>
+                        </button>
+                        <button class="month-btn" data-month="Nov">
+                            <i class="fas fa-star"></i>
+                            <span class="m-name">Nov</span>
+                            <span class="m-status high">High</span>
+                            <span class="m-desc">Connection</span>
+                        </button>
+                        <button class="month-btn" data-month="Dec">
+                            <i class="fas fa-gift"></i>
+                            <span class="m-name">Dec</span>
+                            <span class="m-status moderate">Moderate</span>
+                            <span class="m-desc">Fulfillment</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="forecast-content">
+                    <div class="forecast-grid">
+                        <div class="forecast-card roadmap" id="roadmapCard">
+                            <div class="roadmap-header">
+                                <h4>2026 Numerology Roadmap</h4>
+                                <p>Your Personal Year Report</p>
+                            </div>
+                            
+                            <div class="personal-year-box">
+                                <span class="py-label">PERSONAL YEAR NUMBER</span>
+                                <div class="py-number" id="pyNumber">9</div>
+                                <p class="py-desc" id="pyDesc">Year of Completion, Wisdom & Transformation</p>
+                            </div>
+                            
+                            <div class="key-months-section">
+                                <span class="key-label">KEY MONTHS</span>
+                                <div class="key-months-grid" id="keyMonthsGrid">
+                                    <div class="key-month-pill">
+                                        <span class="km-name">Jan</span>
+                                        <span class="km-type">Breakthrough</span>
+                                    </div>
+                                    <div class="key-month-pill">
+                                        <span class="km-name">May</span>
+                                        <span class="km-type">Growth</span>
+                                    </div>
+                                    <div class="key-month-pill">
+                                        <span class="km-name">Sep</span>
+                                        <span class="km-type">Harvest</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="energy-status-bar">
+                                <span class="status-dot"></span>
+                                <span id="energyStatusText">High manifestation energy</span>
+                            </div>
+                        </div>
+                        <div class="forecast-card relationship" id="relationshipCard">
+                            <h4>RELATIONSHIP MILESTONES</h4>
+                            <ul id="relationshipList">
+                                <li><i class="fas fa-check"></i> February (Communication peak)</li>
+                                <li><i class="fas fa-check"></i> May-June (Harmony period)</li>
+                                <li><i class="fas fa-check"></i> November (Connection deepens)</li>
+                                <li><i class="fas fa-check"></i> December (Commitment ready)</li>
+                            </ul>
+                        </div>
+                        <div class="forecast-card caution" id="cautionCard">
+                            <h4>CAUTION PERIODS</h4>
+                            <ul id="cautionList">
+                                <li><i class="fas fa-triangle-exclamation"></i> April (Avoid major risks)</li>
+                                <li><i class="fas fa-triangle-exclamation"></i> June (Pause & reflect)</li>
+                                <li><i class="fas fa-triangle-exclamation"></i> October (Energy low)</li>
+                                <li><i class="fas fa-triangle-exclamation"></i> Mercury Retrogrades (3x in 2026)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="forecast-legend">
+                        <p class="legend-title">Understanding Your Energy Forecast</p>
+                        <div class="legend-items">
+                            <div class="legend-item"><span class="dot high"></span><strong>High Energy:</strong> Take action, launch projects</div>
+                            <div class="legend-item"><span class="dot moderate"></span><strong>Moderate Energy:</strong> Plan, prepare, reflect</div>
+                            <div class="legend-item"><span class="dot stable"></span><strong>Stable Energy:</strong> Build foundations, consolidate</div>
+                            <div class="legend-item"><span class="dot caution"></span><strong>Caution Energy:</strong> Rest, review, avoid risks</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Trust Section -->
-    <section class="trust" id="trust">
+    <section class="trust" id="trust" style="position: relative; overflow: hidden;">
+        <div class="star-sparkle" style="top: 20%; left: 5%;"></div>
+        <div class="star-sparkle" style="bottom: 25%; right: 5%;"></div>
         <div class="container">
             <h2 class="section-title">Why Thousands Trust Mystic Reports</h2>
             
@@ -234,30 +424,49 @@
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px;">What Happy Clients Have to Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card reveal">
-                    <p>“My report clearly mentioned a career shift around March 2025 — and that’s exactly when I received my promotion. I was shocked at the accuracy.”</p>
-                    <div class="testimonial-author">— Priya S., Mumbai</div>
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 50px;line-height: 1;">What Happy Clients Have to Say</h2>
+        </div>
+        
+        <div class="whatsapp-carousel">
+            <div class="whatsapp-track">
+                <div class="whatsapp-card">
+                    <img src="assets/rahul_testi.webp" alt="Rahul Testimonial">
                 </div>
-                <div class="testimonial-card reveal" style="animation-delay: 0.1s;">
-                    <p>“I was struggling in my 6 year long relationship and the remedies suggested in the report are working like a charm for me. The remedies were extremely easy to follow and I am glad that I took this step.”</p>
-                    <div class="testimonial-author">— Rishab M, Noida</div>
+                <div class="whatsapp-card">
+                    <img src="assets/saurabh_test.webp" alt="Saurabh Testimonial">
                 </div>
-                <div class="testimonial-card reveal" style="animation-delay: 0.2s;">
-                    <p>“I felt confused about my career path and financial choices. The personalised guidance and remedies from the report helped me gain clarity and move forward with confidence.”</p>
-                    <div class="testimonial-author">— Pratham A, Delhi</div>
+                <div class="whatsapp-card">
+                    <img src="assets/shreya_tesi.webp" alt="Shreya Testimonial">
                 </div>
-                <div class="testimonial-card reveal" style="animation-delay: 0.3s;">
-                    <p>“I had been ignoring my health for years due to work pressure. The report helped me understand my low-energy periods and make small changes that made a big difference.”</p>
-                    <div class="testimonial-author">— Rahul K, Pune</div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="whatsapp-card">
+                    <img src="assets/rahul_testi.webp" alt="Rahul Testimonial">
+                </div>
+                <div class="whatsapp-card">
+                    <img src="assets/saurabh_test.webp" alt="Saurabh Testimonial">
+                </div>
+                <div class="whatsapp-card">
+                    <img src="assets/shreya_tesi.webp" alt="Shreya Testimonial">
+                </div>
+                <!-- One more set for wider screens -->
+                <div class="whatsapp-card">
+                    <img src="assets/rahul_testi.webp" alt="Rahul Testimonial">
+                </div>
+                <div class="whatsapp-card">
+                    <img src="assets/saurabh_test.webp" alt="Saurabh Testimonial">
+                </div>
+                <div class="whatsapp-card">
+                    <img src="assets/shreya_tesi.webp" alt="Shreya Testimonial">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing" id="pricing">
+    <section class="pricing" id="pricing" style="position: relative; overflow: hidden;">
+        <div class="celestial-map" style="opacity: 0.4;"></div>
+        <div class="star-sparkle" style="top: 10%; right: 10%;"></div>
+        <div class="star-sparkle" style="bottom: 10%; left: 5%;"></div>
         <div class="container">
             <div style="text-align: center; margin-bottom: 30px;">
                 <span class="tag" style="background: white;"><i class="fas fa-clock"></i> Early Access Pricing Ending Soon</span>
@@ -305,7 +514,7 @@
                                 <span class="new-price">₹399</span>
                             </div>
                         </div>
-                        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20my%202026%20Numerology%20Roadmap" class="cta-btn pulse">Unlock My Personal 2026 Roadmap Now <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="cta-btn pulse">Unlock My Personal 2026 Roadmap Now <i class="fas fa-arrow-right"></i></a>
                         <div class="pricing-trust-badges">
                             <span><i class="fas fa-check-circle"></i> Expert-Curated Analysis</span>
                             <span><i class="fas fa-check-circle"></i> Fully Personalised</span>
@@ -329,6 +538,7 @@
                     <h2 class="mentor-tagline">Meet The Mentor</h2>
                     
                     <div class="mentor-glamour-aura">
+                        <img src="assets/isolation.png" alt="" class="isolation-bg">
                         <div class="mentor-main-portrait">
                             <img src="assets/prashant-portrait.png" alt="Prashant Rohilla">
                         </div>

@@ -79,6 +79,166 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Cosmic Timeline Interaction ---
+    const monthBtns = document.querySelectorAll('.month-btn');
+    const roadmapCardEl = document.getElementById('roadmapCard');
+    const relationshipList = document.getElementById('relationshipList');
+    const cautionList = document.getElementById('cautionList');
+
+
+
+    const relationshipPool = [
+        "Deep emotional connection window",
+        "Harmony in existing bonds",
+        "Spark of new companionship",
+        "Resolution of past conflicts",
+        "Commitment & Stability peak",
+        "Social expansion & Networking",
+        "Family bonding high-energy",
+        "Spiritual partnership growth",
+        "Self-love & Healing cycle"
+    ];
+
+    const cautionPool = [
+        "Avoid high-risk legal signing",
+        "Pause on major capital spends",
+        "Inner reflection required",
+        "Potential communication fog",
+        "Rest & Vitality focus needed",
+        "Avoid ego-driven confrontations",
+        "Mercury Retrograde shadow",
+        "Conserve financial energy",
+        "Guard against impulsive travel"
+    ];
+
+    function getRandomItems(arr, count) {
+        const shuffled = [...arr].sort(() => 0.5 - Math.random());
+        return shuffled.slice(0, count);
+    }
+
+    const pyData = {
+        1: "Year of New Beginnings, Independence & Core Identity",
+        2: "Year of Cooperation, Balance & Emotional Depth",
+        3: "Year of Creativity, Social Expansion & Expression",
+        4: "Year of Foundation, Structure & Hard Work",
+        5: "Year of Change, Freedom & Rapid Progress",
+        6: "Year of Responsibility, Love & Family Harmony",
+        7: "Year of Introspection, Spirituality & Wisdom",
+        8: "Year of Success, Power & Financial Abundance",
+        9: "Year of Completion, Wisdom & Transformation"
+    };
+
+    const energyStatuses = [
+        "High manifestation energy",
+        "Abundance portal fully open",
+        "Strategic alignment phase",
+        "Spiritual growth peak",
+        "Financial expansion cycle",
+        "Maximum creative flow"
+    ];
+
+    const monthLabels = ["Breakthrough", "Harvest", "Expansion", "Foundation", "Recognition", "Stability", "Focus"];
+
+    function updateForecast() {
+        // Add fade out
+        const cards = document.querySelectorAll('.forecast-card');
+        cards.forEach(card => card.style.opacity = '0.3');
+
+        setTimeout(() => {
+            // --- Randomize Roadmap Card ---
+            const roadmapCard = document.getElementById('roadmapCard');
+            if (roadmapCard) {
+                const pyNum = Math.floor(Math.random() * 9) + 1;
+                
+                // Add a small punch animation
+                const pyBox = roadmapCard.querySelector('.personal-year-box');
+                pyBox.style.transform = 'scale(0.95)';
+                pyBox.style.transition = 'transform 0.2s ease';
+                
+                setTimeout(() => {
+                    document.getElementById('pyNumber').textContent = pyNum;
+                    document.getElementById('pyDesc').textContent = pyData[pyNum];
+                    pyBox.style.transform = 'scale(1)';
+                    
+                    // Random Key Months
+                    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                    const randomMonths = getRandomItems(months, 3);
+                    const keyMonthsGrid = document.getElementById('keyMonthsGrid');
+                    keyMonthsGrid.innerHTML = randomMonths.map(m => `
+                        <div class="key-month-pill">
+                            <span class="km-name">${m}</span>
+                            <span class="km-type">${getRandomItems(monthLabels, 1)[0]}</span>
+                        </div>
+                    `).join('');
+                    
+                    // Energy Status
+                    document.getElementById('energyStatusText').textContent = getRandomItems(energyStatuses, 1)[0];
+                }, 100);
+            }
+
+            // Randomize Relationship
+            relationshipList.innerHTML = getRandomItems(relationshipPool, 4)
+                .map(text => `<li><i class="fas fa-check"></i> ${text}</li>`).join('');
+
+            // Randomize Caution
+            cautionList.innerHTML = getRandomItems(cautionPool, 4)
+                .map(text => `<li><i class="fas fa-triangle-exclamation"></i> ${text}</li>`).join('');
+
+            // Fade in
+            cards.forEach(card => {
+                card.style.opacity = '1';
+                card.style.transition = 'opacity 0.5s ease';
+            });
+        }, 300);
+    }
+
+    monthBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            monthBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateForecast();
+        });
+    });
+
+    // Initialize with first month
+    if (monthBtns.length > 0) {
+        updateForecast();
+    }
+
+    // --- Generic Drag to Scroll for Sliders ---
+    const sliders = document.querySelectorAll('.month-selector, .forecast-grid');
+    
+    sliders.forEach(slider => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('dragging');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('dragging');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('dragging');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed multiplier
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    });
+
     // Vibration Wheel Static Randomizer (On Load Only)
     const vibrationNum = document.querySelector('.vibration-number');
     if (vibrationNum) {
