@@ -78,12 +78,21 @@ section {
     background: var(--sunlit-clay);
     color: var(--coffee-bean);
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 900;
-    letter-spacing: 0.8px;
 }
 
 /* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(128, 78, 32, 0.4); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 15px rgba(128, 78, 32, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(128, 78, 32, 0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -479,6 +488,8 @@ section {
     position: relative;
     overflow: hidden;
     padding-top: 50px;
+        padding-bottom: 50px;
+
 }
 
 .inside h2.section-title {
@@ -708,32 +719,113 @@ section {
     }
 }
 
-/* Trust Section */
+/* Trust Section Redesign */
 .trust {
-    background: var(--coffee-bean);
-    color: white;
+    padding: 80px 0;
+    background: var(--saddle-brown);
+    position: relative;
+}
+
+.trust .section-title {
+    margin-bottom: 60px;
     text-align: center;
+    color: white; /* Ensure visibility on dark background */
 }
 
-.trust h2 {
-    color: var(--sunlit-clay);
+.trust-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    border: 3px solid var(--sunlit-clay);
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-top: 60px;
+.trust-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
 
-.stat-item h3 {
-    color: var(--sunlit-clay);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.trust-icon {
+    width: 60px;
+    height: 60px;
+    background: #fdfaf7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--saddle-brown);
+    border: 1px solid var(--sunlit-clay);
+    transition: all 0.3s ease;
 }
 
-.stat-item p {
-    font-weight: 600;
+.trust-item:hover .trust-icon {
+    background: var(--saddle-brown);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.trust-info h3 {
+    font-size: 1.8rem;
+    color: var(--coffee-bean);
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.trust-info p {
+    font-size: 0.9rem;
+    color: var(--espresso);
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #ddd, transparent);
+}
+
+@media (max-width: 1024px) {
+    .trust-grid {
+        flex-wrap: wrap;
+        padding: 30px;
+    }
+    .stat-divider {
+        display: none;
+    }
+    .trust-item {
+        flex: 1 1 40%;
+    }
+}
+
+@media (max-width: 640px) {
+    .trust {
+        padding: 60px 0;
+    }
+    .trust-grid {
+        gap: 20px;
+        padding: 20px;
+    }
+    .trust-item {
+        flex: 1 1 100%; /* Change to 100% or keep 2 per row? Let's try 2 per row for attraction */
+        flex: 1 1 45%;
+    }
+    .trust-info h3 {
+        font-size: 1.4rem;
+    }
+    .trust-info p {
+        font-size: 0.75rem;
+    }
 }
 
 /* Testimonials */
@@ -768,59 +860,214 @@ section {
 .pricing {
     background: var(--espresso);
     color: white;
-    padding: 120px 0;
+    padding: 40px 0; /* Reduced from 60px */
 }
 
-.pricing-box {
-    background: rgba(255, 255, 255, 0.98);
+/* Minimalistic Pricing Card Redesign */
+.pricing-card {
+    background: #ffffff;
     color: var(--coffee-bean);
-    max-width: 650px;
-    margin: 0 auto;
-    border-radius: 30px;
-    padding: 60px;
-    box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing-header {
+    background: #fdfaf7;
+    padding: 20px 30px; /* Even tighter */
     text-align: center;
-    border: 4px solid var(--sunlit-clay);
-    position: relative;
-}
-
-.pricing-box::before {
-    content: 'BEST VALUE';
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--saddle-brown);
-    color: white;
-    padding: 5px 20px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.pricing-list {
-    text-align: left;
-    margin: 40px 0;
-}
-
-.pricing-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
     border-bottom: 1px solid #eee;
 }
 
-.total-value-row {
-    font-weight: 700;
-    color: #888;
-    margin-top: 20px;
+.best-value {
+    display: inline-block;
+    background: var(--sunlit-clay);
+    color: var(--coffee-bean);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 
-.final-price {
-    font-size: 3rem;
+.pricing-header h3 {
+    font-size: 1.4rem; /* Balanced punch */
+    margin-bottom: 2px;
+    line-height: 1;
+    color: var(--coffee-bean);
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+.pricing-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px; /* Tighter padding */
+    gap: 20px;
+    align-items: center;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 30px;
+}
+
+.benefit-list li {
+    font-size: 0.9rem; /* Slightly smaller for density */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align price to right */
+    gap: 15px;
+    color: var(--espresso);
+    margin-bottom: 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.05); /* Subtle row feel */
+    padding-bottom: 8px;
+}
+
+.benefit-price {
+    font-weight: 700;
     color: var(--saddle-brown);
-    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.benefit-list li i {
+    color: var(--sunlit-clay);
+    font-size: 1.2rem;
+}
+
+.price-cta-block {
+    background: #fdfaf7;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(236, 180, 101, 0.3); /* Softer gold border */
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02); /* Internal depth */
+}
+
+/* Custom Strikethrough & Price Style */
+.final-offer-badge {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.offer-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--espresso);
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.price-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.old-price {
+    font-size: 2.5rem; /* Large and clear */
+    font-weight: 900;
+    color: var(--espresso);
+    opacity: 0.3;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* The custom horizontal cut through */
+.old-price::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    right: -5px;
+    top: 50%;
+    height: 4px; /* Bold cut */
+    background: var(--espresso);
+    transform: translateY(-50%);
+}
+
+.new-price {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--saddle-brown);
+    font-family: 'Poppins', sans-serif;
+}
+
+.offer-subline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--espresso);
+    opacity: 0.6;
+}
+
+.cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--saddle-brown);
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px; /* More compact height */
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 8px; /* Reduced from 15px */
+}
+
+.cta-btn:hover {
+    background: var(--espresso);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.guarantee-text {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .pricing-content {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+    
+    .pricing-header h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .pricing-content {
+        padding: 30px 20px;
+    }
+    
+    .amount {
+        font-size: 3.5rem;
+    }
+    
+    .benefit-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .benefit-list li {
+        font-size: 1rem;
+    }
 }
 
 /* About Section */
