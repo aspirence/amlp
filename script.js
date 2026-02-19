@@ -78,4 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- UI Interactions ---
+    // Section reveal animations are already handled by intersection observer in previous turns or scripts
 });

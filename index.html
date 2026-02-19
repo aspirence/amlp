@@ -15,6 +15,9 @@
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -111,60 +114,60 @@
     <!-- Inside Section -->
     <section class="inside" id="inside">
         <div class="container">
-            <h2>What’s Inside Your 80+ Page Report?</h2>
-            <div class="inside-content">
-                <div class="inside-grid">
-                    <div class="inside-item reveal">
-                        <div class="icon"><i class="fas fa-crystal-ball"></i></div>
-                        <div>
-                            <h3>Your Personal Year Number & Core Theme For 2026</h3>
-                            <p>Understand the main energy shaping your entire year.</p>
-                        </div>
+            <h2 class="section-title">What’s Inside Your 80+ Page Report?</h2>
+            
+            <div class="inside-layout">
+                <!-- 3D Book Viewer -->
+                <div class="report-mockup-showcase reveal">
+                    <div class="mockup-layers">
+                        <img src="assets/report_mockup_1.png" alt="Report Cover" class="mockup-img main-mockup">
+                        <img src="assets/report_mockup_2.png" alt="Report Interior" class="mockup-img interior-mockup">
+                        <div class="glamour-glow"></div>
                     </div>
-                    <div class="inside-item reveal" style="animation-delay: 0.1s;">
-                        <div class="icon"><i class="fas fa-calendar-alt"></i></div>
-                        <div>
-                            <h3>Month-by-Month Forecast (January to December)</h3>
-                            <p>Know exactly when to act and when to pause.</p>
-                        </div>
-                    </div>
-                    <div class="inside-item reveal" style="animation-delay: 0.2s;">
-                        <div class="icon"><i class="fas fa-chart-line"></i></div>
-                        <div>
-                            <h3>Money & Career Windows</h3>
-                            <p>Identify high-income months and potential career shifts.</p>
-                        </div>
-                    </div>
-                    <div class="inside-item reveal" style="animation-delay: 0.3s;">
-                        <div class="icon"><i class="fas fa-user-friends"></i></div>
-                        <div>
-                            <h3>Relationship & Marriage Insights</h3>
-                            <p>Understand emotional patterns, compatibility, and key dates.</p>
-                        </div>
-                    </div>
-                    <div class="inside-item reveal" style="animation-delay: 0.4s;">
-                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>
-                            <h3>Risk & Caution Periods</h3>
-                            <p>Avoid costly mistakes by knowing your low-energy cycles.</p>
-                        </div>
-                    </div>
-                    <div class="inside-item reveal" style="animation-delay: 0.5s;">
-                        <div class="icon"><i class="fas fa-leaf"></i></div>
-                        <div>
-                            <h3>Personalised Remedies & Corrections</h3>
-                            <p>Simple, practical actions tailored to your numbers.</p>
-                        </div>
+                    <div class="mockup-badge">
+                        <span class="badge-text">80+ PAGES</span>
+                        <span class="badge-sub">OF PERSONALIZED INSIGHTS</span>
                     </div>
                 </div>
-                <div class="preview-images reveal">
-                    <img src="assets/interior-preview.png" alt="Report Preview" class="preview-img">
-                    <div class="pointer pointer--1"></div>
-                    <div class="pointer pointer--2"></div>
-                    <div class="pointer pointer--3"></div>
-                    <div style="text-align: center; margin-top: 20px;">
-                        <p style="font-weight: 700; font-family: var(--font-heading);">Your 2026 Cosmic Timeline</p>
-                        <p style="font-size: 0.9rem;">Month-by-month energy forecast and action windows</p>
+
+                <!-- Strategic Content List - Original Content in New UI -->
+                <div class="inside-details">
+                    <div class="inside-details-grid">
+                        <div class="inside-detail-item reveal">
+                            <div class="detail-icon"><i class="fas fa-sun"></i></div>
+                            <div class="detail-info">
+                                <h3>Personal Year Theme</h3>
+                                <p>The overarching energy of your 2026.</p>
+                            </div>
+                        </div>
+                        <div class="inside-detail-item reveal" style="animation-delay: 0.1s;">
+                            <div class="detail-icon"><i class="fas fa-map-location-dot"></i></div>
+                            <div class="detail-info">
+                                <h3>12-Month Roadmap</h3>
+                                <p>Specific dates for every single month.</p>
+                            </div>
+                        </div>
+                        <div class="inside-detail-item reveal" style="animation-delay: 0.2s;">
+                            <div class="detail-icon"><i class="fas fa-coins"></i></div>
+                            <div class="detail-info">
+                                <h3>Money & Power</h3>
+                                <p>Your best investment & career windows.</p>
+                            </div>
+                        </div>
+                        <div class="inside-detail-item reveal" style="animation-delay: 0.3s;">
+                            <div class="detail-icon"><i class="fas fa-heart"></i></div>
+                            <div class="detail-info">
+                                <h3>Love & Destiny</h3>
+                                <p>Relationship compatibility & key phases.</p>
+                            </div>
+                        </div>
+                        <div class="inside-detail-item reveal" style="animation-delay: 0.4s;">
+                            <div class="detail-icon"><i class="fas fa-magic-wand-sparkles"></i></div>
+                            <div class="detail-info">
+                                <h3>Exact Remedies</h3>
+                                <p>Simple actions to shift your luck.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -316,6 +319,9 @@
         </div>
     </footer>
 
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
