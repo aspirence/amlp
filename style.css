@@ -502,12 +502,157 @@ section {
 
 .inside-layout {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
     gap: 40px; /* Reduced from 80px */
     align-items: center; /* Centered for better vertical balance */
+        padding-top: 50px;
+
 }
 
-/* 3D Book Container */
+/* Vibration Wheel Styles */
+.vibration-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vibration-wheel {
+    position: relative;
+    width: 240px; /* Reduced from 320px */
+    height: 240px; /* Reduced from 320px */
+    background: #2b1d18; /* Deep espresso variant */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(0,0,0,0.3), inset 0 0 30px rgba(236, 180, 101, 0.1);
+    border: 1px solid rgba(236, 180, 101, 0.2);
+}
+
+.wheel-center {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.vibration-label {
+    display: block;
+    font-size: 0.75rem; /* Scaled down */
+    color: #fff;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.vibration-number {
+    display: block;
+    font-size: 3.5rem; /* Reduced from 4.5rem */
+    font-weight: 900;
+    color: var(--sunlit-clay);
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 15px rgba(236, 180, 101, 0.3);
+}
+
+.orbit-numbers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateWheel 40s linear infinite;
+}
+
+.orbit-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px; /* Reduced from 40px */
+    height: 30px;
+    margin-top: -15px; /* Half of width */
+    margin-left: -15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Formula: R * cos/sin(angle) */
+    /* Angle = (index - 1) * 360 / 9 */
+    transform: rotate(calc(var(--i) * 40deg)) translateY(-100px) rotate(calc(var(--i) * -40deg));
+}
+
+.orbit-item span {
+    width: 28px; /* Reduced from 34px */
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(236, 180, 101, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--sunlit-clay);
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: rgba(43, 29, 24, 0.8);
+    transition: all 0.3s ease;
+}
+
+.orbit-item:hover span {
+    background: var(--sunlit-clay);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.wheel-halo {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border: 1px dashed rgba(236, 180, 101, 0.15);
+    border-radius: 50%;
+    animation: pulseHalo 4s ease-in-out infinite;
+}
+
+@keyframes rotateWheel {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulseHalo {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(1.05); opacity: 0.5; }
+}
+
+@media (max-width: 640px) {
+    .vibration-wheel {
+        width: 280px;
+        height: 280px;
+    }
+    .vibration-number {
+        font-size: 3.8rem;
+    }
+    .orbit-item {
+        transform: rotate(calc(var(--i) * 40deg)) translateY(-115px) rotate(calc(var(--i) * -40deg));
+    }
+    .orbit-item span {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vibration-wheel {
+        width: 240px;
+        height: 240px;
+    }
+    .vibration-number {
+        font-size: 3.2rem;
+    }
+    .orbit-item {
+        transform: rotate(calc(var(--i) * 40deg)) translateY(-95px) rotate(calc(var(--i) * -40deg));
+    }
+    .orbit-item span {
+        width: 26px;
+        height: 26px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Detail Items Styles Redux */
 .book-container {
     display: flex;
     flex-direction: column;
@@ -644,10 +789,7 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Make the 5th item span full width on desktop for balance */
-.inside-detail-item:nth-child(5) {
-    grid-column: span 2;
-}
+
 
 
 .detail-icon {
@@ -680,7 +822,7 @@ section {
         gap: 60px;
     }
     
-    .report-preview-container {
+    .vibration-showcase {
         order: -1;
     }
 }
@@ -691,9 +833,7 @@ section {
         gap: 10px;
     }
 
-    .inside-detail-item:nth-child(5) {
-        grid-column: span 2;
-    }
+
 
     .inside-detail-item {
         padding: 15px 10px;
@@ -1034,10 +1174,27 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.guarantee-text {
+.pricing-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
     font-size: 0.8rem;
-    opacity: 0.5;
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--espresso);
+    opacity: 0.6;
+}
+
+.pricing-trust-badges i {
+    color: var(--saddle-brown);
+    margin-right: 4px;
+}
+
+@media (max-width: 640px) {
+    .pricing-trust-badges {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1070,25 +1227,154 @@ section {
     }
 }
 
-/* About Section */
-.about {
-    background: white;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+/* Luxury Mentor Card Redesign */
+.mentor-card-container {
+    background: #fffcf8; /* Soft parchment white */
+    border: 5px solid var(--sunlit-clay); /* Outer frame */
+    border-radius: 40px;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
-.about-image img {
-    width: 100%;
-    border-radius: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+.mentor-tagline {
+    font-size: 1.8rem;
+    color: var(--coffee-bean);
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.mentor-glamour-aura {
+    position: relative;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mandala-bg {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    background-image: url('assets/mandala.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    animation: rotateMandala 60s linear infinite;
+    z-index: 1;
+    opacity: 0.15; /* Subtly blend the image as an aura */
+}
+
+@keyframes rotateMandala {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.mentor-main-portrait {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid var(--sunlit-clay);
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.mentor-main-portrait img {
+    width: 110%; /* Slightly zoomed */
+    height: 110%;
+    object-fit: cover;
+    margin-left: -5%;
+}
+
+.mentor-details-centered {
+    position: relative;
+    z-index: 3;
+}
+
+.mentor-name-lg {
+    font-size: 2.2rem;
+    color: var(--espresso);
+    margin-bottom: 5px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.about{
+    padding-top: 50px;
+}
+
+.mentor-subs {
+    font-size: 1rem;
+    color: var(--saddle-brown);
+    font-weight: 700;
+    margin-bottom: 35px;
+    opacity: 0.8;
+}
+
+.mentor-stat-tags {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stat-tag-box {
+    background: var(--espresso);
+    padding: 12px 20px;
+    border-radius: 12px;
+    min-width: 140px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-tag-box:hover {
+    transform: translateY(-5px);
+    background: var(--coffee-bean);
+}
+
+.tag-val {
+    display: block;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.tag-lbl {
+    display: block;
+    color: var(--sunlit-clay);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .mentor-card-container {
+        padding: 40px 15px;
+        border-radius: 30px;
+    }
+    
+    .mentor-name-lg {
+        font-size: 1.8rem;
+    }
+    
+    .mentor-main-portrait {
+        width: 160px;
+        height: 160px;
+    }
+
+    .stat-tag-box {
+        min-width: 120px;
+        padding: 10px 15px;
+    }
 }
 
 /* FAQ */

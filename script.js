@@ -79,6 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- UI Interactions ---
-    // Section reveal animations are already handled by intersection observer in previous turns or scripts
+    // Vibration Wheel Static Randomizer (On Load Only)
+    const vibrationNum = document.querySelector('.vibration-number');
+    if (vibrationNum) {
+        const randomNum = Math.floor(Math.random() * 9) + 1;
+        vibrationNum.textContent = randomNum;
+    }
 });
