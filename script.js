@@ -66,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     });
 
-    // Sticky Mobile CTA Visibility logic
-    const stickyCta = document.querySelector('.sticky-mobile-cta');
+    // Sticky CTA Visibility logic
+    const stickyCta = document.querySelector('.sticky-cta');
     const familiarSection = document.getElementById('familiar');
     
     const handleStickyCta = () => {

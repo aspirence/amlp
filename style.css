@@ -2250,57 +2250,76 @@ section {
     }
 }
 
-/* Sticky Mobile CTA Styles */
-.sticky-mobile-cta {
-    display: none;
+/* Sticky CTA Styles */
+.sticky-cta {
+    display: block; /* Always available, visibility controlled by .visible class */
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(40, 31, 25, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 15px 20px;
+    background: rgba(40, 31, 25, 0.98);
+    backdrop-filter: blur(12px);
+    padding: 12px 20px;
     z-index: 1000;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.4);
     border-top: 1px solid rgba(236, 180, 101, 0.2);
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: translateY(100%);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(105%);
     opacity: 0;
     pointer-events: none;
+    text-align: center;
 }
 
-.sticky-mobile-cta.visible {
+.sticky-cta.visible {
     transform: translateY(0);
     opacity: 1;
     pointer-events: all;
 }
 
-.mobile-cta-btn {
-    display: flex;
+.sticky-cta-btn {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    max-width: 500px;
     width: 100%;
-    padding: 16px;
+    padding: 14px 30px;
     background: var(--saddle-brown);
     color: white;
     text-decoration: none;
-    border-radius: 12px;
+    border-radius: 50px; /* More modern rounded look */
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(128, 78, 32, 0.3);
+    box-shadow: 0 4px 20px rgba(128, 78, 32, 0.4);
+    transition: all 0.3s ease;
     animation: pulse 2s infinite;
 }
 
+.sticky-cta-btn:hover {
+    background: var(--espresso);
+    transform: scale(1.02);
+}
+
+/* Ensure body has padding to accommodate the sticky bar */
+body {
+    padding-bottom: 90px;
+}
+
 @media (max-width: 768px) {
-    .sticky-mobile-cta {
-        display: block;
+    .sticky-cta {
+        padding: 15px 20px;
     }
     
-    /* Add padding to body to prevent content from being hidden behind sticky bar */
+    .sticky-cta-btn {
+        max-width: 100%;
+        font-size: 1rem;
+        padding: 16px;
+        border-radius: 12px;
+    }
+    
     body {
-        padding-bottom: 80px;
+        padding-bottom: 110px;
     }
 }
