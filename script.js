@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set Real Date for Scarcity
     const dateElements = document.querySelectorAll('.real-date');
     const today = new Date();
+    
+    // Randomize: either today or tomorrow (0 or 1 day from now)
+    const randomDays = Math.floor(Math.random() * 2);
     const expiryDate = new Date(today);
-    expiryDate.setDate(today.getDate() + 2);
+    expiryDate.setDate(today.getDate() + randomDays);
     
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const dateString = expiryDate.toLocaleDateString('en-US', options);
