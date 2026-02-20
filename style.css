@@ -509,40 +509,34 @@ section {
     font-size: 0.9rem;
 }
 
-/* Urgency Widget */
-.urgency-widget {
-    padding: 15px 0;
-    border-top: 1px solid rgba(236, 180, 101, 0.2);
-    border-bottom: 1px solid rgba(236, 180, 101, 0.2);
-    position: relative;
-    z-index: 5;
-}
-
-.urgency-content {
+/* CTA Urgency Subtext */
+.cta-urgency {
+    color: #d32f2f;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    color: #d32f2f;
-    font-weight: 800;
-    font-size: 1.1rem;
-    text-align: center;
+    gap: 8px;
     animation: flash 2s infinite;
 }
 
-.urgency-content i {
-    font-size: 1.2rem;
+.cta-urgency i {
+    font-size: 1.1rem;
 }
 
 @keyframes flash {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+    50% { opacity: 0.6; }
 }
 
 @media (max-width: 768px) {
-    .urgency-content {
-        font-size: 0.9rem;
-        padding: 0 10px;
+    .cta-urgency {
+        font-size: 0.85rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
     }
 }
 
@@ -1173,10 +1167,10 @@ section {
 /* Month Selector */
 .month-selector-wrapper {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     border-top: 1px solid rgba(236, 180, 101, 0.1);
     border-bottom: 1px solid rgba(236, 180, 101, 0.1);
-    padding: 15px 0;
+    padding: 12px 0;
 }
 
 .month-selector {
@@ -1196,15 +1190,15 @@ section {
 }
 
 .month-btn {
-    flex: 0 0 100px;
+    flex: 0 0 110px;
     background: #1e1713;
     border: 1px solid #4a3a30;
     border-radius: 12px;
-    padding: 15px 10px;
+    padding: 12px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: white;
@@ -1259,97 +1253,139 @@ section {
     color: var(--sunlit-clay);
 }
 
-/* Intelligent Forecast Dashboard */
+/* Intelligent Forecast Dashboard - Single Row 4-Column */
 .forecast-dashboard {
     display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     background: rgba(43, 31, 25, 0.4);
-    padding: 30px;
+    padding: 20px;
     border-radius: 24px;
     border: 1px solid rgba(236, 180, 101, 0.1);
     backdrop-filter: blur(10px);
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .report-page-marker {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 800;
     color: var(--sunlit-clay);
-    opacity: 0.5;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-.dashboard-sidebar {
-    display: flex;
-    flex-direction: column;
-}
-
-.sidebar-card.roadmap {
-    background: #fffdf5;
-    color: var(--espresso);
-    padding: 30px;
-    border-radius: 20px;
-    height: 100%;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.dashboard-main {
-    display: flex;
-    flex-direction: column;
-}
-
-.forecast-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto;
-    gap: 20px;
+    opacity: 0.4;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    display: block;
 }
 
 .forecast-card {
     background: rgba(30, 23, 19, 0.8);
     border: 1px solid rgba(236, 180, 101, 0.1);
     border-radius: 18px;
-    padding: 24px;
+    padding: 20px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
 }
 
-.forecast-card.energy {
-    grid-column: 1 / -1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
+.forecast-card.roadmap {
+    background: #fffdf5;
+    color: var(--espresso);
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.forecast-card.roadmap .report-page-marker {
+    color: var(--espresso);
 }
 
 .card-title-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .card-title-row i {
     color: var(--sunlit-clay);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .card-title-row h4 {
     margin: 0;
-    border: none;
-    padding: 0;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: var(--sunlit-clay);
+    white-space: nowrap;
 }
 
-.energy-insight {
-    font-size: 0.85rem;
-    color: #b0b0b0;
-    max-width: 300px;
-    margin: 0;
+.forecast-card.roadmap h4 {
+    color: var(--espresso);
+    font-size: 1.1rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.roadmap-header p {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+.personal-year-box {
+    background: #fdf2de;
+    padding: 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid rgba(193, 141, 69, 0.1);
+}
+
+.py-number {
+    font-size: 3.5rem; /* Slightly smaller to fit 4 cols */
+    color: #8c5d25;
+    margin: 5px 0;
+    line-height: 1;
+}
+
+.py-desc {
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.key-label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--espresso);
+}
+
+.key-months-grid {
+    display: flex;
+    gap: 5px;
+}
+
+.key-month-pill {
+    flex: 1;
+    background: white;
+    padding: 8px 4px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.km-name {
+    display: block;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+
+.km-type {
+    display: block;
+    font-size: 0.6rem;
+    opacity: 0.6;
 }
 
 .forecast-card ul {
@@ -1358,57 +1394,39 @@ section {
 }
 
 .forecast-card ul li {
-    font-size: 0.9rem;
-    margin-bottom: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
     display: flex;
     gap: 10px;
     line-height: 1.4;
     color: #e0e0e0;
 }
 
-.personal-year-box {
-    background: #fdf2de;
-    padding: 25px;
-    border-radius: 15px;
-    margin: 20px 0;
-    text-align: center;
-    border: 1px solid rgba(193, 141, 69, 0.1);
-}
-
-.py-number {
-    font-size: 4rem;
-    color: #8c5d25;
-    margin: 10px 0;
-}
-
-.key-month-pill {
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.key-label {
-    font-size: 0.65rem;
-    font-weight: 800;
-    margin-bottom: 12px;
-    display: block;
-    color: var(--espresso);
-}
-
-.key-months-grid {
-    display: flex;
-    gap: 8px;
-}
-
 .energy-status-bar {
     background: rgba(238, 248, 255, 0.1);
-    padding: 12px 18px;
-    border-radius: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.8rem;
+    gap: 8px;
+    font-size: 0.75rem;
     font-weight: 700;
     color: white;
+    margin-bottom: 15px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
+}
+
+.energy-insight {
+    font-size: 0.8rem;
+    color: #b0b0b0;
+    line-height: 1.4;
 }
 
 .status-dot {
@@ -1443,12 +1461,12 @@ section {
 .legend-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 0.85rem;
+    gap: 8px;
+    font-size: 0.8rem;
 }
 
 .legend-item strong {
-    white-space: nowrap; /* Keep 'Stable Energy:' in one line */
+    white-space: nowrap;
 }
 
 .legend-item .dot {
@@ -1462,14 +1480,10 @@ section {
 .legend-item .dot.stable { background: var(--saddle-brown); }
 .legend-item .dot.caution { background: #943126; }
 
-@media (max-width: 1024px) {
+@media (max-width: 991px) {
     .forecast-dashboard {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .forecast-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 20px;
         gap: 20px;
     }
 }
@@ -1482,60 +1496,33 @@ section {
     }
 
     .month-btn {
-        flex: 0 0 calc(33.33% - 8px); /* 3 per row for better text fit */
+        flex: 0 0 calc(33.33% - 8px); 
         padding: 15px 5px;
         min-width: 80px;
     }
 
-    .month-btn i {
-        font-size: 1.1rem;
-    }
+    .month-btn .m-name { font-size: 0.85rem; }
+    .month-btn .m-status { font-size: 0.55rem; padding: 1px 6px; }
+    .month-btn .m-desc { font-size: 0.65rem; display: block; text-align: center; }
 
-    .month-btn .m-name {
-        font-size: 0.85rem;
-    }
-
-    .month-btn .m-status {
-        font-size: 0.55rem;
-        padding: 1px 6px;
-        margin: 2px 0;
-    }
-
-    .month-btn .m-desc {
-        font-size: 0.65rem;
-        opacity: 0.8;
-        display: block;
-        white-space: normal; /* Allow wrap if needed */
-        text-align: center;
-    }
-
-    .forecast-grid {
-        display: grid;
+    .forecast-dashboard {
         grid-template-columns: 1fr;
         gap: 15px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .forecast-card.energy {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .energy-insight {
-        max-width: 100%;
+        padding: 15px;
     }
 
     .report-page-marker {
         text-align: center;
     }
-    
-    .sidebar-card.roadmap {
-        padding: 20px;
+
+    .energy-status-bar {
+        justify-content: center;
     }
 
+    .energy-insight {
+        text-align: center;
+    }
+    
     .py-number {
         font-size: 3rem;
     }
@@ -1549,7 +1536,7 @@ section {
 
 @media (max-width: 480px) {
     .month-btn {
-        flex: 0 0 calc(33.33% - 8px); /* 3 per row on very small screens */
+        flex: 0 0 calc(33.33% - 8px);
     }
 }
 
