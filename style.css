@@ -761,26 +761,51 @@ section {
 
 .vibration-wheel {
     position: relative;
-    width: 240px; /* Reduced from 320px */
-    height: 240px; /* Reduced from 320px */
-    background: #2b1d18; /* Deep espresso variant */
+    width: 280px;
+    height: 280px;
+    background: #1a0f0a; /* Darker space background */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 50px rgba(0,0,0,0.3), inset 0 0 30px rgba(236, 180, 101, 0.1);
-    border: 1px solid rgba(236, 180, 101, 0.2);
+    box-shadow: 0 0 60px rgba(0,0,0,0.5), inset 0 0 40px rgba(236, 180, 101, 0.1);
+    border: 2px solid rgba(236, 180, 101, 0.15);
+    overflow: hidden; /* Contains the cosmic background */
+}
+
+.cosmos-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    animation: rotateCosmos 60s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.vibration-cosmos-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.5) hue-rotate(340deg) brightness(0.8);
+}
+
+@keyframes rotateCosmos {
+    from { transform: rotate(0deg) scale(1.2); }
+    to { transform: rotate(360deg) scale(1.2); }
 }
 
 .wheel-center {
     position: relative;
-    z-index: 10;
+    z-index: 5;
     text-align: center;
 }
 
 .vibration-label {
     display: block;
-    font-size: 0.75rem; /* Scaled down */
+    font-size: 0.75rem;
     color: #fff;
     opacity: 0.7;
     margin-bottom: 5px;
@@ -789,12 +814,12 @@ section {
 
 .vibration-number {
     display: block;
-    font-size: 3.5rem; /* Reduced from 4.5rem */
+    font-size: 4rem;
     font-weight: 900;
     color: var(--sunlit-clay);
     line-height: 1;
     font-family: 'Poppins', sans-serif;
-    text-shadow: 0 0 15px rgba(236, 180, 101, 0.3);
+    text-shadow: 0 0 25px rgba(236, 180, 101, 0.6);
 }
 
 .orbit-numbers {
@@ -802,37 +827,37 @@ section {
     width: 100%;
     height: 100%;
     animation: rotateWheel 40s linear infinite;
+    z-index: 6;
 }
 
 .orbit-item {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 30px; /* Reduced from 40px */
+    width: 30px;
     height: 30px;
-    margin-top: -15px; /* Half of width */
+    margin-top: -15px;
     margin-left: -15px;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Formula: R * cos/sin(angle) */
-    /* Angle = (index - 1) * 360 / 9 */
-    transform: rotate(calc(var(--i) * 40deg)) translateY(-100px) rotate(calc(var(--i) * -40deg));
+    transform: rotate(calc(var(--i) * 40deg)) translateY(-105px) rotate(calc(var(--i) * -40deg));
 }
 
 .orbit-item span {
-    width: 28px; /* Reduced from 34px */
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    border: 1px solid rgba(236, 180, 101, 0.4);
+    border: 1px solid rgba(236, 180, 101, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--sunlit-clay);
-    font-weight: 700;
-    font-size: 0.85rem;
-    background: rgba(43, 29, 24, 0.8);
-    transition: all 0.3s ease;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    background: rgba(26, 15, 10, 0.6);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .orbit-item:hover span {
@@ -843,11 +868,21 @@ section {
 
 .wheel-halo {
     position: absolute;
-    width: 110%;
-    height: 110%;
-    border: 1px dashed rgba(236, 180, 101, 0.15);
+    width: 105%;
+    height: 105%;
+    border: 1px solid rgba(236, 180, 101, 0.2);
     border-radius: 50%;
     animation: pulseHalo 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulseNumber {
+    0%, 100% { transform: scale(1); text-shadow: 0 0 25px rgba(236, 180, 101, 0.6); }
+    50% { transform: scale(1.05); text-shadow: 0 0 40px rgba(236, 180, 101, 0.8); }
+}
+
+.vibration-number {
+    animation: pulseNumber 3s ease-in-out infinite;
 }
 
 @keyframes rotateWheel {
