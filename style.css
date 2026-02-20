@@ -1113,7 +1113,7 @@ section {
 .report-preview {
     position: relative;
     background-color: var(--coffee-bean);
-    padding-top: 40px;
+    padding-top: 0px;
     padding-bottom: 10px;
     color: white;
     z-index: 5;
@@ -1151,7 +1151,7 @@ section {
 .timeline-container {
     padding: 0;
     position: relative;
-    overflow: hidden;
+    z-index: 2;
 }
 
 .timeline-header {
@@ -1166,7 +1166,7 @@ section {
 }
 
 .timeline-header p {
-    color: #d5d5d5; /* Solid light grey instead of opacity */
+    color: #d5d5d5;
     font-size: 1rem;
 }
 
@@ -1174,8 +1174,8 @@ section {
 .month-selector-wrapper {
     position: relative;
     margin-bottom: 30px;
-    border-top: 1px solid #3d2f26;
-    border-bottom: 1px solid #3d2f26;
+    border-top: 1px solid rgba(236, 180, 101, 0.1);
+    border-bottom: 1px solid rgba(236, 180, 101, 0.1);
     padding: 15px 0;
 }
 
@@ -1186,23 +1186,18 @@ section {
     padding: 10px 0;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
+    scrollbar-width: none;
     cursor: grab;
     user-select: none;
 }
 
-.month-selector.dragging {
-    cursor: grabbing;
-}
-
 .month-selector::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
 }
 
 .month-btn {
     flex: 0 0 100px;
-    background: #1e1713; /* Solid dark brown */
+    background: #1e1713;
     border: 1px solid #4a3a30;
     border-radius: 12px;
     padding: 15px 10px;
@@ -1239,19 +1234,18 @@ section {
 
 .month-btn .m-desc {
     font-size: 0.7rem;
-    color: #a0a0a0; /* Solid grey */
-    white-space: nowrap;
+    color: #a0a0a0;
 }
 
 .month-btn:hover {
-    background: #3d2f26; /* Solid lighter brown */
+    background: #3d2f26;
     transform: translateY(-5px);
 }
 
 .month-btn.active {
     background: var(--sunlit-clay);
     border-color: var(--sunlit-clay);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Shadow is fine, but color is solid */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .month-btn.active i, 
@@ -1265,29 +1259,97 @@ section {
     color: var(--sunlit-clay);
 }
 
-/* Forecast content */
-.forecast-grid {
+/* Intelligent Forecast Dashboard */
+.forecast-dashboard {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    background: rgba(43, 31, 25, 0.4);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(236, 180, 101, 0.1);
+    backdrop-filter: blur(10px);
     margin-bottom: 30px;
 }
 
-.forecast-card {
-    background: #1e1713;
-    border: 1px solid #3d2f26;
-    border-radius: 15px;
-    padding: 20px;
-    transition: all 0.5s ease;
+.report-page-marker {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--sunlit-clay);
+    opacity: 0.5;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
 }
 
-.forecast-card h4 {
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-card.roadmap {
+    background: #fffdf5;
+    color: var(--espresso);
+    padding: 30px;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.forecast-card {
+    background: rgba(30, 23, 19, 0.8);
+    border: 1px solid rgba(236, 180, 101, 0.1);
+    border-radius: 18px;
+    padding: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.forecast-card.energy {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.card-title-row i {
     color: var(--sunlit-clay);
-    font-size: 0.8rem;
-    letter-spacing: 0.5px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #3d2f26;
-    padding-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.card-title-row h4 {
+    margin: 0;
+    border: none;
+    padding: 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--sunlit-clay);
+}
+
+.energy-insight {
+    font-size: 0.85rem;
+    color: #b0b0b0;
+    max-width: 300px;
+    margin: 0;
 }
 
 .forecast-card ul {
@@ -1301,73 +1363,35 @@ section {
     display: flex;
     gap: 10px;
     line-height: 1.4;
-    color: #e0e0e0; /* Solid light grey */
-}
-
-.forecast-card ul li i {
-    font-size: 0.8rem;
-    margin-top: 4px;
-}
-
-.forecast-card.roadmap {
-    background: #fff9e6;
-    border: none;
-    color: #422217;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    box-shadow: 0 10px 30px rgba(26, 35, 126, 0.15); /* Blue-ish glow */
-    position: relative;
-    overflow: hidden;
-}
-
-.roadmap-header h4 {
-    margin: 0;
-    color: #804e20;
-    font-size: 1.1rem;
-    border: none;
-    padding-bottom: 0;
-}
-
-.roadmap-header p {
-    font-size: 0.75rem;
-    opacity: 0.6;
-    margin: 0;
+    color: #e0e0e0;
 }
 
 .personal-year-box {
-    background: #fae8c8;
-    padding: 15px;
-    border-radius: 12px;
+    background: #fdf2de;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 20px 0;
     text-align: center;
-}
-
-.py-label {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    opacity: 0.7;
+    border: 1px solid rgba(193, 141, 69, 0.1);
 }
 
 .py-number {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #c18d45;
-    line-height: 1;
-    margin: 5px 0;
+    font-size: 4rem;
+    color: #8c5d25;
+    margin: 10px 0;
 }
 
-.py-desc {
-    font-size: 0.8rem;
-    font-weight: 600;
-    margin: 0;
+.key-month-pill {
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .key-label {
     font-size: 0.65rem;
     font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     display: block;
+    color: var(--espresso);
 }
 
 .key-months-grid {
@@ -1375,56 +1399,32 @@ section {
     gap: 8px;
 }
 
-.key-month-pill {
-    flex: 1;
-    background: white;
-    padding: 8px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.km-name {
-    display: block;
-    font-weight: 800;
-    font-size: 0.8rem;
-}
-
-.km-type {
-    display: block;
-    font-size: 0.6rem;
-    opacity: 0.6;
-}
-
 .energy-status-bar {
-    background: #eef8ff;
-    padding: 10px 15px;
+    background: rgba(238, 248, 255, 0.1);
+    padding: 12px 18px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: #2c3e50;
-    margin-top: auto;
+    color: white;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: #2ecc71;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.6);
 }
-
-.forecast-card.opportunity ul li i { color: #82e0aa; }
-.forecast-card.relationship ul li i { color: #85c1e9; }
-.forecast-card.caution ul li i { color: #e67e22; }
 
 /* Legend */
 .forecast-legend {
-    background: #1e1713;
+    background: rgba(30, 23, 19, 0.6);
     border-radius: 12px;
     padding: 15px 25px;
+    margin-top: 20px;
 }
 
 .legend-title {
@@ -1447,6 +1447,10 @@ section {
     font-size: 0.85rem;
 }
 
+.legend-item strong {
+    white-space: nowrap; /* Keep 'Stable Energy:' in one line */
+}
+
 .legend-item .dot {
     width: 10px;
     height: 10px;
@@ -1459,53 +1463,93 @@ section {
 .legend-item .dot.caution { background: #943126; }
 
 @media (max-width: 1024px) {
+    .forecast-dashboard {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
     .forecast-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
-@media (max-width: 640px) {
-    .timeline-container {
-        padding: 40px 0;
-        border-radius: 0;
+@media (max-width: 768px) {
+    .month-selector {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
-    
-    .timeline-header h3 {
-        font-size: 1.5rem;
+
+    .month-btn {
+        flex: 0 0 calc(33.33% - 8px); /* 3 per row for better text fit */
+        padding: 15px 5px;
+        min-width: 80px;
     }
-    
-    .month-selector-wrapper {
-        margin-bottom: 30px;
+
+    .month-btn i {
+        font-size: 1.1rem;
     }
-    
+
+    .month-btn .m-name {
+        font-size: 0.85rem;
+    }
+
+    .month-btn .m-status {
+        font-size: 0.55rem;
+        padding: 1px 6px;
+        margin: 2px 0;
+    }
+
+    .month-btn .m-desc {
+        font-size: 0.65rem;
+        opacity: 0.8;
+        display: block;
+        white-space: normal; /* Allow wrap if needed */
+        text-align: center;
+    }
+
     .forecast-grid {
-        display: flex;
-        overflow-x: auto;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 15px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-        margin: 0 -20px;
-        padding: 0 20px 20px;
-        cursor: grab;
-        user-select: none;
+        margin: 0;
+        padding: 0;
     }
 
-    .forecast-grid.dragging {
-        cursor: grabbing;
+    .forecast-card.energy {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
     }
 
-    .forecast-grid::-webkit-scrollbar {
-        display: none;
+    .energy-insight {
+        max-width: 100%;
     }
 
-    .forecast-card {
-        flex: 0 0 280px;
+    .report-page-marker {
+        text-align: center;
+    }
+    
+    .sidebar-card.roadmap {
+        padding: 20px;
+    }
+
+    .py-number {
+        font-size: 3rem;
     }
 
     .legend-items {
         flex-direction: column;
-        gap: 10px;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .month-btn {
+        flex: 0 0 calc(33.33% - 8px); /* 3 per row on very small screens */
     }
 }
 

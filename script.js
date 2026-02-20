@@ -161,56 +161,60 @@ document.addEventListener('DOMContentLoaded', () => {
     const monthLabels = ["Breakthrough", "Harvest", "Expansion", "Foundation", "Recognition", "Stability", "Focus"];
 
     function updateForecast() {
-        // Add fade out
-        const cards = document.querySelectorAll('.forecast-card');
-        cards.forEach(card => card.style.opacity = '0.3');
+        // Add fade and scale out for premium feel
+        const dashboard = document.querySelector('.forecast-dashboard');
+        const cards = document.querySelectorAll('.sidebar-card, .forecast-card');
+        
+        cards.forEach(card => {
+            card.style.opacity = '0.4';
+            card.style.transform = 'scale(0.98)';
+        });
 
         setTimeout(() => {
             // --- Randomize Roadmap Card ---
             const roadmapCard = document.getElementById('roadmapCard');
             if (roadmapCard) {
+                // To keep it 'Intelligent', let's make Personal Year more stable 
+                // but still allow it to change to show variety in the preview
                 const pyNum = Math.floor(Math.random() * 9) + 1;
                 
-                // Add a small punch animation
                 const pyBox = roadmapCard.querySelector('.personal-year-box');
-                pyBox.style.transform = 'scale(0.95)';
-                pyBox.style.transition = 'transform 0.2s ease';
                 
-                setTimeout(() => {
-                    document.getElementById('pyNumber').textContent = pyNum;
-                    document.getElementById('pyDesc').textContent = pyData[pyNum];
-                    pyBox.style.transform = 'scale(1)';
-                    
-                    // Random Key Months
-                    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    const randomMonths = getRandomItems(months, 3);
-                    const keyMonthsGrid = document.getElementById('keyMonthsGrid');
-                    keyMonthsGrid.innerHTML = randomMonths.map(m => `
-                        <div class="key-month-pill">
-                            <span class="km-name">${m}</span>
-                            <span class="km-type">${getRandomItems(monthLabels, 1)[0]}</span>
-                        </div>
-                    `).join('');
-                    
-                    // Energy Status
-                    document.getElementById('energyStatusText').textContent = getRandomItems(energyStatuses, 1)[0];
-                }, 100);
+                document.getElementById('pyNumber').textContent = pyNum;
+                document.getElementById('pyDesc').textContent = pyData[pyNum];
+                
+                // Random Key Months
+                const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const randomMonths = getRandomItems(months, 3);
+                const keyMonthsGrid = document.getElementById('keyMonthsGrid');
+                keyMonthsGrid.innerHTML = randomMonths.map(m => `
+                    <div class="key-month-pill" style="padding: 10px; border-radius: 8px; flex: 1; text-align: center;">
+                        <span class="km-name" style="display: block; font-weight: 800; font-size: 0.8rem;">${m}</span>
+                        <span class="km-type" style="display: block; font-size: 0.6rem; opacity: 0.6;">${getRandomItems(monthLabels, 1)[0]}</span>
+                    </div>
+                `).join('');
+                
+                // Energy Status
+                document.getElementById('energyStatusText').textContent = getRandomItems(energyStatuses, 1)[0];
             }
 
             // Randomize Relationship
-            relationshipList.innerHTML = getRandomItems(relationshipPool, 4)
-                .map(text => `<li><i class="fas fa-check"></i> ${text}</li>`).join('');
+            relationshipList.innerHTML = getRandomItems(relationshipPool, 3)
+                .map(text => `<li><i class="fas fa-circle-check"></i> ${text}</li>`).join('');
 
             // Randomize Caution
-            cautionList.innerHTML = getRandomItems(cautionPool, 4)
+            cautionList.innerHTML = getRandomItems(cautionPool, 3)
                 .map(text => `<li><i class="fas fa-triangle-exclamation"></i> ${text}</li>`).join('');
 
-            // Fade in
-            cards.forEach(card => {
-                card.style.opacity = '1';
-                card.style.transition = 'opacity 0.5s ease';
+            // Fade in with punch
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                    card.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                }, index * 50); // Staggered reveal
             });
-        }, 300);
+        }, 400);
     }
 
     monthBtns.forEach(btn => {
