@@ -63,8 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
     });
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger once on load
+    // Sticky Mobile CTA Visibility logic
+    const stickyCta = document.querySelector('.sticky-mobile-cta');
+    const familiarSection = document.getElementById('familiar');
+    
+    const handleStickyCta = () => {
+        if (!stickyCta || !familiarSection) return;
+        
+        const monitorPoint = familiarSection.getBoundingClientRect().bottom;
+        
+        if (monitorPoint < 0) {
+            stickyCta.classList.add('visible');
+        } else {
+            stickyCta.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', () => {
+        revealOnScroll();
+        handleStickyCta();
+    });
+    
+    revealOnScroll(); 
+    handleStickyCta();
 
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

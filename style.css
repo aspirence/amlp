@@ -170,12 +170,37 @@ section {
 
 /* Cosmic Dust Particles */
 .cosmic-dust {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(128, 78, 32, 0.08) 1px, transparent 0);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+/* New: Sacred Geometry Texture */
+.sacred-geometry-texture {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 A40 40 0 1 0 90 50 A40 40 0 1 0 50 10' fill='none' stroke='%23804E20' stroke-opacity='0.4' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='50' r='20' stroke='%23804E20' stroke-opacity='0.3' stroke-width='0.3' fill='none'/%3E%3Cpath d='M50 10 L50 90 M10 50 L90 50 M21.7 21.7 L78.3 78.3 M78.3 21.7 L21.7 78.3' stroke='%23804E20' stroke-opacity='0.2' stroke-width='0.2'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: -1;
+    display: block;
+}
+
+/* New: Floating Number Pattern */
+.number-drift {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(circle at 2px 2px, rgba(128, 78, 32, 0.05) 1px, transparent 0);
-    background-size: 40px 40px;
+    min-height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Ctext x='20' y='30' font-family='serif' font-size='16' fill='%23804E20' fill-opacity='0.15'%3E3%3C/text%3E%3Ctext x='150' y='40' font-family='serif' font-size='14' fill='%23804E20' fill-opacity='0.1'%3E7%3C/text%3E%3Ctext x='80' y='120' font-family='serif' font-size='18' fill='%23804E20' fill-opacity='0.2'%3E1%3C/text%3E%3Ctext x='40' y='170' font-family='serif' font-size='12' fill='%23804E20' fill-opacity='0.1'%3E9%3C/text%3E%3Ctext x='170' y='160' font-family='serif' font-size='14' fill='%23804E20' fill-opacity='0.15'%3E5%3C/text%3E%3C/svg%3E");
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
+    display: block;
 }
 
 @keyframes rotateSlow {
@@ -214,7 +239,8 @@ section {
 .hero {
     min-height: 100vh;
     padding: 20px 0 80px;
-    background: linear-gradient(135deg, #f5f2ef 0%, #edeae7 100%);
+    background: linear-gradient(135deg, rgba(245, 242, 239, 0.7) 0%, rgba(237, 234, 231, 0.7) 100%), url('assets/numer.png') no-repeat center center;
+    background-size: cover;
     position: relative;
     overflow: hidden;
 }
@@ -472,6 +498,8 @@ section {
     color: var(--coffee-bean);
     padding-top: 20px;
     padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
 .problem-container {
@@ -645,12 +673,12 @@ section {
 
 /* Inside Section */
 .inside {
-   background: #fbf9f7;
+    background: linear-gradient(135deg, rgba(251, 249, 247, 0.8) 0%, rgba(245, 242, 239, 0.8) 100%), url('assets/numer.png') no-repeat center center;
+    background-size: cover;
     position: relative;
     overflow: hidden;
     padding-top: 50px;
-        padding-bottom: 10px;
-
+    padding-bottom: 10px;
 }
 
 .inside h2.section-title {
@@ -1535,6 +1563,8 @@ section {
     background: white;
     padding-top: 50px;
     padding-bottom: 50px;
+    position: relative;
+    overflow: hidden;
 }
 
 .testimonial-grid {
@@ -1564,7 +1594,24 @@ section {
 .pricing {
     background: var(--espresso);
     color: white;
-    padding: 40px 0; /* Reduced from 60px */
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.sun-cosmos-bg {
+    display: none;
+}
+
+.mystic-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.15;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='20' cy='20' r='0.5' fill='%23804E20' opacity='0.5'/%3E%3Cpath d='M20 0 L20 40 M0 20 L40 20' stroke='%23804E20' stroke-width='0.1' opacity='0.2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3Cpath d='M50 50 m-40 0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0' stroke='%23804E20' stroke-width='0.05' fill='none' opacity='0.1'/%3E%3Cpath d='M50 10 L90 50 L50 90 L10 50 Z' stroke='%23804E20' stroke-width='0.05' fill='none' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 800px 800px;
+    background-position: center;
 }
 
 /* Minimalistic Pricing Card Redesign */
@@ -2069,5 +2116,60 @@ section {
     @keyframes marquee {
         0% { transform: translateX(0); }
         100% { transform: translateX(calc(-280px * 3 - 40px * 3)); }
+    }
+}
+
+/* Sticky Mobile CTA Styles */
+.sticky-mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(40, 31, 25, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+    border-top: 1px solid rgba(236, 180, 101, 0.2);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sticky-mobile-cta.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.mobile-cta-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: var(--saddle-brown);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(128, 78, 32, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .sticky-mobile-cta {
+        display: block;
+    }
+    
+    /* Add padding to body to prevent content from being hidden behind sticky bar */
+    body {
+        padding-bottom: 80px;
     }
 }
