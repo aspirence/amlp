@@ -65,6 +65,12 @@ body {
     position: relative;
 }
 
+/* PageSpeed Insights: Optimize off-screen rendering */
+.report-contents, .how-it-works, .detailed-insights, .benefits, .report-details, .about, .testimonials, .faq {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+}
+
 /* Stars container */
 .stars-bg {
     position: fixed;
