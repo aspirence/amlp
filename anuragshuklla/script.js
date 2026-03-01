@@ -147,5 +147,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // =============================================
     // Can be expanded to auto-scroll testimonials on mobile
 
+    // =============================================
+    // STICKY CTA VISIBILITY
+    // =============================================
+    const stickyCta = document.getElementById('stickyCta');
+    const heroSection = document.querySelector('.hero');
+    
+    if (stickyCta && heroSection) {
+        window.addEventListener('scroll', function() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            
+            // Show sticky CTA if we've scrolled past hero
+            if (window.scrollY > (heroBottom - 50)) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+    }
+
     console.log('Numerology Landing Page Loaded Successfully');
 });
