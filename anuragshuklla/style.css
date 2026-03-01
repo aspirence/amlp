@@ -506,6 +506,172 @@ p {
 }
 
 /* =============================================
+   DETAILED INSIGHTS SECTION (GRADIENT FULL UI)
+============================================= */
+.detailed-insights {
+    padding: var(--space-3xl) 20px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden; /* Prevent background from spanning out */
+}
+
+
+
+.detailed-insights h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: var(--space-md);
+    color: var(--white);
+}
+
+.detailed-insights .section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--space-3xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.insights-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.insight-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.insight-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.insight-content {
+    flex: 1;
+}
+
+.insight-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.insight-image-box img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(200, 160, 230, 0.2));
+}
+
+@keyframes spin-slow { 100% { transform: rotate(360deg); } }
+.celestial-spin { animation: spin-slow 20s linear infinite; }
+.celestial-spin-slow { animation: spin-slow 40s linear infinite; }
+
+@keyframes pulse-slow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+.celestial-pulse { animation: pulse-slow 6s ease-in-out infinite; }
+
+@keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+.celestial-float { animation: float-slow 6s ease-in-out infinite; }
+
+.insight-card {
+    position: relative;
+    padding: 30px;
+    border: 1px dotted rgba(200, 160, 230, 0.7);
+    border-radius: 0;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    background: rgba(65, 30, 95, 0.4);
+}
+
+.insight-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.grad-1::before { background: linear-gradient(135deg, rgba(142, 45, 226, 0.3), rgba(74, 0, 224, 0.3)); }
+.grad-2::before { background: linear-gradient(135deg, rgba(236, 0, 140, 0.3), rgba(252, 103, 103, 0.3)); }
+.grad-3::before { background: linear-gradient(135deg, rgba(86, 171, 47, 0.3), rgba(168, 224, 99, 0.3)); }
+.grad-4::before { background: linear-gradient(135deg, rgba(255, 128, 8, 0.3), rgba(255, 200, 55, 0.3)); }
+.grad-5::before { background: linear-gradient(135deg, rgba(0, 198, 255, 0.3), rgba(0, 114, 255, 0.3)); }
+
+.insight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    border-color: var(--gold);
+}
+
+@media (max-width: 900px) {
+    .insight-row, .insight-row.reverse {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+    .insights-timeline {
+        gap: 60px;
+    }
+}
+
+.insight-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+.insight-num-box {
+    font-size: 54px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 1;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-family: "Arial Black", Arial, sans-serif;
+    letter-spacing: -2px;
+}
+
+.insight-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+}
+
+.insight-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.insight-item {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 0;
+}
+
+.insight-item strong {
+    color: var(--gold);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* =============================================
    BENEFITS SECTION
 ============================================= */
 .benefits {
