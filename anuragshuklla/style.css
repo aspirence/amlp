@@ -66,7 +66,7 @@ body {
 }
 
 /* PageSpeed Insights: Optimize off-screen rendering */
-.report-contents, .how-it-works, .detailed-insights, .benefits, .report-details, .about, .testimonials, .faq {
+.report-contents, .how-it-works, .detailed-insights, .benefits, .report-preview, .report-details, .about, .testimonials, .faq {
     content-visibility: auto;
     contain-intrinsic-size: 800px;
 }
@@ -734,11 +734,194 @@ p {
 }
 
 /* =============================================
-   REPORT DETAILS SECTION
+   REPORT PREVIEW MOCKUP WIDGET
 ============================================= */
-.report-details {
+.report-preview {
     padding: var(--space-3xl) 20px;
 }
+
+.report-preview h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: var(--space-sm);
+    color: var(--white);
+}
+
+.preview-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    margin-bottom: var(--space-2xl);
+}
+
+.mockup-widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.mockup-container {
+    position: relative;
+    perspective: 1000px;
+}
+
+.mockup-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.mockup-card {
+    position: relative;
+    z-index: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+    animation: mockupFloat 4s ease-in-out infinite;
+}
+
+@keyframes mockupFloat {
+    0%, 100% { transform: translateY(0) rotateX(5deg) rotateY(-5deg); }
+    50% { transform: translateY(-15px) rotateX(5deg) rotateY(-5deg); }
+}
+
+.mockup-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-10px) rotateX(0) rotateY(0) scale(1.02);
+}
+
+.mockup-image {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(212, 175, 55, 0.3);
+    display: block;
+}
+
+.mockup-hotspots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.hotspot {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--gold);
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    animation: hotspotPulse 2s ease-in-out infinite;
+    transform: translate(-50%, -50%);
+}
+
+.hotspot::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--deep-purple);
+    border-radius: 50%;
+}
+
+.hotspot::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--white);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--gold);
+}
+
+.hotspot:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 140%;
+}
+
+@keyframes hotspotPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+    50% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+}
+
+.mockup-features {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-tag {
+    background: rgba(65, 30, 95, 0.6);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--white);
+    font-size: 14px;
+    backdrop-filter: blur(5px);
+}
+
+.feature-tag span {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    .mockup-image {
+        max-width: 260px;
+    }
+
+    .hotspot {
+        width: 20px;
+        height: 20px;
+    }
+
+    .hotspot::before {
+        width: 8px;
+        height: 8px;
+    }
+
+    .feature-tag {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+
+/* =============================================
+   REPORT DETAILS SECTION
+============================================= */
+
 
 .report-details h2 {
     text-align: center;
@@ -1396,6 +1579,114 @@ p {
 
 span.language-note {
     font-size: 15px;
+}
+
+/* Premium Mockup Showcase */
+.report-mockup-showcase {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-layers {
+    position: relative;
+    width: 100%;
+    max-width: 280px;
+    height: 500px;
+}
+
+.mockup-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.main-mockup {
+    width: 85%;
+    height: 85%;
+    z-index: 3;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+.interior-mockup {
+    width: 80%;
+    height: 80%;
+    z-index: 2;
+    top: 48%;
+    left: 42%;
+    transform: translate(-10%, -40%) rotate(10deg);
+    opacity: 0.8;
+}
+
+.report-mockup-showcase:hover .main-mockup {
+    transform: translate(-50%, -55%) rotate(-1deg);
+}
+
+.report-mockup-showcase:hover .interior-mockup {
+    transform: translate(-25%, -45%) rotate(8deg);
+}
+
+.glamour-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(236, 180, 101, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    filter: blur(40px);
+}
+
+.mockup-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    background: var(--camel);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    transform: rotate(5deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.badge-text {
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.badge-sub {
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    .mockup-layers {
+        height: 380px;
+        max-width: 215px;
+    }
+
+    .mockup-badge {
+        right: -10px;
+        bottom: 20px;
+        transform: rotate(0) scale(0.85);
+    }
 }
 
 .sticky-btn {
