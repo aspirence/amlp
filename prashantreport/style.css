@@ -1,0 +1,913 @@
+/* =============================================
+   MYSTIC NUMEROLOGY REPORT - PRASHANT REPORT
+   Design Thinking: anuragshuklla
+   Color Palette: Prussian Blue & Pale Sky
+   ============================================= */
+
+:root {
+    /* Updated Palette from Reference Image */
+    --primary-bg: #0B1C3B;      /* Prussian Blue */
+    --primary-dark: #101D35;    /* Darker Prussian */
+    --surface: rgba(23, 38, 66, 0.4);   /* More transparent Surface */
+    --deep-space: #233449;      /* Deep Space Blue */
+    --accent-light: #C1E0EF;    /* Pale Sky */
+    --gold: #E3B650;            /* Metallic Gold */
+    --white: #ffffff;
+    --text-muted: #B8C9CF;      /* Pale Sky 2 */
+    
+    /* Functional Colors */
+    --accent: var(--gold);
+    --surface-glass: rgba(23, 38, 66, 0.6);
+    --surface-light: rgba(193, 224, 239, 0.1);
+    
+    /* Shadows */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --shadow-gold: 0 0 20px rgba(227, 182, 80, 0.3);
+    
+    /* Spacing */
+    --space-xs: 0.44rem;
+    --space-sm: 0.67rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3.38rem;
+    --space-3xl: 5.06rem;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--white);
+    font-size: 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative; /* Anchor for absolute stars-bg */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Stars Background (from anuragshuklla) */
+.stars-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Above body color, below content */
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    color: rgba(193, 224, 239, 0.3);
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+.star.num {
+    font-weight: 700;
+    color: rgba(227, 182, 80, 0.2);
+}
+
+/* Decorative Background Elements */
+.bg-decorative-img {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.25; /* Increased opacity for visibility */
+    filter: invert(100%) brightness(1.5);
+    animation: drift 30s linear infinite alternate;
+}
+
+/* Large Celestial Assets */
+.bg-full-cele {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.15;
+    filter: invert(100%) brightness(1.2);
+    transform-origin: center center;
+    transition: width 0.3s ease;
+}
+
+/* Ensure background assets scale up on mobile to bridge vertical gaps */
+@media (max-width: 768px) {
+    .bg-full-cele {
+        width: 120vw !important; /* Scale up significantly on mobile */
+        opacity: 0.12; /* Slightly lower opacity for better readability on small text */
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-full-cele {
+        width: 150vw !important; /* Increased width to ensure overlap when pulled off-screen */
+        margin-top: -12vh;
+        margin-bottom: -12vh;
+    }
+    /* Pull left-aligned assets further left */
+    .bg-full-cele[style*="left"] {
+        margin-left: -25vh;
+    }
+    /* Pull right-aligned assets further right */
+    .bg-full-cele[style*="right"] {
+        margin-right: -25vh;
+    }
+}
+
+@keyframes celestial-slow-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(30px, 30px) rotate(15deg); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Typography */
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: var(--gold);
+}
+
+.highlight-sand {
+    color: var(--accent-light);
+}
+
+/* Buttons */
+.cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), #B8860B);
+    color: #1a1a1a;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(227, 182, 80, 0.4);
+}
+
+.price-strike {
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--surface);
+    padding: 0.5rem 1.5rem;
+    border: 1px dotted var(--accent-light);
+    color: var(--accent-light);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-muted);
+}
+
+.hero-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Sections General */
+section {
+    padding: 6rem 0;
+    position: relative;
+    background: transparent;
+}
+
+section h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 3rem;
+}
+
+/* Feature Grid (Cards like anuragshuklla) */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border: 1px dotted rgba(193, 224, 239, 0.4);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: rgba(193, 224, 239, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Section Headings Styling */
+.section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+/* Benefit Grid (Numbers 1-9) */
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: var(--surface);
+    padding: 2rem;
+    border: 1px dotted var(--accent-light);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.benefit-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.benefit-card p {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* Comparison Table */
+.comparison-table-wrapper table {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.comparison-table-wrapper th, .comparison-table-wrapper td {
+    border: 1px dotted var(--accent-light);
+    padding: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.comparison-table-wrapper th {
+    background: var(--surface-glass);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.comparison-table-wrapper td:last-child {
+    font-weight: 700;
+}
+
+/* Feature Grid Refinements */
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.problem.bg-dark {
+    background-color: transparent;
+}
+
+.bg-dark {
+    background-color: transparent;
+}
+
+/* How It Works Steps */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px dotted var(--accent-light);
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+/* Detailed Insights (Timeline style from anuragshuklla) */
+.insights-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.insight-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.insight-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.insight-card {
+    flex: 1;
+    background: var(--surface);
+    padding: 2.5rem;
+    border: 1px dotted var(--accent-light);
+    position: relative;
+}
+
+.insight-num {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.insight-image {
+    flex: 1;
+    text-align: center;
+}
+
+.insight-image img {
+    max-width: 300px;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.insight-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+}
+
+.insight-item strong {
+    color: var(--gold);
+    display: block;
+}
+
+/* About Section */
+.about-card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background: var(--surface);
+    padding: 4rem;
+    border: 1px dotted var(--accent-light);
+}
+
+.about-img img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    object-fit: cover;
+}
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-left: 4px solid var(--gold);
+}
+
+.stars { color: var(--gold); margin-bottom: 1rem; }
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.price-card {
+    background: var(--surface);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px dotted var(--accent-light);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.price-card.featured {
+    border: 2px solid var(--gold);
+    transform: scale(1.05);
+    background: rgba(227, 182, 80, 0.05);
+    z-index: 2;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #1a1a1a;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border-radius: 50px;
+}
+
+.price-tag {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+    color: var(--gold);
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.price-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px dotted var(--accent-light);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+    color: var(--text-muted);
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-dark);
+    padding: 1rem 0;
+    z-index: 100;
+    border-top: 1px solid var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .insight-row, .insight-row.reverse, .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .price-card.featured {
+        transform: scale(1);
+    }
+    .sticky-cta {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: var(--space-2xl) 20px var(--space-3xl);
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-desc {
+        font-size: 17px;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 16px 35px;
+    }
+
+    section {
+        padding: var(--space-3xl) 0;
+    }
+    
+    h2 {
+        font-size: 30px;
+        margin-bottom: var(--space-xl);
+    }
+}
+
+/* Numerology Wheel Section */
+.numerology-wheel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.wheel-wrapper {
+    flex: 0 0 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cosmic-wheel {
+    position: relative;
+    width: 600px; /* Increased for better spatial breathing */
+    height: 600px;
+    background: url('assets/celestial_wheel_bg.svg') no-repeat center;
+    background-size: contain; /* SVG 1:1 with container */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+}
+
+/* Positioning 11 nodes around the circle */
+.wheel-node {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border: 1px solid rgba(227, 182, 80, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(193, 224, 239, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 10;
+    /* Centered exactly on the r=380 (380*0.6=228px) orbit line */
+    --angle: calc((360deg / 11) * (var(--i) - 1));
+    transform: rotate(var(--angle)) translate(228px) rotate(calc(-1 * var(--angle)));
+}
+
+
+.wheel-node:active, .wheel-node.tapping {
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle))) scale(0.9);
+    filter: brightness(1.2);
+    transition: all 0.1s ease;
+}
+
+.wheel-node.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--primary-dark);
+    transform: rotate(var(--angle)) translate(228px) rotate(calc(-1 * var(--angle))) scale(1.25);
+    box-shadow: 0 0 30px rgba(227, 182, 80, 0.8);
+    background-image: none; /* Solid gold for active state prominence */
+}
+
+.wheel-center {
+    width: 170px;
+    height: 170px;
+    background: url('assets/center_sun.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    animation: celestial-slow-spin 25s linear infinite; /* Faster rotation for sun energy */
+    filter: drop-shadow(0 0 15px rgba(227, 182, 80, 0.4));
+}
+
+.center-icon {
+    display: none; /* Icon is now part of the SVG background */
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.wheel-details-panel {
+    flex: 1;
+    background: var(--surface-glass);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(193, 224, 239, 0.1);
+    backdrop-filter: blur(10px);
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wheel-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.wheel-content.active {
+    display: block;
+}
+
+/* Cosmic Particle Effect */
+.cosmic-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    color: var(--gold);
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 8px rgba(227, 182, 80, 0.8);
+}
+
+.cosmic-particle.dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.cosmic-particle.star {
+    font-size: 1.4rem;
+}
+
+.cosmic-particle.moon {
+    font-size: 1.3rem;
+}
+
+.cosmic-particle.number {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes particle-flight {
+    0% {
+        transform: translate(0, 0) scale(0.2);
+        opacity: 0;
+    }
+    15% {
+        /* High fountain burst */
+        transform: translate(var(--burst-x), -150px) scale(1.5);
+        opacity: 1;
+    }
+    40% {
+        /* Brief float at the peak */
+        transform: translate(calc(var(--burst-x) * 1.5), -160px) scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        /* Slow graceful glide to panel */
+        transform: var(--target-transform) scale(0.4);
+        opacity: 0;
+    }
+}
+
+.topic-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.wheel-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.show-results-cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(193, 224, 239, 0.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tablet / Mobile Wheel */
+@media (max-width: 1024px) {
+    .numerology-wheel-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .wheel-wrapper {
+        flex: none;
+        width: 100%;
+        height: 480px;
+        order: 1; /* Wheel first */
+    }
+    .wheel-details-panel {
+        order: 2; /* Content second */
+        width: 100%;
+        padding: 2rem;
+        min-height: auto;
+    }
+    .cosmic-wheel {
+        width: 320px;
+        height: 320px;
+        background-size: contain;
+    }
+    .wheel-node {
+        width: 50px;
+        height: 50px;
+        --node-distance: 121px;
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle)));
+    }
+    .wheel-node:active, .wheel-node.tapping {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(0.9);
+    }
+    .wheel-node.active {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(1.2);
+    }
+    .wheel-center {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wheel-wrapper {
+        height: 380px;
+    }
+    .cosmic-wheel {
+        width: 260px; /* Slightly increased for better target size */
+        height: 260px;
+        background-size: contain;
+    }
+    .wheel-node {
+        width: 42px;
+        height: 42px;
+        font-size: 0.85rem;
+        --node-distance: 98px;
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle)));
+    }
+    .wheel-node:active, .wheel-node.tapping {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(0.85);
+    }
+    .wheel-node.active {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(1.15);
+    }
+    .wheel-center {
+        width: 100px; /* Adjusted from 80 for solar detail */
+        height: 100px;
+    }
+    .wheel-details-panel {
+        padding: 1.5rem;
+    }
+    .wheel-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .wheel-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}

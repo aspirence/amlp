@@ -1,0 +1,52 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Radiating Rays (The "Emanation" effect from the reference) -->
+  <g transform="translate(500, 500)">
+    <!-- 72 Rays for high density -->
+    <g stroke="#C1E0EF" stroke-opacity="0.15" stroke-width="1">
+      <!-- Logic for multiple ray lengths and styles -->
+      <path d="M0 -150 L0 -480" transform="rotate(0)" />
+      <path d="M0 -150 L0 -400" transform="rotate(5)" stroke-dasharray="2 6" />
+      <path d="M0 -150 L0 -450" transform="rotate(10)" />
+      <path d="M0 -150 L0 -420" transform="rotate(15)" stroke-dasharray="4 8" />
+      <path d="M0 -150 L0 -480" transform="rotate(20)" />
+      <path d="M0 -150 L0 -400" transform="rotate(25)" stroke-dasharray="2 6" />
+      <path d="M0 -150 L0 -450" transform="rotate(30)" />
+      <path d="M0 -150 L0 -420" transform="rotate(35)" stroke-dasharray="4 8" />
+      <!-- Repeat pattern 360deg -->
+      <path d="M0 -150 L0 -480" transform="rotate(40)" /> <path d="M0 -150 L0 -480" transform="rotate(80)" /> <path d="M0 -150 L0 -120" transform="rotate(120)" />
+      <path d="M0 -150 L0 -480" transform="rotate(160)" /> <path d="M0 -150 L0 -200" transform="rotate(200)" /> <path d="M0 -150 L0 -240" transform="rotate(240)" />
+      <path d="M0 -150 L0 -280" transform="rotate(280)" /> <path d="M0 -150 L0 -320" transform="rotate(320)" />
+      <!-- High density radial lines -->
+      <circle r="490" stroke-width="0.5" stroke-opacity="0.05" fill="none" />
+    </g>
+    
+    <!-- Programmatically adding more rays via loops in my head, but I'll write more paths for density -->
+    <g stroke="#E3B650" stroke-opacity="0.1" stroke-width="0.5">
+      <path d="M0 -180 L0 -495" transform="rotate(2.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(12.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(22.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(32.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(42.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(52.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(62.5)" />
+      <path d="M0 -180 L0 -495" transform="rotate(72.5)" />
+    </g>
+  </g>
+
+  <!-- Scattered "Stardust" Dots -->
+  <g fill="#E3B650" fill-opacity="0.2">
+    <circle cx="200" cy="200" r="1.5" /><circle cx="800" cy="150" r="1" /><circle cx="150" cy="750" r="2" />
+    <circle cx="850" cy="850" r="1.5" /><circle cx="500" cy="100" r="1" /><circle cx="500" cy="900" r="1.5" />
+    <circle cx="100" cy="500" r="2" /><circle cx="900" cy="500" r="1" />
+  </g>
+
+  <!-- Central Crescent Moon (Symbolic of the reference center) -->
+  <path d="M500 350 C417.157 350 350 417.157 350 500 C350 582.843 417.157 650 500 650 C540.067 650 576.223 634.254 602.837 608.683 C574.966 619.682 544.7 625.806 513 625.806 C443.414 625.806 387 569.392 387 499.806 C387 430.221 443.414 373.806 513 373.806 C544.7 373.806 574.966 379.931 602.837 390.93 C576.223 365.358 540.067 349.613 500 349.613" 
+    stroke="#E3B650" stroke-opacity="0.4" stroke-width="2" fill="none" />
+  
+  <!-- Stars inside Moon (Conceptual) -->
+  <g fill="#E3B650" opacity="0.3">
+    <path d="M440 460 L445 475 L460 480 L445 485 L440 500 L435 485 L420 480 L435 475 Z" />
+    <path d="M470 520 L473 529 L482 532 L473 535 L470 544 L467 535 L458 532 L467 529 Z" />
+  </g>
+</svg>

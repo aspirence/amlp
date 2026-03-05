@@ -1,0 +1,96 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Interactive Solar System Grid -->
+  <g transform="translate(500, 500)">
+    <!-- Orbits with subtle depth -->
+    <circle r="450" stroke="#C1E0EF" stroke-opacity="0.08" stroke-width="0.5" />
+    <circle r="380" stroke="#C1E0EF" stroke-opacity="0.12" stroke-width="1" />
+    <circle r="310" stroke="#C1E0EF" stroke-opacity="0.08" stroke-width="0.5" />
+    <circle r="200" stroke="#E3B650" stroke-opacity="0.2" stroke-width="1.5" />
+    <circle r="120" stroke="#C1E0EF" stroke-opacity="0.08" stroke-width="0.5" />
+
+    <!-- Degree markers around the wheel -->
+    <g stroke="#C1E0EF" stroke-opacity="0.15" stroke-width="1">
+      <!-- 72 ticks for 5-degree increments -->
+      <path d="M0 -380 L0 -370" transform="rotate(0)" />
+      <path d="M0 -380 L0 -375" transform="rotate(5)" />
+      <path d="M0 -380 L0 -375" transform="rotate(10)" />
+      <path d="M0 -380 L0 -375" transform="rotate(15)" />
+      <path d="M0 -380 L0 -375" transform="rotate(20)" />
+      <path d="M0 -380 L0 -375" transform="rotate(25)" />
+      <path d="M0 -380 L0 -370" transform="rotate(30)" />
+      <path d="M0 -380 L0 -375" transform="rotate(35)" />
+      <path d="M0 -380 L0 -375" transform="rotate(40)" />
+      <path d="M0 -380 L0 -375" transform="rotate(45)" />
+      <path d="M0 -380 L0 -375" transform="rotate(50)" />
+      <path d="M0 -380 L0 -375" transform="rotate(55)" />
+      <path d="M0 -380 L0 -370" transform="rotate(60)" />
+      <path d="M0 -380 L0 -375" transform="rotate(65)" />
+      <path d="M0 -380 L0 -375" transform="rotate(70)" />
+      <path d="M0 -380 L0 -375" transform="rotate(75)" />
+      <path d="M0 -380 L0 -375" transform="rotate(80)" />
+      <path d="M0 -380 L0 -375" transform="rotate(85)" />
+      <path d="M0 -380 L0 -370" transform="rotate(90)" />
+      <path d="M0 -380 L0 -375" transform="rotate(95)" />
+      <path d="M0 -380 L0 -375" transform="rotate(100)" />
+      <path d="M0 -380 L0 -375" transform="rotate(105)" />
+      <path d="M0 -380 L0 -375" transform="rotate(110)" />
+      <path d="M0 -380 L0 -375" transform="rotate(115)" />
+      <path d="M0 -380 L0 -370" transform="rotate(120)" />
+      <path d="M0 -380 L0 -375" transform="rotate(125)" />
+      <path d="M0 -380 L0 -375" transform="rotate(130)" />
+      <path d="M0 -380 L0 -375" transform="rotate(135)" />
+      <path d="M0 -380 L0 -375" transform="rotate(140)" />
+      <path d="M0 -380 L0 -375" transform="rotate(145)" />
+      <path d="M0 -380 L0 -370" transform="rotate(150)" />
+      <path d="M0 -380 L0 -375" transform="rotate(155)" />
+      <path d="M0 -380 L0 -375" transform="rotate(160)" />
+      <path d="M0 -380 L0 -375" transform="rotate(165)" />
+      <path d="M0 -380 L0 -375" transform="rotate(170)" />
+      <path d="M0 -380 L0 -375" transform="rotate(175)" />
+      <path d="M0 -380 L0 -370" transform="rotate(180)" />
+      <path d="M0 -380 L0 -375" transform="rotate(185)" />
+      <path d="M0 -380 L0 -375" transform="rotate(190)" />
+      <path d="M0 -380 L0 -375" transform="rotate(195)" />
+      <path d="M0 -380 L0 -375" transform="rotate(200)" />
+      <path d="M0 -380 L0 -375" transform="rotate(205)" />
+      <path d="M0 -380 L0 -370" transform="rotate(210)" />
+      <path d="M0 -380 L0 -375" transform="rotate(215)" />
+      <path d="M0 -380 L0 -375" transform="rotate(220)" />
+      <path d="M0 -380 L0 -375" transform="rotate(225)" />
+      <path d="M0 -380 L0 -375" transform="rotate(230)" />
+      <path d="M0 -380 L0 -375" transform="rotate(235)" />
+      <path d="M0 -380 L0 -370" transform="rotate(240)" />
+      <path d="M0 -380 L0 -375" transform="rotate(245)" />
+      <path d="M0 -380 L0 -375" transform="rotate(250)" />
+      <path d="M0 -380 L0 -375" transform="rotate(255)" />
+      <path d="M0 -380 L0 -375" transform="rotate(260)" />
+      <path d="M0 -380 L0 -375" transform="rotate(265)" />
+      <path d="M0 -380 L0 -370" transform="rotate(270)" />
+      <path d="M0 -380 L0 -375" transform="rotate(275)" />
+      <path d="M0 -380 L0 -375" transform="rotate(280)" />
+      <path d="M0 -380 L0 -375" transform="rotate(285)" />
+      <path d="M0 -380 L0 -375" transform="rotate(290)" />
+      <path d="M0 -380 L0 -375" transform="rotate(295)" />
+      <path d="M0 -380 L0 -370" transform="rotate(300)" />
+      <path d="M0 -380 L0 -375" transform="rotate(305)" />
+      <path d="M0 -380 L0 -375" transform="rotate(310)" />
+      <path d="M0 -380 L0 -375" transform="rotate(315)" />
+      <path d="M0 -380 L0 -375" transform="rotate(320)" />
+      <path d="M0 -380 L0 -375" transform="rotate(325)" />
+      <path d="M0 -380 L0 -370" transform="rotate(330)" />
+      <path d="M0 -380 L0 -375" transform="rotate(335)" />
+      <path d="M0 -380 L0 -375" transform="rotate(340)" />
+      <path d="M0 -380 L0 -375" transform="rotate(345)" />
+      <path d="M0 -380 L0 -375" transform="rotate(350)" />
+      <path d="M0 -380 L0 -375" transform="rotate(355)" />
+    </g>
+
+    <!-- Celestial Artifacts (Planets/Signs) scattered as subtle background detail -->
+    <g fill="#C1E0EF" opacity="0.2">
+      <circle cx="280" cy="-150" r="8" /> <!-- Symbolic Planet -->
+      <path d="M-300 -200 Q-320 -220 -340 -200 Q-320 -180 -300 -200" /> <!-- Abstract Sign -->
+      <circle cx="-150" cy="300" r="5" />
+      <path d="M400 50 Q420 70 440 50 Q420 30 400 50" transform="rotate(45)" />
+    </g>
+  </g>
+</svg>
