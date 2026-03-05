@@ -259,6 +259,12 @@ p {
     50% { transform: translateY(-20px); }
 }
 
+.numerology-wheel-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden; /* Prevent infinite rays from causing scrollbars */
+}
+
 /* Sections General */
 section {
     padding: 6rem 0;
@@ -649,6 +655,21 @@ section h2 {
     justify-content: center;
 }
 
+.wheel-infinite-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw; /* Infinity of screen */
+    height: 200vw;
+    background: url('assets/infinite_rays.svg') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.25;
+    animation: celestial-spin 120s linear infinite; /* Very slow rotation */
+}
+
 .cosmic-wheel {
     position: relative;
     width: 600px; /* Increased for better spatial breathing */
@@ -660,6 +681,7 @@ section h2 {
     align-items: center;
     justify-content: center;
     perspective: 1200px;
+    z-index: 2; /* Sit above the infinite rays */
 }
 
 /* Positioning 11 nodes around the circle */
@@ -827,9 +849,9 @@ section h2 {
     border-top: 1px solid rgba(193, 224, 239, 0.1);
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes celestial-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* Tablet / Mobile Wheel */
