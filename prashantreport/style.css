@@ -260,7 +260,7 @@ p {
 }
 
 .numerology-wheel-section {
-    padding: 100px 0;
+    padding: 60px 0; /* Reduced from 100px */
     position: relative;
     overflow: hidden; /* Prevent infinite rays from causing scrollbars */
 }
@@ -689,6 +689,7 @@ section h2 {
     position: absolute;
     width: 70px;
     height: 70px;
+    background: rgba(16, 29, 53, 0.9) url('assets/node_bg.svg') no-repeat center;
     background-size: cover;
     border: 1px solid rgba(227, 182, 80, 0.3);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(193, 224, 239, 0.1);
@@ -703,11 +704,10 @@ section h2 {
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 10;
-    /* Centered exactly on the r=380 (380*0.6=228px) orbit line */
+    /* Orbital Path */
     --angle: calc((360deg / 11) * (var(--i) - 1));
-    transform: rotate(var(--angle)) translate(228px) rotate(calc(-1 * var(--angle)));
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle)));
 }
-
 
 .wheel-node:active, .wheel-node.tapping {
     transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle))) scale(0.9);
@@ -719,7 +719,7 @@ section h2 {
     background: var(--gold);
     border-color: var(--gold);
     color: var(--primary-dark);
-    transform: rotate(var(--angle)) translate(228px) rotate(calc(-1 * var(--angle))) scale(1.25);
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle))) scale(1.25);
     box-shadow: 0 0 30px rgba(227, 182, 80, 0.8);
     background-image: none; /* Solid gold for active state prominence */
 }
@@ -863,13 +863,13 @@ section h2 {
     .wheel-wrapper {
         flex: none;
         width: 100%;
-        height: 480px;
+        height: 420px; /* Reduced from 480px */
         order: 1; /* Wheel first */
     }
     .wheel-details-panel {
         order: 2; /* Content second */
         width: 100%;
-        padding: 2rem;
+        padding: 1.5rem; /* Reduced padding */
         min-height: auto;
     }
     .cosmic-wheel {
@@ -897,7 +897,7 @@ section h2 {
 
 @media (max-width: 480px) {
     .wheel-wrapper {
-        height: 380px;
+        height: 320px; /* Reduced from 380px */
     }
     .cosmic-wheel {
         width: 260px; /* Slightly increased for better target size */

@@ -85,12 +85,5 @@
       <path d="M0 -380 L0 -375" transform="rotate(355)" />
     </g>
 
-    <!-- Celestial Artifacts (Planets/Signs) scattered as subtle background detail -->
-    <g fill="#C1E0EF" opacity="0.2">
-      <circle cx="280" cy="-150" r="8" /> <!-- Symbolic Planet -->
-      <path d="M-300 -200 Q-320 -220 -340 -200 Q-320 -180 -300 -200" /> <!-- Abstract Sign -->
-      <circle cx="-150" cy="300" r="5" />
-      <path d="M400 50 Q420 70 440 50 Q420 30 400 50" transform="rotate(45)" />
-    </g>
   </g>
 </svg>

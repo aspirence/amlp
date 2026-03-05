@@ -153,11 +153,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
             node.addEventListener('touchend', (e) => {
                 node.classList.remove('tapping');
-                // Preventing double trigger if click also fires
-                // but usually needed for immediate response
                 handleWheelInteraction(node);
                 e.preventDefault(); 
             }, { passive: false });
         });
     }
+
+    // 5. HYPER-DENSITY STAR FIELD GENERATOR (1500+ Stars)
+    function generateLargeScaleStarField() {
+        const starsBg = document.querySelector('.stars-bg');
+        if (!starsBg) return;
+
+        // Assets and Weights
+        const assets = [
+            'assets/star_mp.png', 
+            'assets/star_mp_2.png', 
+            'assets/star_mp_3.png', 
+            'assets/star_mp_4.png'
+        ];
+        
+        const targetStars = 1500; // Increased for "Infinite" feel
+        const avoidRangeStart = 42; // Report Section start %
+        const avoidRangeEnd = 68;   // Report Section end %
+        
+        // Large celestial image vertical zones (from index.html top values)
+        const eclipseZones = [0, 5, 8, 16, 24, 32, 35, 65, 72, 80, 85, 88, 96];
+        const eclipseBuffer = 4; // Tighter buffer for higher density near assets
+
+        const fragment = document.createDocumentFragment();
+        let starsPlaced = 0;
+        let attempts = 0;
+        const maxAttempts = 5000; // Safety cap
+
+        while (starsPlaced < targetStars && attempts < maxAttempts) {
+            attempts++;
+            let topPos = Math.random() * 100;
+            
+            // Rule 1: Avoid the Report Section strictly
+            if (topPos >= avoidRangeStart && topPos <= avoidRangeEnd) continue;
+
+            // Rule 2: Avoid clashing directly with center-aligned large celestial assets
+            let isEclipse = eclipseZones.some(zoneTop => Math.abs(topPos - zoneTop) < eclipseBuffer);
+            if (isEclipse) continue;
+
+            // All clear - Create Star
+            const star = document.createElement('div');
+            const randomAsset = assets[Math.floor(Math.random() * assets.length)];
+            
+            // Randomized Aesthetics for Depth
+            const size = 2 + Math.random() * 20; 
+            const opacity = 0.04 + Math.random() * 0.18;
+            const rotation = Math.random() * 360;
+            const leftPos = Math.random() * 100;
+
+            star.className = 'bg-decorative-img'; // Inherit drift animation if present
+            star.style.position = 'absolute';
+            star.style.top = topPos + '%';
+            star.style.left = leftPos + '%';
+            star.style.width = size + 'px';
+            star.style.height = size + 'px';
+            star.style.backgroundImage = `url('${randomAsset}')`;
+            star.style.backgroundSize = 'contain';
+            star.style.backgroundRepeat = 'no-repeat';
+            star.style.opacity = opacity;
+            star.style.transform = `rotate(${rotation}deg)`;
+            star.style.pointerEvents = 'none';
+            star.style.zIndex = '0';
+            
+            fragment.appendChild(star);
+            starsPlaced++;
+        }
+        
+        starsBg.appendChild(fragment);
+    }
+
+    generateLargeScaleStarField();
 });
