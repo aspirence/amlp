@@ -185,7 +185,10 @@ p {
 
 /* Buttons */
 .cta-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     background: linear-gradient(135deg, var(--gold), #B8860B);
     color: #1a1a1a;
     padding: 1.2rem 3rem;
@@ -294,21 +297,21 @@ section h2 {
 
 @media (max-width: 600px) {
     .oracle-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
     .oracle-card {
-        padding: 1rem 0.2rem;
-        min-height: 220px;
-        border-radius: 12px;
+        padding: 1.5rem 0.5rem;
+        min-height: 240px;
+        border-radius: 16px;
     }
-    .oracle-card::after { inset: 5px; border-radius: 8px; }
-    .oracle-main-symbol { width: 40px; height: 40px; }
-    .oracle-main-symbol img { max-width: 32px; }
-    .oracle-card h3 { font-size: 0.65rem; letter-spacing: 1px; }
-    .oracle-card h3 span { font-size: 0.45rem; letter-spacing: 1px; margin-top: 3px; }
-    .oracle-div-icon { font-size: 0.8rem; }
-    .oracle-divider { gap: 0.5rem; margin: 0.5rem 0; }
+    .oracle-card::after { inset: 6px; border-radius: 12px; }
+    .oracle-main-symbol { width: 50px; height: 50px; }
+    .oracle-main-symbol img { max-width: 40px; }
+    .oracle-card h3 { font-size: 0.8rem; letter-spacing: 1px; }
+    .oracle-card h3 span { font-size: 0.55rem; letter-spacing: 1.5px; margin-top: 4px; }
+    .oracle-div-icon { font-size: 0.9rem; }
+    .oracle-divider { gap: 0.75rem; margin: 0.75rem 0; }
 }
 
 .oracle-card {
@@ -1433,6 +1436,7 @@ section h2 {
     margin-top: 2rem;
     padding-top: 2rem;
     border-top: 1px solid rgba(193, 224, 239, 0.1);
+    text-align: center;
 }
 
 @keyframes celestial-spin {
