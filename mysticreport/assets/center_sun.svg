@@ -1,0 +1,63 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFAD6" />
+      <stop offset="30%" stop-color="#FFD700" />
+      <stop offset="70%" stop-color="#DAA520" />
+      <stop offset="100%" stop-color="#8B4513" stop-opacity="0" />
+    </radialGradient>
+    <filter id="solarGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- High-Density Solar Filaments -->
+  <g transform="translate(100, 100)">
+    <g class="sun-rays">
+      <!-- 72 Intricate Rays -->
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(0)" opacity="0.8" />
+      <path d="M0 -30 L1 -80 L0 -35 L-1 -80 Z" fill="#DAA520" transform="rotate(5)" opacity="0.6" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(10)" opacity="0.8" />
+      <path d="M0 -30 L1 -80 L0 -35 L-1 -80 Z" fill="#DAA520" transform="rotate(15)" opacity="0.6" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(20)" opacity="0.8" />
+      <!-- (Repeating for 360deg coverage in UI) -->
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(30)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(40)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(50)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(60)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(70)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(80)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(90)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(100)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(110)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(120)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(130)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(140)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(150)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(160)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(170)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(180)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(190)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(200)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(210)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(220)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(230)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(240)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(250)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(260)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(270)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(280)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(290)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(300)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(310)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(320)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(330)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(340)" opacity="0.8" />
+      <path d="M0 -30 L2 -95 L0 -35 L-2 -95 Z" fill="#FFD700" transform="rotate(350)" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Central Molten Disc -->
+  <circle cx="100" cy="100" r="35" fill="url(#sunGrad)" filter="url(#solarGlow)" />
+</svg>

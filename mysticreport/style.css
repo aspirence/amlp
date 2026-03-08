@@ -1,0 +1,1547 @@
+/* =============================================
+   MYSTIC NUMEROLOGY REPORT - PRASHANT REPORT
+   Design Thinking: anuragshuklla
+   Color Palette: Prussian Blue & Pale Sky
+   ============================================= */
+
+:root {
+    /* Updated Palette: Light Theme (Linen Background) */
+    --primary-bg: #F6F0E8;      /* Linen */
+    --primary-dark: #010D18;    /* Ink Black */
+    --surface: #ffffff;         /* Pure White for cards */
+    --deep-space: #010D18;      
+    --accent-light: rgba(1, 13, 24, 0.1); 
+    --gold: #E98400;           /* Amber Earth */
+    --white: #ffffff;          /* TRUE White for overlays/buttons */
+    --text-main: #010D18;      /* Ink Black for text */
+    --text-muted: rgba(1, 13, 24, 0.6);
+    
+    /* Functional Colors */
+    --accent: #FF1600;         /* Electric Red */
+    --accent-orange: #F89600;  /* Carrot Orange */
+    --accent-molten: #E74300;  /* Molten Orange */
+    --surface-glass: rgba(255, 255, 255, 0.8);
+    --surface-light: rgba(1, 13, 24, 0.05);
+    
+    /* Shadows - Softening for Light Background */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-gold: 0 0 20px rgba(233, 132, 0, 0.15);
+    
+    /* Spacing */
+    --space-xs: 0.44rem;
+    --space-sm: 0.67rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3.38rem;
+    --space-3xl: 5.06rem;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    font-size: 20px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative; /* Anchor for absolute stars-bg */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Stars Background (from anuragshuklla) */
+.stars-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Above body color, below content */
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    color: rgba(1, 13, 24, 0.15); /* Ink Black Faded */
+    animation: twinkle 4s ease-in-out infinite;
+}
+
+.star.num {
+    font-weight: 700;
+    color: var(--gold);
+    opacity: 0.2;
+}
+
+/* Decorative Background Elements */
+.bg-decorative-img {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.25; /* Increased opacity for visibility */
+    filter: sepia(100%) saturate(1000%) hue-rotate(-15deg) contrast(0.8);
+    opacity: 0.15;
+    animation: drift 30s linear infinite alternate;
+}
+
+/* Large Celestial Assets */
+.bg-full-cele {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.15;
+    filter: invert(100%) brightness(1.2);
+    transform-origin: center center;
+    transition: width 0.3s ease;
+}
+
+/* Ensure background assets scale up on mobile to bridge vertical gaps */
+@media (max-width: 768px) {
+    .bg-full-cele {
+        width: 120vw !important; /* Scale up significantly on mobile */
+        opacity: 0.12; /* Slightly lower opacity for better readability on small text */
+    }
+}
+
+@media (max-width: 480px) {
+    .bg-full-cele {
+        width: 150vw !important; /* Increased width to ensure overlap when pulled off-screen */
+        margin-top: -12vh;
+        margin-bottom: -12vh;
+    }
+    /* Pull left-aligned assets further left */
+    .bg-full-cele[style*="left"] {
+        margin-left: -25vh;
+    }
+    /* Pull right-aligned assets further right */
+    .bg-full-cele[style*="right"] {
+        margin-right: -25vh;
+    }
+}
+
+@keyframes celestial-slow-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(30px, 30px) rotate(15deg); }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Typography */
+h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: var(--accent); /* Electric Red for more punch in light mode */
+}
+
+.highlight-sand {
+    color: var(--accent-light);
+}
+
+/* Buttons */
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent), var(--accent-molten));
+    color: var(--white);
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(255, 22, 0, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(227, 182, 80, 0.4);
+}
+
+.price-strike {
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 2rem 0 4rem;
+    text-align: center;
+    position: relative;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--surface);
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--accent-light);
+    color: var(--text-main);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-muted);
+}
+
+.hero-image-wrapper {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.numerology-wheel-section {
+    padding: 60px 0; /* Reduced from 100px */
+    position: relative;
+    overflow: hidden; /* Prevent infinite rays from causing scrollbars */
+}
+
+/* Sections General */
+section {
+    padding: 6rem 0;
+    position: relative;
+    background: transparent;
+}
+
+section h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 3rem;
+}
+
+/* Oracle Card Redesign (Reference: 2nd image) */
+.oracle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 1200px) {
+    .oracle-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .oracle-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    .oracle-card {
+        padding: 1.5rem 0.5rem;
+        min-height: 240px;
+        border-radius: 16px;
+    }
+    .oracle-card::after { inset: 6px; border-radius: 12px; }
+    .oracle-main-symbol { width: 50px; height: 50px; }
+    .oracle-main-symbol img { max-width: 40px; }
+    .oracle-card h3 { font-size: 0.8rem; letter-spacing: 1px; }
+    .oracle-card h3 span { font-size: 0.55rem; letter-spacing: 1.5px; margin-top: 4px; }
+    .oracle-div-icon { font-size: 0.9rem; }
+    .oracle-divider { gap: 0.75rem; margin: 0.75rem 0; }
+}
+
+.oracle-card {
+    background: radial-gradient(circle at center, #ffffff 0%, #fbf8f4 100%);
+    border: 1px solid rgba(233, 132, 0, 0.15);
+    border-radius: 24px;
+    padding: 1.8rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    min-height: 280px;
+    justify-content: space-between;
+}
+
+/* Inner Gold Frame Effect */
+.oracle-card::after {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(227, 182, 80, 0.1);
+    border-radius: 16px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.oracle-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(227, 182, 80, 0.8);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.oracle-card:hover::after {
+    border-color: rgba(227, 182, 80, 0.3);
+    inset: 5px;
+}
+
+.oracle-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+.oracle-divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.oracle-divider::before, .oracle-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.5;
+}
+
+.oracle-div-icon {
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0.8;
+}
+
+.oracle-main-symbol {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.6s ease;
+}
+
+.oracle-card:hover .oracle-main-symbol {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.oracle-main-symbol img {
+    max-width: 50px;
+    filter: drop-shadow(0 0 10px rgba(233, 132, 0, 0.2));
+    animation: icon-float 4s ease-in-out infinite;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.oracle-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-main);
+    margin: 0.5rem 0;
+    line-height: 1.2;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+}
+
+.oracle-card h3 span {
+    display: block;
+    font-size: 0.55rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--gold);
+    margin-top: 5px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    opacity: 1;
+}
+
+.feature-card:hover {
+    background: rgba(193, 224, 239, 0.1);
+    border-color: var(--gold);
+    transform: translateY(-8px);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(227, 182, 80, 0.3));
+}
+
+.talisman-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    justify-content: center;
+}
+
+.talisman-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.talisman-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fbf8f4 100%);
+    border: 1px solid rgba(1, 13, 24, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 320px;
+    max-width: 400px;
+}
+
+.talisman-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(227, 182, 80, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.talisman-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.talisman-card:hover::before {
+    opacity: 1;
+}
+
+.talisman-symbol {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    background: rgba(227, 182, 80, 0.1);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(227, 182, 80, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.talisman-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.talisman-corner {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--gold);
+    opacity: 0.3;
+}
+
+.tr { top: 15px; right: 15px; border-left: none; border-bottom: none; }
+.bl { bottom: 15px; left: 15px; border-right: none; border-top: none; }
+
+.final-filter-box {
+    margin-top: 5rem;
+    padding: 4rem 3rem;
+    background: rgba(1, 13, 24, 0.03);
+    border: 1px solid rgba(233, 132, 0, 0.15);
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.final-filter-box::after {
+    content: 'EXCLUSIVE ACCESS';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #F6F0E8;
+    padding: 0.2rem 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    border-radius: 50px;
+}
+
+/* Benefit Grid (Numbers 1-9) */
+.benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fbf8f4 100%);
+    padding: 2.25rem 1.8rem;
+    border: 1px solid rgba(233, 132, 0, 0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid var(--gold);
+    border-left: 1px solid var(--gold);
+    opacity: 0.3;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent);
+    background: linear-gradient(135deg, var(--accent), var(--accent-molten));
+    box-shadow: 0 20px 40px rgba(255, 22, 0, 0.2);
+}
+
+.benefit-card:hover p {
+    color: #ffffff;
+}
+
+.benefit-card:hover .benefit-icon {
+    background: #ffffff;
+    color: var(--accent);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.benefit-card:hover .benefit-icon::after {
+    border-left-color: #ffffff;
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: #010D18;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0 15px rgba(227, 182, 80, 0.3);
+}
+
+.benefit-icon::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border-left: 2px solid var(--gold);
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transform: rotate(-15deg);
+    opacity: 0.8;
+}
+
+.benefit-card p {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+/* Why This Is Different - Sacred Comparison Redesign */
+.comparison-section {
+    padding: 10rem 0;
+    background: transparent;
+    position: relative;
+}
+
+.diff-container {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 0;
+    align-items: center;
+}
+
+.diff-column {
+    background: rgba(1, 13, 24, 0.03);
+    border: 1px solid rgba(1, 13, 24, 0.08);
+    border-radius: 40px;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.diff-column.mystic {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 240, 232, 0.9) 100%);
+    border-color: rgba(233, 132, 0, 0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+.diff-column.mystic::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(227, 182, 80, 0.1);
+    border-radius: 30px;
+    pointer-events: none;
+}
+
+.diff-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.diff-header h3 {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.diff-column.generic .diff-header h3 { color: rgba(1, 13, 24, 0.3); }
+.diff-column.mystic .diff-header h3 { color: var(--accent); }
+
+/* Sacred Token Chips */
+.sacred-token {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.generic .sacred-token {
+    background: rgba(1, 13, 24, 0.02);
+    border: 1px solid rgba(1, 13, 24, 0.05);
+    color: rgba(1, 13, 24, 0.3);
+}
+
+.mystic .sacred-token {
+    background: rgba(16, 29, 53, 0.8);
+    border: 1px solid rgba(227, 182, 80, 0.3);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.mystic .sacred-token::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.8rem;
+}
+
+.diff-column.mystic:hover {
+    transform: scale(1.05);
+    border-color: var(--gold);
+    box-shadow: 0 0 50px rgba(227, 182, 80, 0.1);
+}
+
+/* Central Divider */
+.diff-divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 3;
+}
+
+.diff-divider-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: #060e1d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 0 20px rgba(227, 182, 80, 0.5);
+}
+
+.diff-divider-line {
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+}
+
+@media (max-width: 900px) {
+    .diff-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .diff-divider { display: none; }
+    .diff-column { padding: 3rem 1.5rem; }
+    .diff-column.mystic { transform: none !important; }
+}
+    letter-spacing: 1px;
+}
+
+.comparison-table-wrapper td:last-child {
+    font-weight: 700;
+}
+
+/* Feature Grid Refinements */
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.problem.bg-dark {
+    background-color: transparent;
+}
+
+.bg-dark {
+    background-color: transparent;
+}
+
+/* How It Works Steps */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px dotted var(--accent-light);
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+/* Detailed Insights (Timeline style from anuragshuklla) */
+.insights-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.insight-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.insight-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.insight-card {
+    flex: 1;
+    background: var(--surface);
+    padding: 2.5rem;
+    border: 1px dotted var(--accent-light);
+    position: relative;
+}
+
+.insight-num {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.insight-image {
+    flex: 1;
+    text-align: center;
+}
+
+.insight-image img {
+    max-width: 300px;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.insight-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(1, 13, 24, 0.03);
+}
+
+.insight-item strong {
+    color: var(--gold);
+    display: block;
+}
+
+/* Premium About Section Styling */
+.about-card-premium {
+    background: radial-gradient(circle at top right, #ffffff 0%, #fbf8f4 100%);
+    border: 1px solid rgba(1, 13, 24, 0.05);
+    border-radius: 30px;
+    padding: 5rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.cosmic-watermark {
+    position: absolute;
+    inset: -10%;
+    background-image: url('assets/cosmic_diagram.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.04;
+    filter: brightness(1.2) contrast(1.1);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.astrological-texture {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='160' height='160' viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E3B650' stroke-width='0.4' opacity='0.07'%3E%3Ccircle cx='80' cy='80' r='75'/%3E%3Ccircle cx='80' cy='80' r='45'/%3E%3Ccircle cx='80' cy='80' r='15'/%3E%3Cpath d='M80 0v160M0 80h160M23.5 136.5l113-113M23.5 23.5l113 113'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 320px 320px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.celestial-ornament {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    color: var(--gold);
+    opacity: 0.08;
+    pointer-events: none;
+    filter: drop-shadow(0 0 20px rgba(227, 182, 80, 0.1));
+}
+
+.celestial-ornament.top-right { top: -50px; right: -50px; }
+.celestial-ornament.bottom-left { bottom: -50px; left: -50px; rotate: 180deg; }
+
+.about-flex {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.about-image-wrapper {
+    flex: 0 0 320px;
+    position: relative;
+}
+
+.profile-portrait {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    position: relative;
+    z-index: 2;
+}
+
+.profile-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(227, 182, 80, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.8; }
+}
+
+.creator-seal {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+    animation: rotate-seal 20s linear infinite;
+}
+
+@keyframes rotate-seal {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.about-info {
+    flex: 1;
+}
+
+.eyebrow {
+    display: block;
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+.creator-name {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.experience-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba(1, 13, 24, 0.03);
+    border: 1px solid rgba(1, 13, 24, 0.1);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    margin-bottom: 2.5rem;
+}
+
+.creator-bio {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+}
+
+.creator-bio p { margin-bottom: 1.5rem; }
+
+.creator-stats {
+    display: flex;
+    gap: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(1, 13, 24, 0.1);
+}
+
+.stat-num {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
+
+@media (max-width: 992px) {
+    .about-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 3rem;
+    }
+    .creator-stats {
+        justify-content: center;
+    }
+    .about-card-premium {
+        padding: 4rem 2rem;
+    }
+}
+
+/* Testimonials */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-left: 4px solid var(--gold);
+}
+
+.stars { color: var(--gold); margin-bottom: 1rem; }
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.price-card {
+    background: var(--surface);
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px dotted var(--accent-light);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.price-card.featured {
+    border: 2px solid var(--gold);
+    transform: scale(1.05);
+    background: rgba(233, 132, 0, 0.05);
+    z-index: 2;
+}
+
+.featured-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #1a1a1a;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    border-radius: 50px;
+}
+
+.price-tag {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 1.5rem 0;
+    color: var(--gold);
+}
+
+.price-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.price-features li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FAQ */
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px dotted var(--accent-light);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+    display: none;
+    color: var(--text-muted);
+}
+
+/* Sticky CTA */
+.sticky-cta {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-bg); /* Match Linen exactly */
+    padding: 1.2rem 0;
+    z-index: 1000;
+    border-top: 2px solid var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.06);
+    transition: bottom 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    visibility: hidden;
+}
+
+.sticky-text {
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.sticky-cta.visible {
+    bottom: 0;
+    visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .insight-row, .insight-row.reverse, .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .price-card.featured {
+        transform: scale(1);
+    }
+    .sticky-cta {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .hero {
+        padding: var(--space-2xl) 20px var(--space-3xl);
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-desc {
+        font-size: 17px;
+    }
+
+    .cta-btn {
+        font-size: 1rem;
+        padding: 16px 35px;
+    }
+
+    section {
+        padding: var(--space-3xl) 0;
+    }
+    
+    h2 {
+        font-size: 30px;
+        margin-bottom: var(--space-xl);
+    }
+}
+
+/* Numerology Wheel Section */
+.numerology-wheel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.wheel-wrapper {
+    flex: 0 0 500px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel-infinite-rays {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200vw; /* Infinity of screen */
+    height: 200vw;
+    background: url('assets/infinite_rays.svg') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+    filter: sepia(1) saturate(5) hue-rotate(-20deg); /* Golden warmth */
+    animation: celestial-spin 120s linear infinite; /* Very slow rotation */
+}
+
+.cosmic-wheel {
+    position: relative;
+    width: 600px; /* Increased for better spatial breathing */
+    height: 600px;
+    background: url('assets/celestial_wheel_bg.svg') no-repeat center;
+    background-size: contain; /* SVG 1:1 with container */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    z-index: 2; /* Sit above the infinite rays */
+}
+
+/* Positioning 11 nodes around the circle */
+.wheel-node {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    background: radial-gradient(circle at 30% 30% , #ffffff, #f7f3ed);
+    background-image: none; /* Removed clashing Navy SVG background-image */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(233, 132, 0, 0.3);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1), 
+        inset 0 0 10px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(227, 182, 80, 0.3);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 10;
+    /* Orbital Path */
+    --angle: calc((360deg / 11) * (var(--i) - 1));
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle)));
+}
+
+.wheel-node:active, .wheel-node.tapping {
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle))) scale(0.9);
+    filter: brightness(1.2);
+    transition: all 0.1s ease;
+}
+
+.wheel-node.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--white);
+    transform: rotate(var(--angle)) translate(var(--node-distance, 228px)) rotate(calc(-1 * var(--angle))) scale(1.25);
+    box-shadow: 0 0 30px rgba(255, 22, 0, 0.8);
+    background-image: none; /* Solid red for active state prominence */
+}
+
+.wheel-center {
+    width: 170px;
+    height: 170px;
+    background: url('assets/center_sun.svg') no-repeat center;
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    animation: celestial-slow-spin 25s linear infinite; /* Faster rotation for sun energy */
+    filter: sepia(1.2) saturate(8) hue-rotate(-25deg) drop-shadow(0 0 20px rgba(233, 132, 0, 0.4));
+}
+
+.center-icon {
+    display: none; /* Icon is now part of the SVG background */
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.wheel-details-panel {
+    flex: 1;
+    background: var(--surface-glass);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(1, 13, 24, 0.1);
+    backdrop-filter: blur(10px);
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wheel-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.wheel-content.active {
+    display: block;
+}
+
+/* Cosmic Particle Effect */
+.cosmic-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    color: var(--gold);
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 8px rgba(227, 182, 80, 0.8);
+}
+
+.cosmic-particle.dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.cosmic-particle.star {
+    font-size: 1.4rem;
+}
+
+.cosmic-particle.moon {
+    font-size: 1.3rem;
+}
+
+.cosmic-particle.number {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes particle-flight {
+    0% {
+        transform: translate(0, 0) scale(0.2);
+        opacity: 0;
+    }
+    15% {
+        /* High fountain burst */
+        transform: translate(var(--burst-x), -150px) scale(1.5);
+        opacity: 1;
+    }
+    40% {
+        /* Brief float at the peak */
+        transform: translate(calc(var(--burst-x) * 1.5), -160px) scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        /* Slow graceful glide to panel */
+        transform: var(--target-transform) scale(0.4);
+        opacity: 0;
+    }
+}
+
+.topic-tag {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.wheel-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.show-results-cta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(1, 13, 24, 0.1);
+    text-align: center;
+}
+
+@keyframes celestial-spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Tablet / Mobile Wheel */
+@media (max-width: 1024px) {
+    .numerology-wheel-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .wheel-wrapper {
+        flex: none;
+        width: 100%;
+        height: 420px; /* Reduced from 480px */
+        order: 1; /* Wheel first */
+    }
+    .wheel-details-panel {
+        order: 2; /* Content second */
+        width: 100%;
+        padding: 1.5rem; /* Reduced padding */
+        min-height: auto;
+    }
+    .cosmic-wheel {
+        width: 320px;
+        height: 320px;
+        background-size: contain;
+    }
+    .wheel-node {
+        width: 50px;
+        height: 50px;
+        --node-distance: 121px;
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle)));
+    }
+    .wheel-node:active, .wheel-node.tapping {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(0.9);
+    }
+    .wheel-node.active {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(1.2);
+    }
+    .wheel-center {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wheel-wrapper {
+        height: 320px; /* Reduced from 380px */
+    }
+    .cosmic-wheel {
+        width: 260px; /* Slightly increased for better target size */
+        height: 260px;
+        background-size: contain;
+    }
+    .wheel-node {
+        width: 42px;
+        height: 42px;
+        font-size: 0.85rem;
+        --node-distance: 98px;
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle)));
+    }
+    .wheel-node:active, .wheel-node.tapping {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(0.85);
+    }
+    .wheel-node.active {
+        transform: rotate(var(--angle)) translate(var(--node-distance)) rotate(calc(-1 * var(--angle))) scale(1.15);
+    }
+    .wheel-center {
+        width: 100px; /* Adjusted from 80 for solar detail */
+        height: 100px;
+    }
+    .wheel-details-panel {
+        padding: 1.5rem;
+    }
+    .wheel-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .wheel-content p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}

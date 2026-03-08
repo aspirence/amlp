@@ -1,0 +1,64 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="solarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#E3B650" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#E3B650" stop-opacity="0" />
+    </radialGradient>
+    <filter id="solarBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+    </filter>
+  </defs>
+
+  <!-- Dense Radiating Sun Rays (Filled Effect) -->
+  <g stroke="#E3B650" stroke-opacity="0.35">
+    <!-- 36 Rays for absolute 'Filled' look -->
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(0 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(10 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(20 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(30 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(40 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(50 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(60 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(70 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(80 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(90 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(100 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(110 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(120 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(130 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(140 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(150 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(160 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(170 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(180 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(190 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(200 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(210 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(220 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(230 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(240 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(250 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(260 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(270 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(280 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(290 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(300 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(310 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(320 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(330 60 60)" stroke-width="1.5"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(340 60 60)" stroke-width="0.8"/>
+    <line x1="60" y1="5" x2="60" y2="115" transform="rotate(350 60 60)" stroke-width="0.8"/>
+  </g>
+
+  <!-- Solar Core Background Glow -->
+  <circle cx="60" cy="60" r="50" fill="url(#solarGlow)" filter="url(#solarBlur)" />
+
+  <!-- Technical Solar Frames -->
+  <circle cx="60" cy="60" r="48" stroke="#E3B650" stroke-width="1" stroke-opacity="0.65" />
+  <circle cx="60" cy="60" r="44" stroke="#E3B650" stroke-width="0.5" stroke-opacity="0.3" stroke-dasharray="2 2" />
+  
+  <!-- Central "Filled" Disc -->
+  <circle cx="60" cy="60" r="38" fill="#0B1C3B" fill-opacity="0.8" />
+  <circle cx="60" cy="60" r="38" stroke="#E3B650" stroke-width="0.5" stroke-opacity="0.4" />
+</svg>
