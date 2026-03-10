@@ -236,16 +236,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Social Proof Notification Logic
     const socialNotifications = [
-        { name: 'Rohan', city: 'Ahmedabad' },
-        { name: 'Sanjana', city: 'Mumbai' },
-        { name: 'Arjun', city: 'Delhi' },
-        { name: 'Ananya', city: 'Bangalore' },
-        { name: 'Vikram', city: 'Pune' },
-        { name: 'Priya', city: 'Hyderabad' },
-        { name: 'Karan', city: 'Chandigarh' },
-        { name: 'Ishita', city: 'Jaipur' },
-        { name: 'Aditya', city: 'Lucknow' },
-        { name: 'Mehak', city: 'Indore' }
+        { name: 'Rohan', city: 'Ahmedabad', img: 12 },
+        { name: 'Sanjana', city: 'Mumbai', img: 5 },
+        { name: 'Arjun', city: 'Delhi', img: 15 },
+        { name: 'Ananya', city: 'Bangalore', img: 9 },
+        { name: 'Vikram', city: 'Pune', img: 33 },
+        { name: 'Priya', city: 'Hyderabad', img: 11 },
+        { name: 'Karan', city: 'Chandigarh', img: 68 },
+        { name: 'Ishita', city: 'Jaipur', img: 14 },
+        { name: 'Aditya', city: 'Lucknow', img: 54 },
+        { name: 'Mehak', city: 'Indore', img: 1 }
     ];
 
     function createNotificationElement() {
@@ -269,10 +269,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Pick random user
         const user = socialNotifications[Math.floor(Math.random() * socialNotifications.length)];
-        const randomId = Math.floor(Math.random() * 1000);
         
         // Update content
-        notificationEl.querySelector('.social-img').src = `https://i.pravatar.cc/100?u=${randomId}`;
+        notificationEl.querySelector('.social-img').src = `https://i.pravatar.cc/100?img=${user.img}`;
         notificationEl.querySelector('.user-name').innerText = user.name;
         notificationEl.querySelector('.user-city').innerText = user.city;
 

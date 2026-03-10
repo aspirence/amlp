@@ -591,11 +591,9 @@
         </div>
         <div class="testi-slider-block">
             <div class="testi-slider-track" id="testiTrack">
-                <div class="testi-slide"><img src="assets/rahul_testi copy.webp" alt="Rahul Testimonial"></div>
-                <div class="testi-slide"><img src="assets/saurabh_test copy.webp" alt="Saurabh Testimonial"></div>
-                <div class="testi-slide"><img src="assets/saurabh_test.webp" alt="Saurabh Testimonial 2"></div>
-                <div class="testi-slide"><img src="assets/shreya_tesi copy.webp" alt="Shreya Testimonial"></div>
-                <div class="testi-slide"><img src="assets/shreya_tesi.webp" alt="Shreya Testimonial 2"></div>
+                <div class="testi-slide"><img src="assets/Testi_1.webp" alt="Testimonial 1"></div>
+                <div class="testi-slide"><img src="assets/Testi_2.webp" alt="Testimonial 2"></div>
+                <div class="testi-slide"><img src="assets/Testi_3.webp" alt="Testimonial 3"></div>
             </div>
         </div>
         <div class="testi-dots" id="testiDots"></div>
@@ -738,7 +736,8 @@
         }
 
         function setPosition(index, animate) {
-            const slideWidth = allSlides[0].offsetWidth + 80; // width + margin*2
+            const style = getComputedStyle(allSlides[0]);
+            const slideWidth = allSlides[0].offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
             const viewportWidth = track.parentElement.offsetWidth;
             const offset = index * slideWidth - (viewportWidth - slideWidth) / 2;
             track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';

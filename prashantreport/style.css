@@ -1538,8 +1538,8 @@ section h2 {
 /* Social Proof Notification */
 .social-notification {
     position: fixed;
-    bottom: 100px;
-    left: 20px;
+    top: 20px;
+    left: 50%;
     background: #FFFAF5;
     border: 1px solid rgba(233, 132, 0, 0.3);
     border-radius: 12px;
@@ -1549,13 +1549,13 @@ section h2 {
     gap: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     z-index: 9999;
-    transform: translateX(-120%);
+    transform: translate(-50%, -150%);
     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     max-width: 320px;
 }
 
 .social-notification.visible {
-    transform: translateX(0);
+    transform: translate(-50%, 0);
 }
 
 .social-img {
@@ -1585,10 +1585,96 @@ section h2 {
 
 @media (max-width: 768px) {
     .social-notification {
-        bottom: 120px;
-        left: 10px;
-        right: 10px;
-        max-width: none;
-        width: calc(100% - 20px);
+        top: 12px;
+        left: 50%;
+        right: auto;
+        max-width: calc(100% - 24px);
+        width: calc(100% - 24px);
     }
+}
+
+/* ===== Testimonial Slider ===== */
+.testi-slider-section {
+    padding: 6rem 0 4rem;
+    position: relative;
+}
+
+.testi-slider-section h2 {
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 3rem;
+}
+
+.testi-slider-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1.5rem 0;
+}
+
+.testi-slider-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.testi-slide {
+    flex: 0 0 290px;
+    width: 290px;
+    margin: 0 40px;
+    box-sizing: border-box;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0.4;
+    transform: scale(0.9);
+}
+
+.testi-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.testi-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .testi-slide {
+        flex: 0 0 220px;
+        width: 220px;
+        margin: 0 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testi-slide {
+        flex: 0 0 200px;
+        width: 200px;
+        margin: 0 15px;
+    }
+}
+
+.testi-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.testi-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(227, 182, 80, 0.3);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    border: none;
+}
+
+.testi-dot.active {
+    background: var(--gold);
+    transform: scale(1.3);
 }
