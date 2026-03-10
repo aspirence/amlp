@@ -584,6 +584,24 @@
         </div>
     </section>
 
+    <!-- Testimonial Slider Section -->
+    <section class="testi-slider-section">
+        <div class="container">
+            <h2>Here's What <span class="highlight">Customers</span> have to say</h2>
+        </div>
+        <div class="testi-slider-block">
+            <div class="testi-slider-track" id="testiTrack">
+                <div class="testi-slide"><img src="assets/rahul_testi copy.webp" alt="Rahul Testimonial"></div>
+                <div class="testi-slide"><img src="assets/saurabh_test copy.webp" alt="Saurabh Testimonial"></div>
+                <div class="testi-slide"><img src="assets/saurabh_test.webp" alt="Saurabh Testimonial 2"></div>
+                <div class="testi-slide"><img src="assets/shreya_tesi copy.webp" alt="Shreya Testimonial"></div>
+                <div class="testi-slide"><img src="assets/shreya_tesi.webp" alt="Shreya Testimonial 2"></div>
+            </div>
+        </div>
+        <div class="testi-dots" id="testiDots"></div>
+    </section>
+
+
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
@@ -676,11 +694,107 @@
 
     <!-- Sticky Bottom CTA -->
     <div class="sticky-cta">
-        <div class="sticky-text"><span class="highlight">DECODE YOUR LIFE CODE</span> @ <s>₹999</s> ₹599</div>
-        <a href="#pricing" class="cta-btn" style="padding: 0.8rem 2rem;">Get Started Now</a>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+            <div class="sticky-text"><span class="highlight">DECODE YOUR LIFE CODE</span> @ <s>₹999</s> ₹599</div>
+            <a href="#pricing" class="cta-btn" style="padding: 0.8rem 2rem;">Get Started Now</a>
+            <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Offer is going to end Soon: <span id="sticky-timer">10:00</span></div>
+        </div>
     </div>
 
     <!-- JS -->
     <script src="script.js"></script>
+
+    <!-- Testimonial Slider JS -->
+    <script>
+    (function() {
+        const track = document.getElementById('testiTrack');
+        const dotsContainer = document.getElementById('testiDots');
+        if (!track) return;
+
+        const origSlides = Array.from(track.querySelectorAll('.testi-slide'));
+        const total = origSlides.length;
+
+        // Clone slides for infinite loop: append clones at end, prepend clones at start
+        origSlides.forEach(s => track.appendChild(s.cloneNode(true)));
+        origSlides.forEach(s => track.insertBefore(s.cloneNode(true), track.firstChild));
+
+        const allSlides = Array.from(track.querySelectorAll('.testi-slide'));
+        // Real slides start at index = total (after prepended clones)
+        let current = total; // start at first real slide
+        let autoTimer;
+        let isTransitioning = false;
+
+        // Create dots for original slides
+        origSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'testi-dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => { goTo(total + i); resetAuto(); });
+            dotsContainer.appendChild(dot);
+        });
+
+        function updateDots(realIndex) {
+            const dotIndex = ((realIndex - total) % total + total) % total;
+            Array.from(dotsContainer.children).forEach((d, i) => d.classList.toggle('active', i === dotIndex));
+        }
+
+        function setPosition(index, animate) {
+            const slideWidth = allSlides[0].offsetWidth + 80; // width + margin*2
+            const viewportWidth = track.parentElement.offsetWidth;
+            const offset = index * slideWidth - (viewportWidth - slideWidth) / 2;
+            track.style.transition = animate ? 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none';
+            track.style.transform = `translateX(${-offset}px)`;
+        }
+
+        function updateActive(index) {
+            allSlides.forEach(s => s.classList.remove('active'));
+            allSlides[index].classList.add('active');
+        }
+
+        function goTo(index, animate = true) {
+            current = index;
+            setPosition(current, animate);
+            updateActive(current);
+            updateDots(current);
+        }
+
+        // After transition ends, silently jump if at clone zone
+        track.addEventListener('transitionend', () => {
+            if (current >= total * 2) {
+                current = total + (current - total * 2);
+                goTo(current, false);
+            } else if (current < total) {
+                current = total + current;
+                goTo(current, false);
+            }
+            isTransitioning = false;
+        });
+
+        function startAuto() {
+            autoTimer = setInterval(() => {
+                if (!isTransitioning) { isTransitioning = true; goTo(current + 1); }
+            }, 3500);
+        }
+
+        function resetAuto() {
+            clearInterval(autoTimer);
+            startAuto();
+        }
+
+        // Touch/swipe support
+        let startX = 0;
+        track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearInterval(autoTimer); }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+            resetAuto();
+        });
+
+        // Init — no animation on first render
+        goTo(current, false);
+        startAuto();
+
+        window.addEventListener('resize', () => goTo(current, false));
+    })();
+    </script>
 </body>
 </html>

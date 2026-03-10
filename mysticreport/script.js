@@ -303,7 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const minutes = Math.floor(timeLeft / 60);
             const seconds = timeLeft % 60;
             
-            timerDisplay.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            const timeStr = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            timerDisplay.innerText = timeStr;
+            const stickyTimer = document.getElementById('sticky-timer');
+            if (stickyTimer) stickyTimer.innerText = timeStr;
             
             if (timeLeft > 0) {
                 timeLeft--;
