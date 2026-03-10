@@ -208,11 +208,22 @@ p {
     box-shadow: 0 15px 30px rgba(227, 182, 80, 0.4);
 }
 
-.price-strike {
-    text-decoration: line-through;
-    opacity: 0.6;
-    font-size: 0.9em;
-    margin-right: 8px;
+.lang-note {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+.countdown-timer-box {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-top: 1.5rem;
+}
+
+.countdown-timer-box span {
+    color: var(--accent);
+    font-weight: 800;
 }
 
 /* Hero Section */
@@ -1521,5 +1532,63 @@ section h2 {
     .wheel-content p {
         font-size: 1rem;
         line-height: 1.6;
+    }
+}
+
+/* Social Proof Notification */
+.social-notification {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background: #FFFAF5;
+    border: 1px solid rgba(233, 132, 0, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    transform: translateX(-120%);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    max-width: 320px;
+}
+
+.social-notification.visible {
+    transform: translateX(0);
+}
+
+.social-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(233, 132, 0, 0.2);
+}
+
+.social-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.social-text strong {
+    color: var(--deep-space);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.social-text .purchase-detail {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .social-notification {
+        bottom: 120px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+        width: calc(100% - 20px);
     }
 }

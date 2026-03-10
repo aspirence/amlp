@@ -233,4 +233,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     generateLargeScaleStarField();
+
+    // 6. Social Proof Notification Logic
+    const socialNotifications = [
+        { name: 'Rohan', city: 'Ahmedabad' },
+        { name: 'Sanjana', city: 'Mumbai' },
+        { name: 'Arjun', city: 'Delhi' },
+        { name: 'Ananya', city: 'Bangalore' },
+        { name: 'Vikram', city: 'Pune' },
+        { name: 'Priya', city: 'Hyderabad' },
+        { name: 'Karan', city: 'Chandigarh' },
+        { name: 'Ishita', city: 'Jaipur' },
+        { name: 'Aditya', city: 'Lucknow' },
+        { name: 'Mehak', city: 'Indore' }
+    ];
+
+    function createNotificationElement() {
+        const div = document.createElement('div');
+        div.className = 'social-notification';
+        div.innerHTML = `
+            <img src="" alt="" class="social-img">
+            <div class="social-text">
+                <strong><span class="user-name"></span> from <span class="user-city"></span></strong>
+                <span class="purchase-detail">purchased the Report.</span>
+            </div>
+        `;
+        document.body.appendChild(div);
+        return div;
+    }
+
+    let notificationEl = null;
+
+    function showRandomNotification() {
+        if (!notificationEl) notificationEl = createNotificationElement();
+
+        // Pick random user
+        const user = socialNotifications[Math.floor(Math.random() * socialNotifications.length)];
+        const randomId = Math.floor(Math.random() * 1000);
+        
+        // Update content
+        notificationEl.querySelector('.social-img').src = `https://i.pravatar.cc/100?u=${randomId}`;
+        notificationEl.querySelector('.user-name').innerText = user.name;
+        notificationEl.querySelector('.user-city').innerText = user.city;
+
+        // Show
+        setTimeout(() => {
+            notificationEl.classList.add('visible');
+        }, 100);
+
+        // Hide after 5s
+        setTimeout(() => {
+            notificationEl.classList.remove('visible');
+            
+            // Schedule next one
+            const nextDelay = 8000 + Math.random() * 10000; // 8-18 seconds
+            setTimeout(showRandomNotification, nextDelay);
+        }, 6000);
+    }
+
+    // Start after 4 seconds
+    setTimeout(showRandomNotification, 4000);
+
+    // 7. Countdown Timer Logic
+    const timerDisplay = document.getElementById('timer-display');
+    if (timerDisplay) {
+        let timeLeft = 10 * 60; // 10 minutes in seconds
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            timerDisplay.innerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                // Restart timer to keep urgency high
+                timeLeft = 10 * 60;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+        
+        updateTimer();
+    }
 });
