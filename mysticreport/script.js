@@ -47,24 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Sticky CTA Visibility logic (Show after Hero)
-    const stickyCta = document.querySelector('.sticky-cta');
-    const heroSection = document.querySelector('.hero');
-    
-    if (stickyCta && heroSection) {
-        const checkScroll = () => {
-            const heroBottom = heroSection.getBoundingClientRect().bottom;
-            // Visible ONLY after the hero section's bottom has left the viewport
-            if (heroBottom < 0) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-        };
-
-        window.addEventListener('scroll', checkScroll);
-        checkScroll(); // Initial check
-    }
+    // 3. Sticky CTA Logic
+    // Sticky CTA is now always visible via CSS bottom: 0;
+    // No scroll logic required.
 
     // 4. Numerology Wheel Logic
     const wheelNodes = document.querySelectorAll('.wheel-node');
