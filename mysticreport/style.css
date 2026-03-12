@@ -194,23 +194,38 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-molten));
-    color: var(--white);
+    background: linear-gradient(135deg, var(--gold), #B8860B);
+    color: #1a1a1a;
     padding: 1.2rem 3rem;
     border-radius: 50px;
-    font-weight: 700;
+    font-weight: 800;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(255, 22, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--shadow-md);
     border: none;
     cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .cta-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(227, 182, 80, 0.4);
+}
+
+.cta-btn:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 5px 15px rgba(227, 182, 80, 0.3);
+}
+
+@media (max-width: 480px) {
+    .cta-btn {
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-size: 0.95rem;
+    }
 }
 
 .lang-note {
@@ -302,14 +317,14 @@ p {
 }
 
 .numerology-wheel-section {
-    padding: 60px 0; /* Reduced from 100px */
+    padding: 30px 0; /* Reduced from 60px */
     position: relative;
     overflow: hidden; /* Prevent infinite rays from causing scrollbars */
 }
 
 /* Sections General */
 section {
-    padding: 6rem 0;
+    padding: 3rem 0;
     position: relative;
     background: transparent;
 }
@@ -321,7 +336,7 @@ section {
 section h2 {
     text-align: center;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 /* Oracle Card Redesign (Reference: 2nd image) */
@@ -354,20 +369,24 @@ section h2 {
     .oracle-grid::-webkit-scrollbar {
         display: none;
     }
+    .introducing { padding: 1.5rem 0; }
+    .oracle-grid { margin-top: 2rem; padding-bottom: 2.5rem; }
     .oracle-card {
-        flex: 0 0 240px;
+        flex: 0 0 160px;
         scroll-snap-align: center;
-        padding: 1.5rem 0.5rem;
-        min-height: 240px;
+        padding: 1.25rem 0.25rem;
         border-radius: 16px;
     }
-    .oracle-card::after { inset: 6px; border-radius: 12px; }
-    .oracle-main-symbol { width: 50px; height: 50px; }
-    .oracle-main-symbol img { max-width: 40px; }
-    .oracle-card h3 { font-size: 0.8rem; letter-spacing: 1px; }
-    .oracle-card h3 span { font-size: 0.55rem; letter-spacing: 1.5px; margin-top: 4px; }
-    .oracle-div-icon { font-size: 0.9rem; }
-    .oracle-divider { gap: 0.75rem; margin: 0.75rem 0; }
+    .oracle-card .oracle-divider:first-child {
+        display: none;
+    }
+    .oracle-card::after { inset: 5px; border-radius: 12px; }
+    .oracle-main-symbol { width: 35px; height: 35px; margin-bottom: 0.5rem; }
+    .oracle-main-symbol img { max-width: 25px; }
+    .oracle-card h3 { font-size: 0.7rem; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+    .oracle-card h3 span { font-size: 0.45rem; letter-spacing: 0.8px; margin-top: 1px; }
+    .oracle-div-icon { font-size: 0.7rem; }
+    .oracle-divider { gap: 0.4rem; margin: 0.4rem 0; }
 }
 
 .oracle-card {
@@ -500,9 +519,9 @@ section h2 {
 
 .talisman-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
     justify-content: center;
     justify-items: center;
 }
@@ -518,7 +537,7 @@ section h2 {
 .talisman-card {
     background: linear-gradient(145deg, #ffffff 0%, #fbf8f4 100%);
     border: 1px solid rgba(1, 13, 24, 0.1);
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     border-radius: 20px;
     text-align: center;
     position: relative;
@@ -528,8 +547,8 @@ section h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 1 320px;
-    max-width: 400px;
+    flex: 1 1 280px;
+    max-width: 350px;
 }
 
 .talisman-card::before {
@@ -552,12 +571,12 @@ section h2 {
 }
 
 .talisman-symbol {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
     color: var(--gold);
     background: rgba(227, 182, 80, 0.1);
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,8 +587,8 @@ section h2 {
 }
 
 .talisman-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: var(--text-main);
     line-height: 1.4;
     position: relative;
@@ -589,8 +608,8 @@ section h2 {
 .bl { bottom: 15px; left: 15px; border-right: none; border-top: none; }
 
 .final-filter-box {
-    margin-top: 5rem;
-    padding: 4rem 3rem;
+    margin-top: 3rem;
+    padding: 2.5rem 2rem;
     background: rgba(1, 13, 24, 0.03);
     border: 1px solid rgba(233, 132, 0, 0.15);
     border-radius: 30px;
@@ -707,7 +726,7 @@ section h2 {
 
 /* Why This Is Different - Sacred Comparison Redesign */
 .comparison-section {
-    padding: 10rem 0;
+    padding: 4rem 0;
     background: transparent;
     position: relative;
 }
@@ -722,8 +741,8 @@ section h2 {
 }
 
 .diff-column {
-    background: rgba(1, 13, 24, 0.03);
-    border: 1px solid rgba(1, 13, 24, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(227, 182, 80, 0.2);
     border-radius: 40px;
     padding: 4rem 2rem;
     display: flex;
@@ -731,6 +750,11 @@ section h2 {
     gap: 1.5rem;
     position: relative;
     transition: all 0.5s ease;
+}
+
+.diff-column.generic {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 240, 232, 0.9) 100%);
+    border-color: rgba(1, 13, 24, 0.1);
 }
 
 .diff-column.mystic {
@@ -761,7 +785,7 @@ section h2 {
     font-weight: 800;
 }
 
-.diff-column.generic .diff-header h3 { color: rgba(1, 13, 24, 0.3); }
+.diff-column.generic .diff-header h3 { color: var(--accent); }
 .diff-column.mystic .diff-header h3 { color: var(--accent); }
 
 /* Sacred Token Chips */
@@ -772,12 +796,24 @@ section h2 {
     font-weight: 600;
     text-align: center;
     transition: all 0.4s ease;
+    background: rgba(16, 29, 53, 0.8);
+    border: 1px solid rgba(227, 182, 80, 0.3);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.sacred-token::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.8rem;
 }
 
 .generic .sacred-token {
-    background: rgba(1, 13, 24, 0.02);
-    border: 1px solid rgba(1, 13, 24, 0.05);
-    color: rgba(1, 13, 24, 0.3);
+    background: rgba(1, 13, 24, 0.8);
+    opacity: 0.9;
 }
 
 .mystic .sacred-token {
@@ -1134,10 +1170,15 @@ section h2 {
 .stars { color: var(--gold); margin-bottom: 1rem; }
 
 /* Pricing */
+.pricing {
+    padding-top: 0.5rem;
+}
+
 .pricing-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2.5rem;
+    margin-top: 50px;
 }
 
 .price-card {
@@ -1183,10 +1224,11 @@ section h2 {
 }
 
 .price-features li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 1.05rem;
 }
 
 /* FAQ */
@@ -1222,7 +1264,7 @@ section h2 {
     width: 100%;
     background: var(--primary-bg); /* Match Linen exactly */
     padding: 1.2rem 0;
-    z-index: 1000;
+    z-index: 10000;
     border-top: 2px solid var(--accent);
     display: flex;
     justify-content: center;
@@ -1656,14 +1698,14 @@ section h2 {
 
 /* Testimonial Slider */
 .testi-slider-section {
-    padding: 6rem 0 4rem;
+    padding: 3rem 0 2rem;
     position: relative;
 }
 
 .testi-slider-section h2 {
     text-align: center;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 /* This block contains everything */
