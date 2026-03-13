@@ -221,16 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Social Proof Notification Logic
     const socialNotifications = [
-        { name: 'Rohan', city: 'Ahmedabad', img: 12 },
-        { name: 'Sanjana', city: 'Mumbai', img: 5 },
-        { name: 'Arjun', city: 'Delhi', img: 15 },
-        { name: 'Ananya', city: 'Bangalore', img: 9 },
-        { name: 'Vikram', city: 'Pune', img: 33 },
-        { name: 'Priya', city: 'Hyderabad', img: 11 },
-        { name: 'Karan', city: 'Chandigarh', img: 68 },
-        { name: 'Ishita', city: 'Jaipur', img: 14 },
-        { name: 'Aditya', city: 'Lucknow', img: 54 },
-        { name: 'Mehak', city: 'Indore', img: 1 }
+        { name: 'Rahul', city: 'Ahmedabad', gender: 'male' },
+        { name: 'Sanjana', city: 'Mumbai', gender: 'female' },
+        { name: 'Arjun', city: 'Delhi', gender: 'male' },
+        { name: 'Ananya', city: 'Bangalore', gender: 'female' },
+        { name: 'Amit', city: 'Pune', gender: 'male' },
+        { name: 'Priya', city: 'Hyderabad', gender: 'female' },
+        { name: 'Karan', city: 'Chandigarh', gender: 'male' },
+        { name: 'Ishita', city: 'Jaipur', gender: 'female' },
+        { name: 'Aditya', city: 'Lucknow', gender: 'male' },
+        { name: 'Mehak', city: 'Indore', gender: 'female' },
+        { name: 'Suresh', city: 'Chennai', gender: 'male' },
+        { name: 'Deepika', city: 'Kolkata', gender: 'female' },
+        { name: 'Vivek', city: 'Surat', gender: 'male' },
+        { name: 'Komal', city: 'Nagpur', gender: 'female' }
     ];
 
     function createNotificationElement() {
@@ -255,8 +259,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Pick random user
         const user = socialNotifications[Math.floor(Math.random() * socialNotifications.length)];
         
+        // Use local professional Indian images based on gender
+        const imgNum = Math.floor(Math.random() * 4) + 1; // We have 4 images per gender (1, 2, 3, 4)
+        const imgSrc = user.gender === 'male' 
+            ? `assets/user_m${imgNum}.png` 
+            : `assets/user_f${imgNum}.png`;
+
         // Update content
-        notificationEl.querySelector('.social-img').src = `https://i.pravatar.cc/100?img=${user.img}`;
+        notificationEl.querySelector('.social-img').src = imgSrc;
         notificationEl.querySelector('.user-name').innerText = user.name;
         notificationEl.querySelector('.user-city').innerText = user.city;
 
