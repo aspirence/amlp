@@ -129,28 +129,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         lastScroll = currentScroll;
     });
-
-    // Sticky CTA Visibility Logic
-    const heroSection = document.querySelector('.hero');
-    const stickyCta = document.querySelector('.sticky-cta');
-
-    if (heroSection && stickyCta) {
-        const ctaObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                // Determine if hero section is out of view
-                if (!entry.isIntersecting) {
-                    stickyCta.classList.add('is-visible');
-                } else {
-                    stickyCta.classList.remove('is-visible');
-                }
-            });
-        }, {
-            // Trigger as soon as the element goes out of view
-            threshold: 0
-        });
-
-        ctaObserver.observe(heroSection);
-    }
 });
 
 // Countdown Timer (optional enhancement)

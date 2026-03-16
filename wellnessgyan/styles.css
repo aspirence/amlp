@@ -426,7 +426,7 @@ body {
 
 /* About Section */
 .about {
-    padding: 100px 20px;
+    padding: 20px 20px;
     background: #F4FEFD;
     text-align: center;
 }
@@ -470,6 +470,24 @@ body {
     color: #101111;
     font-weight: 500;
     opacity: 0.7;
+}
+
+.brand-logo-container {
+    padding: 60px 20px;
+    text-align: center;
+    background: #FCFCFC;
+}
+
+.brand-logo {
+    max-width: 250px;
+    height: auto;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+    filter: grayscale(0);
+    opacity: 1;
 }
 
 /* Register Section */
@@ -652,7 +670,14 @@ body {
 }
 
 .footer-logo {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-brand-logo {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Ensure it's white on the dark footer */
 }
 
 .summit-branding {
@@ -685,16 +710,6 @@ body {
     z-index: 1000;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-    transform: translateY(100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.sticky-cta.is-visible {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
 }
 
 .sticky-cta .cta-button {
