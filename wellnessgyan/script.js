@@ -129,6 +129,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
         lastScroll = currentScroll;
     });
+
+    // Live Clock for IST
+    const updateISTTime = () => {
+        const timeElements = document.querySelectorAll('.ist-time');
+        const now = new Date();
+        const istTime = now.toLocaleTimeString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        });
+        
+        timeElements.forEach(el => {
+            el.textContent = istTime;
+        });
+    };
+
+    updateISTTime();
+    setInterval(updateISTTime, 1000);
+
+    // Registration Ticker
+    const names = [
+        "Rahul from Mumbai", "Priya from Bangalore", "Amit from Delhi", 
+        "Sneha from Hyderabad", "Vikram from Chennai", "Ananya from Pune",
+        "Karan from Kolkata", "Meera from Ahmedabad", "Arjun from Jaipur",
+        "Ishita from Chandigarh", "Rohan from Lucknow", "Zara from Kochi"
+    ];
+    let nameIndex = 0;
+    const tickerEl = document.getElementById('stickyTicker');
+
+    const updateTicker = () => {
+        if (!tickerEl) return;
+        const name = names[nameIndex];
+        tickerEl.innerHTML = `<span>🔔 ${name} just registered for the Summit</span>`;
+        nameIndex = (nameIndex + 1) % names.length;
+    };
+
+    if (tickerEl) {
+        updateTicker();
+        setInterval(updateTicker, 5000); // Change name every 5 seconds
+    }
 });
 
 // Countdown Timer (optional enhancement)

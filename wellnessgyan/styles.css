@@ -85,6 +85,10 @@ body {
     color: #101111;
 }
 
+.ist-time {
+    font-weight: 800;
+}
+
 .hero h1 {
     font-size: 6rem;
     font-family: 'PF Editorial', 'Playfair Display', 'PP Editorial New', serif;
@@ -98,7 +102,7 @@ body {
 .tagline {
     font-size: 1.25rem;
     font-weight: 500;
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto 30px;
     color: #101111;
     line-height: 1.4;
@@ -228,7 +232,7 @@ body {
 
 /* Why Attend Section */
 .why-attend {
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: linear-gradient(135deg, #10BDA7 0%, #15C6B7 100%);
     color: #FCFCFC;
 }
@@ -259,14 +263,15 @@ body {
 
 .benefit-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     gap: 20px;
-    text-align: center;
+    text-align: left;
     padding: 0;
     background: none;
     backdrop-filter: none;
-    flex: 0 1 220px; /* Forces width while allowing wrap & center */
+    flex: 1 1 350px;
+    max-width: 450px;
 }
 
 .check-icon {
@@ -275,6 +280,7 @@ body {
     justify-content: center;
     width: 64px;
     height: 64px;
+    flex-shrink: 0;
     background: transparent;
     color: #FCFCFC;
     border: 2px solid #FCFCFC;
@@ -715,17 +721,72 @@ body {
     background: rgba(16, 17, 17, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 15px 20px;
+    padding: 10px 20px;
     text-align: center;
     z-index: 1000;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
 }
 
+.sticky-ticker {
+    font-size: 0.75rem;
+    color: #10BDA7;
+    font-weight: 500;
+    margin-bottom: 8px;
+    height: 18px;
+    overflow: hidden;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+    transition: all 0.5s ease;
+}
+
+.sticky-ticker span {
+    display: inline-block;
+    animation: tickerSlide 0.5s ease-out;
+}
+
+@keyframes tickerSlide {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.animated-free-formal {
+    font-weight: 700;
+    color: #15C6B7;
+    animation: formalPulse 3s ease-in-out infinite;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@keyframes formalPulse {
+    0%, 100% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+        color: #FCFCFC;
+    }
+}
+
+.sticky-urgency {
+    color: #F4FEFD;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 8px;
+    animation: stickyPulse 2s infinite;
+}
+
+@keyframes stickyPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
 .sticky-cta .cta-button {
     width: 100%;
     max-width: 400px;
-    padding: 15px;
+    padding: 12px;
     margin: 0 auto;
     font-size: 1.1rem;
 }
