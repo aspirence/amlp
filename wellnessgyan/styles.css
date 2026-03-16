@@ -44,6 +44,7 @@ body {
     color: #FCFCFC;
     padding: 40px 20px;
     overflow: hidden;
+        padding-bottom: 60px;
 }
 
 .hero::before {
