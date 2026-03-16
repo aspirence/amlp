@@ -238,37 +238,51 @@ body {
 }
 
 .benefits-list {
-    max-width: 700px;
-    margin: 50px auto 0;
+    max-width: 1000px;
+    margin: 60px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
 }
 
 .benefit-item {
     display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-    backdrop-filter: blur(5px);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+    flex: 0 1 220px; /* Forces width while allowing wrap & center */
 }
 
 .check-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    background: #FCFCFC;
-    color: #10BDA7;
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    color: #FCFCFC;
+    border: 2px solid #FCFCFC;
     border-radius: 50%;
-    font-weight: bold;
-    flex-shrink: 0;
+    font-size: 1.8rem;
+    font-weight: normal;
+    transition: all 0.3s ease;
+}
+
+.benefit-item:hover .check-icon {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .benefit-item p {
-    font-size: 1.1rem;
-    line-height: 1;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #FCFCFC;
+    font-weight: 500;
 }
 
 /* Speakers Section */
