@@ -399,15 +399,15 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 50px 15px 15px;
-    background: linear-gradient(to top, rgba(16, 17, 17, 0.95) 0%, rgba(16, 17, 17, 0.8) 60%, transparent 100%);
+    padding: 30px 15px 15px;
+    background: linear-gradient(to top, rgba(16, 17, 17, 0.95) 0%, rgba(16, 17, 17, 0.8) 70%, transparent 100%);
     z-index: 1;
     transition: all 0.4s ease;
 }
 
 .speaker-card:hover .speaker-info {
-    padding-top: 80px;
-    background: linear-gradient(to top, rgba(16, 17, 17, 0.98) 0%, rgba(16, 17, 17, 0.9) 70%, rgba(16, 17, 17, 0.7) 100%);
+    padding-top: 20px;
+    background: linear-gradient(to top, rgba(16, 17, 17, 0.98) 0%, rgba(16, 17, 17, 0.9) 80%, rgba(16, 17, 17, 0.7) 100%);
 }
 
 .speaker-card h3 {
@@ -858,6 +858,17 @@ body {
 
     .faq-question h3 {
         font-size: 1rem;
+    }
+
+    .speaker-info {
+        padding: 25px 15px 15px;
+        background: linear-gradient(to top, rgba(16, 17, 17, 0.98) 0%, rgba(16, 17, 17, 0.9) 80%, transparent 100%);
+    }
+
+    .speaker-bio {
+        opacity: 0.9;
+        max-height: 200px;
+        line-height: 1.3;
     }
 }
 
