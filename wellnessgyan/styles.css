@@ -42,7 +42,7 @@ body {
     text-align: center;
     background: url('assets/header_lp.png') center center / cover no-repeat;
     color: #FCFCFC;
-    padding: 40px 20px;
+    padding: 0px 0px;
     overflow: hidden;
         padding-bottom: 60px;
 }
@@ -873,6 +873,11 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        align-items: flex-start;
+        padding-top: 60px;
+    }
+
     .hero h1 {
         font-size: 3rem;
         line-height: 1.1;
@@ -883,45 +888,52 @@ body {
     }
 
     .hero-speakers {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 0;
-        margin: 0 auto 25px;
-        mask-image: none;
-        -webkit-mask-image: none;
-        overflow-x: visible;
-    }
-
-    .h-speaker {
-        padding: 4px 10px 4px 4px;
-    }
-
-    .h-speaker img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .h-name {
-        font-size: 0.65rem;
-    }
-
-    .h-tag {
-        font-size: 0.55rem;
-    }
-
-    .event-details {
+        display: flex;
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
         gap: 6px;
+        padding: 0;
+        margin: 0 auto 20px;
+        overflow-x: visible;
+    }
+
+    .h-speaker {
+        padding: 3px 10px 3px 3px;
+        flex: 0 1 auto;
+    }
+
+    .h-speaker img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .h-name {
+        font-size: 0.6rem;
+    }
+
+    .h-tag {
+        font-size: 0.5rem;
+    }
+
+    .event-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px;
         margin-bottom: 25px;
     }
 
     .detail-item {
-        padding: 6px 12px;
-        font-size: 0.7rem;
-        width: auto;
+        padding: 4px 10px;
+        font-size: 0.62rem;
+        gap: 4px;
+        flex: 0 1 auto;
+    }
+
+    .detail-icon {
+        font-size: 0.85rem;
     }
 
     .cta-button {
@@ -987,8 +999,8 @@ body {
     }
 
     .detail-item {
-        padding: 10px 20px;
-        font-size: 0.95rem;
+        padding: 4px 10px;
+        font-size: 0.65rem;
     }
 
     .cta-button {
