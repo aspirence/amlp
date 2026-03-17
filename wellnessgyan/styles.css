@@ -103,32 +103,98 @@ body {
     font-size: 1.25rem;
     font-weight: 500;
     max-width: 500px;
-    margin: 0 auto 30px;
+    margin: 0 auto 25px;
     color: #101111;
     line-height: 1.4;
+}
+
+.hero-speakers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 auto 35px;
+    max-width: 1100px;
+}
+
+.h-speaker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.85); /* Changed from 0.4 to always use the hover-style opacity */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 14px 5px 5px;
+    border-radius: 50px;
+    border: 1px solid #10BDA7; /* Always using the branded border color */
+    box-shadow: 0 4px 15px rgba(16, 189, 167, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.h-speaker:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: #FCFCFC; /* Solid white on hover for even more focus */
+    box-shadow: 0 10px 25px rgba(16, 189, 167, 0.2);
+}
+
+.h-speaker img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #10BDA7;
+    background: #FCFCFC;
+}
+
+.h-info {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.h-name {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #101111;
+}
+
+.h-tag {
+    display: block;
+    font-size: 0.6rem;
+    color: #10BDA7;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .event-details {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
+    gap: 12px;
+    margin-bottom: 35px;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 12px 25px;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #101111;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 8px 18px;
     border-radius: 50px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(16, 189, 167, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .detail-icon {
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .cta-button {
@@ -816,13 +882,43 @@ body {
         font-size: 1rem;
     }
 
+    .hero-speakers {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 5px 20px;
+        margin: 0 -20px 25px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .hero-speakers::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .h-speaker {
+        flex-shrink: 0;
+        padding: 4px 12px 4px 4px;
+    }
+
+    .h-speaker img {
+        width: 34px;
+        height: 34px;
+    }
+
     .event-details {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 20px;
     }
 
     .detail-item {
-        justify-content: center;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        width: auto;
     }
 
     .cta-button {
