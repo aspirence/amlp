@@ -883,41 +883,44 @@ body {
     }
 
     .hero-speakers {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        padding: 5px 20px;
-        margin: 0 -20px 25px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    }
-
-    .hero-speakers::-webkit-scrollbar {
-        display: none; /* Chrome/Safari */
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 0;
+        margin: 0 auto 25px;
+        mask-image: none;
+        -webkit-mask-image: none;
+        overflow-x: visible;
     }
 
     .h-speaker {
-        flex-shrink: 0;
-        padding: 4px 12px 4px 4px;
+        padding: 4px 10px 4px 4px;
     }
 
     .h-speaker img {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .h-name {
+        font-size: 0.65rem;
+    }
+
+    .h-tag {
+        font-size: 0.55rem;
     }
 
     .event-details {
         flex-direction: row;
         justify-content: center;
-        gap: 8px;
-        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 25px;
     }
 
     .detail-item {
-        padding: 6px 14px;
-        font-size: 0.75rem;
+        padding: 6px 12px;
+        font-size: 0.7rem;
         width: auto;
     }
 
