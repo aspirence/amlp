@@ -733,15 +733,17 @@ body {
     color: #10BDA7;
     font-weight: 500;
     margin-bottom: 8px;
-    height: 18px;
-    overflow: hidden;
     opacity: 0.9;
     letter-spacing: 0.5px;
-    transition: all 0.5s ease;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0 10px;
+    display: block; /* Changed from flex to block for safer multi-line wrapping */
 }
 
 .sticky-ticker span {
     display: inline-block;
+    text-align: center;
     animation: tickerSlide 0.5s ease-out;
 }
 
@@ -895,5 +897,10 @@ body {
 
     .benefit-item p {
         font-size: 1rem;
+    }
+
+    .sticky-ticker {
+        font-size: 0.7rem;
+        display: block;
     }
 }
