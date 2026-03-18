@@ -786,7 +786,7 @@ body {
 }
 
 .footer .about-logo {
-    max-width: 150px;
+    max-width: 100px;
 }
 
 .copyright {
@@ -985,7 +985,7 @@ body {
     }
 
     .about h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 0;
     }
 
@@ -995,7 +995,7 @@ body {
     }
 
     .about-logo {
-        max-width: 180px;
+        max-width: 120px;
     }
 
     .audience-grid {
