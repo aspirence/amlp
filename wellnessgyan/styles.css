@@ -40,15 +40,23 @@ body {
     align-items: end;
     justify-content: center;
     text-align: center;
-    background: url('assets/header_lp.png') center center / cover no-repeat;
+    background-color: #FCFCFC; /* Base background for opacity against */
     color: #FCFCFC;
-    padding: 0px 0px;
+    padding-top: 50px;
     overflow: hidden;
-        padding-bottom: 60px;
+    padding-bottom: 0px;
 }
 
 .hero::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('assets/header_lp.png') center center / cover no-repeat;
+    opacity: 0.4; /* Adjusted background image opacity */
+    z-index: 0;
 }
 
 .hero::after {
@@ -69,10 +77,11 @@ body {
 
 .hero-logo-container {
     margin-bottom: 25px;
+    padding-top: 25px;
 }
 
 .hero-logo {
-    max-width: 150px;
+    max-width: 300px;
     height: auto;
     filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.3));
 }
@@ -100,7 +109,7 @@ body {
 }
 
 .tagline {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
     max-width: 500px;
     margin: 0 auto 25px;
@@ -112,60 +121,57 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 0 auto 35px;
-    max-width: 1100px;
+    gap: 15px;
+    margin: 30px auto 45px;
+    max-width: 1000px;
+    flex-wrap: nowrap;
 }
 
-.h-speaker {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.85); /* Changed from 0.4 to always use the hover-style opacity */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 5px 14px 5px 5px;
-    border-radius: 50px;
-    border: 1px solid #10BDA7; /* Always using the branded border color */
-    box-shadow: 0 4px 15px rgba(16, 189, 167, 0.1);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.h-speaker:hover {
-    transform: translateY(-3px) scale(1.02);
-    background: #FCFCFC; /* Solid white on hover for even more focus */
-    box-shadow: 0 10px 25px rgba(16, 189, 167, 0.2);
-}
-
-.h-speaker img {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #10BDA7;
+.h-speaker-card {
+    position: relative;
+    width: 160px;
+    aspect-ratio: 16/22;
+    border-radius: 12px;
+    overflow: hidden;
     background: #FCFCFC;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
-.h-info {
+.h-speaker-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.h-speaker-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.h-speaker-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 10px 10px;
+    background: linear-gradient(to top, rgba(16, 17, 17, 0.95) 0%, rgba(16, 17, 17, 0.7) 60%, transparent 100%);
     text-align: left;
-    line-height: 1.2;
 }
 
-.h-name {
-    display: block;
+.h-speaker-info h3 {
     font-size: 0.75rem;
+    color: #FCFCFC;
     font-weight: 700;
-    color: #101111;
+    margin-bottom: 2px;
 }
 
-.h-tag {
-    display: block;
+.h-speaker-info p {
     font-size: 0.6rem;
     color: #10BDA7;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.3px;
 }
 
 .event-details {
@@ -233,9 +239,11 @@ body {
 .urgency {
     margin-top: 15px;
     font-size: 1rem;
-    color: #F4FEFD;
-    font-weight: 600;
-    animation: pulse 2s infinite;
+    color: #000000;
+    font-weight: 700;
+    /* animation: formalPulse 3s ease-in-out infinite; */
+    /* text-transform: uppercase; */
+    letter-spacing: 0.5px;
 }
 
 @keyframes pulse {
@@ -513,10 +521,24 @@ body {
     text-align: center;
 }
 
+.about-branding {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap:20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
 .about h2 {
     font-size: 2.5rem;
     color: #101111;
-    margin-bottom: 40px;
+    margin-bottom: 0;
+}
+
+.about-logo {
+    max-width: 200px;
+    height: auto;
 }
 
 .about-text {
@@ -663,14 +685,14 @@ body {
 
 /* FAQ Section */
 .faq {
-    padding: 100px 20px;
-    background: #FCFCFC;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #10BDA7 0%, #15C6B7 100%);
 }
 
 .faq h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #101111;
+    color: #FCFCFC;
     margin-bottom: 60px;
 }
 
@@ -697,7 +719,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 25px 30px;
-    background: #F4FEFD;
+    background: #FCFCFC;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -729,6 +751,7 @@ body {
 .faq-answer {
     max-height: 0;
     overflow: hidden;
+    background: #FCFCFC;
     transition: max-height 0.3s ease;
 }
 
@@ -746,35 +769,30 @@ body {
 /* Footer */
 .footer {
     padding: 50px 20px 100px 20px;
-    background: #101111;
+    background: linear-gradient(135deg, #10BDA7 0%, #15C6B7 80%);
     text-align: center;
     color: #FCFCFC;
 }
 
-.footer-logo {
-    margin-bottom: 30px;
+.footer .about-branding {
+    margin-bottom: 20px;
+    gap: 15px;
 }
 
-.footer-brand-logo {
-    max-width: 180px;
-    height: auto;
-    margin-bottom: 15px;
-    filter: brightness(0) invert(1); /* Ensure it's white on the dark footer */
-}
-
-.summit-branding {
-    font-size: 1.3rem;
+.footer .about-branding h2 {
+    color: #FCFCFC;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
-.summit-branding .highlight {
-    color: #15C6B7;
-    font-weight: 700;
+.footer .about-logo {
+    max-width: 180px;
 }
 
 .copyright {
-    color: #C2CBCA;
-    font-size: 0.9rem;
+    color: rgba(252, 252, 252, 0.7);
+    font-size: 0.85rem;
+    margin-top: 30px;
 }
 
 /* Sticky CTA */
@@ -821,7 +839,6 @@ body {
 .animated-free-formal {
     font-weight: 700;
     color: #15C6B7;
-    animation: formalPulse 3s ease-in-out infinite;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -884,36 +901,38 @@ body {
     }
 
     .tagline {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .hero-speakers {
-        display: flex;
-        flex-direction: row;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 6px;
-        padding: 0;
-        margin: 0 auto 20px;
+        flex-wrap: nowrap;
         overflow-x: visible;
+        padding: 0 5px;
+        margin: 0 auto 30px;
+        gap: 3px;
+        width: 100%;
     }
 
-    .h-speaker {
-        padding: 3px 10px 3px 3px;
-        flex: 0 1 auto;
+    .h-speaker-card {
+        width: 18.5vw;
+        aspect-ratio: 16/24;
+        scroll-snap-align: none;
+        flex-shrink: 1;
+        border-radius: 6px;
     }
 
-    .h-speaker img {
-        width: 28px;
-        height: 28px;
+    .h-speaker-info {
+        padding: 15px 4px 5px;
     }
 
-    .h-name {
-        font-size: 0.6rem;
+    .h-speaker-info h3 {
+        font-size: 0.45rem;
+        margin-bottom: 1px;
     }
 
-    .h-tag {
-        font-size: 0.5rem;
+    .h-speaker-info p {
+        font-size: 0.35rem;
     }
 
     .event-details {
@@ -944,10 +963,24 @@ body {
     .who-should-attend h2,
     .why-attend h2,
     .speakers h2,
-    .about h2,
     .register h2,
     .faq h2 {
         font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .about-branding {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .about-logo {
+        max-width: 180px;
     }
 
     .audience-grid {
@@ -959,12 +992,22 @@ body {
     }
 
     .stats {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 80px;
     }
 
     .stat-number {
-        font-size: 2.5rem;
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
     }
 
     .faq-question h3 {
@@ -990,7 +1033,7 @@ body {
     }
 
     .hero-logo {
-        max-width: 150px;
+        max-width: 200px;
     }
 
     .pre-headline {
