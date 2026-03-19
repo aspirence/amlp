@@ -154,6 +154,21 @@ body {
     font-weight: 400;
 }
 
+.hero-subheadline strong {
+    font-size: 1.8rem;
+    color: #101111;
+    font-weight: 700;
+    display: block;
+}
+
+.highlight-energy {
+    color: #10BDA7;
+}
+
+.highlight-health {
+    color: #10BDA7;
+}
+
 .hero-desc {
     display: inline-block;
     max-width: 500px;
