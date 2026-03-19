@@ -7,7 +7,9 @@
       "Bash(git -C d:/amlp/amlp pull)",
       "Bash(git -C d:/amlp/amlp status)",
       "Bash(git -C d:/amlp/amlp add mysticreport/index.html mysticreport/script.js mysticreport/style.css \"mysticreport/assets/rahul_testi copy.webp\" \"mysticreport/assets/saurabh_test copy.webp\" \"mysticreport/assets/saurabh_test.webp\" \"mysticreport/assets/shreya_tesi copy.webp\" \"mysticreport/assets/shreya_tesi.webp\")",
-      "Bash(git -C:*)"
+      "Bash(git -C:*)",
+      "Bash(git checkout:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
