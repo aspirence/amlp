@@ -46,7 +46,7 @@ body {
     background-size: 30px 30px, 100% 100%;
     color: #101111;
     padding: 0px 0 60px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .hero::before {
