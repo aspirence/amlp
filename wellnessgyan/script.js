@@ -50,25 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Success message
     function showSuccessMessage(name) {
-        const form = document.getElementById('registerForm');
-        form.innerHTML = `
-            <div class="success-message" style="
-                background: rgba(255, 255, 255, 0.2);
-                padding: 40px;
-                border-radius: 20px;
-                text-align: center;
-            ">
-                <div style="font-size: 4rem; margin-bottom: 20px;">&#10003;</div>
-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Thank You, ${name}!</h3>
-                <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px;">
-                    You're registered for the Wellness Gyan Summit 2026!
-                </p>
-                <p style="font-size: 0.95rem; opacity: 0.8;">
-                    Check your email for confirmation details.<br>
-                    The Zoom link will be shared 24 hours before the event.
-                </p>
-            </div>
-        `;
+        // Redirect to the new Thank You page
+        window.location.href = 'thankyou.html';
     }
 
     // Smooth scroll for CTA buttons
