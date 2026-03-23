@@ -17,6 +17,7 @@ Color Palette:
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     line-height: 1.2;
     color: #101111;
     background-color: #FCFCFC;
+    overflow-x: hidden;
 }
 
 .container {
@@ -40,16 +42,35 @@ body {
     align-items: flex-start;
     justify-content: center;
     text-align: center;
-    background: #FCFCFC;
+    background:
+        radial-gradient(circle, rgba(16, 189, 167, 0.25) 2px, transparent 2px),
+        #FCFCFC;
+    background-size: 30px 30px, 100% 100%;
     color: #101111;
     padding: 0px 0 60px;
-    overflow: visible;
+    overflow: hidden;
 }
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center top,
+        rgba(180, 230, 220, 0.8) 0%,
+        rgba(180, 220, 210, 0.5) 40%,
+        rgba(252, 252, 252, 0) 70%);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    z-index: 0;
+}
+
 
 .hero .container {
     position: relative;
     z-index: 2;
-    max-width: 1000px;
 }
 
 .hero-content {
@@ -70,7 +91,7 @@ body {
 .top-pre-headline {
     font-size: 1rem;
     font-weight: 600;
-    line-height: 1;
+    line-height: 1.4;
     color: #ffffff;
     background: #00C3B3;
     margin: 0 auto 30px;
@@ -109,9 +130,7 @@ body {
 
 /* Speaker Collage */
 .speaker-collage {
-    margin: 40px auto 50px;
-    max-width: 800px;
-    padding: 0 20px;
+    margin-top: -60px;
 }
 
 .speaker-collage img {
