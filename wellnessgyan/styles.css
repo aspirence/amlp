@@ -1613,9 +1613,9 @@ body {
     gap: 10px;
     background: #25D366;
     color: #FFFFFF;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-size: 1.05rem;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
