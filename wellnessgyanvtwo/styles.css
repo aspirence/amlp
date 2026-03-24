@@ -114,14 +114,14 @@ body {
 }
 
 .main-headline {
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    line-height: 1.15;
-    margin-top: -15px;
-    margin-bottom: 25px;
+    line-height: 1.1;
+    margin-top: 0px;
+    margin-bottom: 30px;
     color: #101111;
-    max-width: 950px;
-    letter-spacing: -1px;
+    max-width: 1000px;
+    letter-spacing: -1.5px;
 }
 
 .main-headline .highlight {
@@ -205,12 +205,12 @@ body {
 }
 
 .hero-subheadline {
-    font-size: 1.12rem;
-    line-height: 1.2;
+    font-size: 1.35rem;
+    line-height: 1.4;
     color: #333;
-    max-width: 500px;
+    max-width: 850px;
     margin: 0 auto 50px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .hero-subheadline strong {
@@ -1533,7 +1533,9 @@ body {
 
 @media (max-width: 480px) {
     .main-headline {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        letter-spacing: -1.2px;
+        line-height: 1.1;
     }
 
     .hero-logo {
@@ -1541,8 +1543,8 @@ body {
     }
 
     .hero-subheadline {
-        font-size: 0.75rem;
-        line-height: 1;
+        font-size: 0.8rem;
+        line-height: 1.35;
     }
 
     .speaker-collage {
