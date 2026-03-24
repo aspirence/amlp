@@ -813,7 +813,7 @@ body {
 }
 
 .speaker-card h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #FCFCFC;
     margin-bottom: 4px;
     font-weight: 700;
@@ -822,14 +822,14 @@ body {
 .speaker-title {
     color: #10BDA7;
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     line-height: 1;
 }
 
 .speaker-bio {
     color: #FCFCFC;
-    font-size: 0.7rem;
-    line-height: 1;
+    font-size: 0.77rem;
+    line-height: 1.25;
     margin-top: 10px;
     opacity: 0;
     max-height: 0;
@@ -838,8 +838,8 @@ body {
 }
 
 .speaker-card:hover .speaker-bio {
-    opacity: 0.9;
-    max-height: 200px;
+    opacity: 0.95;
+    max-height: 250px;
 }
 
 /* About Section */
