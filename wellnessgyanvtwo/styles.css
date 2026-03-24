@@ -304,9 +304,9 @@ body {
 .event-details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 35px;
-    max-width: 500px;
+    gap: 15px;
+    margin-bottom: 45px;
+    max-width: 650px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -330,22 +330,22 @@ body {
 .detail-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 0.75rem;
+    gap: 15px;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #101111;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 8px 12px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 15px 20px;
+    border-radius: 16px;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(16, 189, 167, 0.15);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(16, 189, 167, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .detail-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -366,16 +366,16 @@ body {
 }
 
 .detail-label {
-    font-size: 0.55rem;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #10BDA7;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
 }
 
 .detail-value {
-    font-size: 0.7rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     color: #101111;
     line-height: 1.2;
 }
