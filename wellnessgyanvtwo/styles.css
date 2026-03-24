@@ -597,54 +597,53 @@ body {
 
 /* Why Attend Section */
 .why-attend {
-    padding: 20px 20px 60px 20px;
+    padding: 60px 40px;
+    margin: 0 20px;
     background: linear-gradient(135deg, #10BDA7 0%, #15C6B7 100%);
     color: #FCFCFC;
+    border-radius: 5px;
 }
 
 .why-attend h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
     font-weight: 800;
     color: #FFFFFF;
 }
 
 .why-attend-wrapper {
     display: flex;
-    gap: 50px;
-    max-width: 1100px;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
     margin: 0 auto;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .why-attend-left {
-    flex: 1;
-    position: sticky;
-    top: 100px;
+    text-align: center;
+    max-width: 900px;
 }
 
 .why-attend-right {
-    flex: 1.2;
+    width: 100%;
 }
 
 .section-intro {
-    text-align: left;
-    margin: 0 0 20px;
+    text-align: center;
+    margin: 0 auto 20px;
     font-size: 1rem;
-    opacity: 0.95;
-    line-height: 1;
+    opacity: 1;
+    line-height: 1.6;
     color: #FFFFFF;
 }
 
 .benefits-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.benefit-item:last-child {
-    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .benefit-item {
@@ -653,13 +652,16 @@ body {
     flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 20px 25px;
+    padding: 25px 30px;
     background: #FFFFFF;
     border-radius: 12px;
-    border: none;
+    border: 1.5px solid #101111;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     overflow: hidden;
+    flex: 1 1 30%;
+    min-width: 300px;
+    max-width: 380px;
 }
 
 .benefit-item::before {
@@ -1648,6 +1650,8 @@ body {
 
     .why-attend {
         padding: 40px 15px;
+        margin: 0 10px;
+        border-radius: 5px;
     }
 
     .why-attend h2 {
