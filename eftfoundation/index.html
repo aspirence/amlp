@@ -116,19 +116,23 @@
       }
       body {
         margin: 0;
-        font-family: Roboto, sans-serif;
-        background-color: #0b0b0f;
-        background-image: url('bg_modern.png');
-        background-repeat: no-repeat;
-        background-position: center top;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #050508;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(255, 127, 0, 0.05) 0, transparent 50%), 
+          radial-gradient(at 100% 0%, rgba(0, 229, 195, 0.05) 0, transparent 50%),
+          url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23ffffff' fill-opacity='0.15'/%3E%3C/svg%3E"), /* Prominent dot grid */
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
         background-attachment: fixed;
-        background-size: cover;
+        background-size: cover, cover, 30px 30px, 150px 150px;
+        background-repeat: no-repeat, no-repeat, repeat, repeat;
+        color: #ffffff;
       }
       .ftheadline {
         text-align: center;
         font-size: 32px;
         font-weight: 400;
-        color: #000000;
+        color: #ffffff;
         line-height: 1.2;
       }
       #ilwo {
@@ -148,7 +152,7 @@
       .ftsub_heading {
         text-align: center;
         font-size: 23px;
-        color: #000000;
+        color: rgba(255, 255, 255, 0.9);
         font-weight: 400;
         line-height: 1.2;
       }
@@ -163,7 +167,7 @@
         text-align: center;
         font-size: 18px;
         line-height: 1.5;
-        color: #000000;
+        color: rgba(255, 255, 255, 0.8);
         margin-bottom: 1rem;
         margin-top: 0;
         padding-left: 5px;
@@ -317,7 +321,7 @@
         font-size: 18px;
         min-height: 25px;
         line-height: 1.5;
-        color: #000000;
+        color: rgba(255, 255, 255, 0.85);
         margin-bottom: 10px;
         padding-bottom: 0;
       }
@@ -330,11 +334,12 @@
         margin-top: 0px;
         font-family: Montserrat, sans-serif;
         font-size: 42px;
-        color: #1a1a2e;
+        color: #ffffff;
         font-weight: 800;
         text-transform: capitalize;
         margin-bottom: 10px;
         text-align: center;
+        text-shadow: 0 0 20px rgba(255, 127, 0, 0.3);
       }
       #ixwxjl {
         margin-top: 0px;
@@ -360,7 +365,10 @@
         display: inline-block;
       }
       #is1l0x {
-        background: linear-gradient(135deg, #fff5f0 0%, #f0f4ff 100%);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 60px 0;
       }
       #i6ssi8 {
@@ -582,7 +590,10 @@
         display: block;
       }
       #i44ffd {
-        background: linear-gradient(135deg, #faf8ff 0%, #f0f4ff 100%);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         padding: 60px 0;
       }
       #iamm3v {
@@ -777,7 +788,8 @@
       #ib75jy {
         padding-top: 60px;
         padding-bottom: 60px;
-        background: linear-gradient(135deg, #faf8ff 0%, #f0f4ff 100%);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
       }
       #i8cvxm .gjs-ft-row,
       #ikuzcq .gjs-ft-row {
@@ -838,7 +850,8 @@
         text-align: left;
       }
       #iyboqc {
-        background: linear-gradient(135deg, #f8f9ff 0%, #fff5f0 100%);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
         padding-top: 50px;
         padding-bottom: 50px;
         margin-top: 0px;
@@ -2364,7 +2377,10 @@
         padding-bottom: 70px;
         margin-top: 0px;
         padding-top: 70px;
-        background: linear-gradient(135deg, #f0f4ff 0%, #fff5f0 100%);
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
 
       #ih01dv:after {
@@ -2381,10 +2397,11 @@
         padding-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
-        background: #ffffff;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
         border-radius: 20px;
         padding: 35px 30px;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.4);
         border: 2px solid #ff7f00;
       }
       #iubhiu .gjs-ft-row {
@@ -2410,8 +2427,9 @@
       #iubhiu .gjs-ft-row .gjs-ft-col-md:last-child .ftsub_heading {
         margin-left: 0 !important;
         font-size: 17px !important;
-        color: #333 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
         line-height: 1.5 !important;
+        text-align: left !important;
       }
       #iosgc9 {
         background-color: transparent;
@@ -6963,7 +6981,7 @@
                 />
               </div>
             </div>
-            <div id="ipamkl" class="gjs-ft-column gjs-ft-col-md" style="background: #fff; border: 1px solid #ff7f00; border-radius: 20px; padding: 30px; text-align: left;">
+            <div id="ipamkl" class="gjs-ft-column gjs-ft-col-md" style="background: #000000; border: 1px solid #ff7f00; border-radius: 20px; padding: 30px; text-align: left; box-shadow: 0 10px 40px rgba(0,0,0,0.8);">
               <div id="is8odp" class="gjs-ft-row" style="display: flex; align-items: flex-start; padding: 12px 0;">
                 <div id="iw13k4" class="gjs-ft-column gjs-ft-col-md" style="flex: 0 0 40px; padding: 0;">
                   <div id="i2ty0f" class="ft_com_div ft_com_box">
@@ -6971,8 +6989,8 @@
                   </div>
                 </div>
                 <div id="i1eb5j" class="gjs-ft-column gjs-ft-col-md" style="flex: 1; padding: 0 0 0 10px;">
-                  <h2 id="iieijj" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px;">
-                    EFT is- <b id="ikz57v" style="color: #111;">Emotional Freedom Technique</b>
+                  <h2 id="iieijj" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.9) !important;">
+                    EFT is- <b id="ikz57v" style="color: #ff7f00;">Emotional Freedom Technique</b>
                   </h2>
                 </div>
               </div>
@@ -6983,8 +7001,8 @@
                   </div>
                 </div>
                 <div id="iv1moo" class="gjs-ft-column gjs-ft-col-md" style="flex: 1; padding: 0 0 0 10px;">
-                  <h2 id="i4xv63" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px;">
-                    EFT involves- <b style="color: #111;">tapping on Energy</b> Points in your body.
+                  <h2 id="i4xv63" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.9) !important;">
+                    EFT involves- <b style="color: #ff7f00;">tapping on Energy</b> Points in your body.
                     Its that easy.
                   </h2>
                 </div>
@@ -6996,9 +7014,9 @@
                   </div>
                 </div>
                 <div id="ipp3tl" class="gjs-ft-column gjs-ft-col-md" style="flex: 1; padding: 0 0 0 10px;">
-                  <h2 id="ihfgs7" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px;">
+                  <h2 id="ihfgs7" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.9) !important;">
                     along tapping in EFT, a script/statements are narrated to
-                    stimulate your <b style="color: #111;">conscious/ subconscious mind</b>
+                    stimulate your <b style="color: #ff7f00;">conscious/ subconscious mind</b>
                   </h2>
                 </div>
               </div>
@@ -7009,9 +7027,9 @@
                   </div>
                 </div>
                 <div id="iagqn4" class="gjs-ft-column gjs-ft-col-md" style="flex: 1; padding: 0 0 0 10px;">
-                  <h2 id="i1h2a7" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px;">
+                  <h2 id="i1h2a7" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.9) !important;">
                     Tapping on these energy points "flushes out" negativity from
-                    a <b style="color: #111;">person's energy system</b>
+                    a <b style="color: #ff7f00;">person's energy system</b>
                   </h2>
                 </div>
               </div>
@@ -7022,7 +7040,7 @@
                   </div>
                 </div>
                 <div id="io2j1j" class="gjs-ft-column gjs-ft-col-md" style="flex: 1; padding: 0 0 0 10px;">
-                  <h2 id="ilbm6j" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px;">
+                  <h2 id="ilbm6j" class="ftsub_heading" style="text-align: left; margin: 0; font-weight: 600; font-family: Montserrat, sans-serif; font-size: 18px; color: rgba(255, 255, 255, 0.9) !important;">
                     EFT eliminates negative emotions, patterns &amp; behaviors
                   </h2>
                 </div>
@@ -7647,7 +7665,7 @@
                   src="https://assets.flexifunnels.com/images/itrans.png"
                   alt="aymzq_305_workshopbox"
                   class="ft_image img-fluid ft_image-style"
-                  data-src="https://img.flexifunnels.com/images/8535/aymzq_305_workshopbox.png"
+                  data-src="assets/page_files/aymzq_305_workshopbox.png"
                   data-lazy="loading"
                 />
               </div>
@@ -8786,99 +8804,156 @@
         </div>
       </section>
 
-      <h1 id="ieo5ais" class="ftheadline">
-        And the stories won't stop, ever...
-      </h1>
-      <div id="imyb29" class="gjs-ft-row">
-        <div id="il1f9t" class="gjs-ft-column gjs-ft-col-md">
-          <div class="ft_com_div ft_com_box">
-            <img
-              id="ikw911"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="awmdq_367_Screenshot20230712at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/awmdq_367_Screenshot20230712at5.04.17PM.png"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/awmdq_367_Screenshot20230712at5.04.17PM.png 320w,https://img.flexifunnels.com/images/8535/awmdq_367_Screenshot20230712at5.04.17PM.png 480w"
-            />
+      <style>
+        .stories-redesign-section {
+          padding: 80px 0 100px;
+          background: transparent;
+          position: relative;
+        }
+        
+        .stories-redesign-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .stories-redesign-title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 52px;
+          font-weight: 900;
+          text-align: center;
+          margin-bottom: 60px;
+          color: #ffffff;
+          line-height: 1.1;
+          letter-spacing: -1px;
+        }
+
+        .stories-redesign-title span {
+          background: linear-gradient(135deg, #ff7f00 0%, #ffbb00 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          display: inline-block;
+        }
+
+        .stories-redesign-masonry {
+          column-count: 3;
+          column-gap: 30px;
+        }
+
+        .story-card-premium {
+          break-inside: avoid;
+          margin-bottom: 30px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 20px;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .story-card-premium:hover {
+          transform: translateY(-12px) scale(1.02);
+          border-color: rgba(255, 127, 0, 0.5);
+          box-shadow: 0 30px 60px rgba(255, 127, 0, 0.2);
+        }
+
+        .story-card-premium img {
+          width: 100%;
+          height: auto;
+          display: block;
+          filter: grayscale(10%) brightness(0.9);
+          transition: all 0.5s ease;
+        }
+
+        .story-card-premium:hover img {
+          filter: grayscale(0%) brightness(1.1);
+          transform: scale(1.03);
+        }
+
+        @media (max-width: 991px) {
+          .stories-redesign-masonry {
+            column-count: 2;
+            column-gap: 20px;
+          }
+          .stories-redesign-title {
+            font-size: 42px;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .stories-redesign-masonry {
+            column-count: 1;
+          }
+          .stories-redesign-title {
+            font-size: 34px;
+          }
+          .stories-redesign-section {
+            padding: 60px 0 80px;
+          }
+        }
+      </style>
+      <section id="stories-ever" class="stories-redesign-section">
+        <div class="stories-redesign-container">
+          <h1 class="stories-redesign-title">And the stories won't <br><span>stop, ever...</span></h1>
+          <div class="stories-redesign-masonry">
+            <div class="story-card-premium">
+              <img
+                id="ikw911"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Transformation Story"
+                data-src="https://img.flexifunnels.com/images/8535/awmdq_367_Screenshot20230712at5.04.17PM.png"
+                data-lazy="loading"
+              />
+            </div>
+            <div class="story-card-premium">
+              <img
+                id="i98p4b"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Success Story"
+                data-src="https://img.flexifunnels.com/images/8535/iyotk_366_Screenshot20230712at5.04.44PM.png"
+                data-lazy="loading"
+              />
+            </div>
+            <div class="story-card-premium">
+              <img
+                id="ivczyo"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Results"
+                data-src="https://img.flexifunnels.com/images/8535/mzoty_444_Screenshot20230712at5.07.28PM.png"
+                data-lazy="loading"
+              />
+            </div>
+            <div class="story-card-premium">
+              <img
+                id="ire1w5"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Student Feedback"
+                data-src="https://img.flexifunnels.com/images/8535/ywmje_362_Screenshot20230712at5.08.12PM.png"
+                data-lazy="loading"
+              />
+            </div>
+            <div class="story-card-premium">
+              <img
+                id="i1275x"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Journey"
+                data-src="https://img.flexifunnels.com/images/8535/cwnta_463_Screenshot20230712at5.09.11PM.png"
+                data-lazy="loading"
+              />
+            </div>
+            <div class="story-card-premium">
+              <img
+                id="ib1jck"
+                src="https://assets.flexifunnels.com/images/itrans.png"
+                alt="EFT Community Story"
+                data-src="https://img.flexifunnels.com/images/8535/a1otc_750_WhatsAppImage20230711at5.47.55PM.jpeg"
+                data-lazy="loading"
+              />
+            </div>
           </div>
         </div>
-        <div id="iw1mjc" class="gjs-ft-column gjs-ft-col-md">
-          <div class="ft_com_div ft_com_box">
-            <img
-              id="i98p4b"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="iyotk_366_Screenshot20230712at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/iyotk_366_Screenshot20230712at5.04.44PM.png"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/iyotk_366_Screenshot20230712at5.04.44PM.png 320w,https://img.flexifunnels.com/images/8535/iyotk_366_Screenshot20230712at5.04.44PM.png 480w"
-            />
-          </div>
-        </div>
-      </div>
-      <div id="i97ypj" class="gjs-ft-row">
-        <div id="ikb9im" class="gjs-ft-column gjs-ft-col-md">
-          <div id="inh0lk" class="ft_com_div ft_com_box">
-            <img
-              id="ivczyo"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="mzoty_444_Screenshot20230712at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/mzoty_444_Screenshot20230712at5.07.28PM.png"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/mzoty_444_Screenshot20230712at5.07.28PM.png 320w,https://img.flexifunnels.com/images/8535/mzoty_444_Screenshot20230712at5.07.28PM.png 480w"
-            />
-          </div>
-        </div>
-        <div id="in0mba" class="gjs-ft-column gjs-ft-col-md">
-          <div id="id4d86" class="ft_com_div ft_com_box">
-            <img
-              id="ire1w5"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="ywmje_362_Screenshot20230712at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/ywmje_362_Screenshot20230712at5.08.12PM.png"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/ywmje_362_Screenshot20230712at5.08.12PM.png 320w,https://img.flexifunnels.com/images/8535/ywmje_362_Screenshot20230712at5.08.12PM.png 480w"
-            />
-          </div>
-        </div>
-      </div>
-      <div id="ie81ks" class="gjs-ft-row">
-        <div id="ifjpch" class="gjs-ft-column gjs-ft-col-md">
-          <div id="i12hwf" class="ft_com_div ft_com_box">
-            <img
-              id="i1275x"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="cwnta_463_Screenshot20230712at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/cwnta_463_Screenshot20230712at5.09.11PM.png"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/cwnta_463_Screenshot20230712at5.09.11PM.png 320w,https://img.flexifunnels.com/images/8535/cwnta_463_Screenshot20230712at5.09.11PM.png 480w"
-            />
-          </div>
-        </div>
-        <div id="idtgnk" class="gjs-ft-column gjs-ft-col-md">
-          <div id="ixyfak" class="ft_com_div ft_com_box">
-            <img
-              id="ib1jck"
-              sizes="100vw"
-              src="https://assets.flexifunnels.com/images/itrans.png"
-              alt="a1otc_750_WhatsAppImage20230711at5"
-              class="ft_image img-fluid ft_image-style"
-              data-src="https://img.flexifunnels.com/images/8535/a1otc_750_WhatsAppImage20230711at5.47.55PM.jpeg"
-              data-lazy="loading"
-              data-srcset="https://img.flexifunnels.com/images/8535/320/a1otc_750_WhatsAppImage20230711at5.47.55PM.jpeg 320w,https://img.flexifunnels.com/images/8535/480/a1otc_750_WhatsAppImage20230711at5.47.55PM.jpeg 480w,https://img.flexifunnels.com/images/8535/a1otc_750_WhatsAppImage20230711at5.47.55PM.jpeg 768w"
-            />
-          </div>
-        </div>
-      </div>
+      </section>
       <style>
         .footer-link {
           color: #3063f1;
@@ -9198,6 +9273,7 @@
             .gjs-ft-row[style*="display: flex"] { flex-wrap: wrap !important; justify-content: center !important; }
             #izy46i, #i3blp2 { font-size: 36px !important; font-weight: 800 !important; margin-bottom: 5px !important; }
             #ijnyvc { font-size: 18px !important; font-weight: 700 !important; margin-bottom: 25px !important; color: #ff6b6b !important; }
+            #ik1vg9 { padding: 40px 15px 60px !important; }
           }
           @keyframes pulse-glow { 0% { opacity: 0.4; transform: scale(1); } 100% { opacity: 0.8; transform: scale(1.3); } }
           #ik1vg9 { 
@@ -9206,7 +9282,7 @@
               radial-gradient(at 0% 0%, rgba(255, 127, 0, 0.2) 0px, transparent 60%),
               radial-gradient(at 100% 0%, rgba(255, 71, 87, 0.15) 0px, transparent 60%),
               radial-gradient(at 50% 100%, rgba(255, 127, 0, 0.1) 0px, transparent 80%) !important;
-            padding: 100px 0 !important; position: relative; overflow: hidden; 
+            padding: 60px 0 100px !important; position: relative; overflow: hidden; 
           }
           #ik1vg9::before { 
             content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
@@ -9260,11 +9336,7 @@
       ></script>
       <script src="https://assets.flexifunnels.com/js/ft-control.js"></script>
       <script src="https://assets.flexifunnels.com/js/ft-lazy-loading.js"></script>
-        <label for="noscript-close" id="close-noscript-popup">X</label>⚠️
-        JavaScript is disabled in the browser!<br />
-        Please enable it for a better experience.
-      </div></noscript
-    >
+      </div>
     <script>
       (function(){
         var target = 15 * 60; // 15 mins

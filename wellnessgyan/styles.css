@@ -23,7 +23,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.2;
     color: #101111;
-    background-color: #FCFCFC;
+    background-color: #F4FEFD;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
 }
 
 .container {
@@ -45,7 +46,9 @@ body {
         radial-gradient(ellipse at 100% 0%, rgba(180, 240, 230, 0.4) 0%, transparent 50%),
         radial-gradient(ellipse at 0% 100%, rgba(220, 200, 255, 0.3) 0%, transparent 40%),
         radial-gradient(ellipse at 100% 100%, rgba(160, 230, 220, 0.35) 0%, transparent 45%),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"),
         linear-gradient(180deg, #FCFCFC 0%, #F8F9FA 100%);
+    background-size: cover, cover, cover, cover, 150px 150px, cover;
     color: #101111;
     padding: 0px 0 60px;
     overflow: hidden;
