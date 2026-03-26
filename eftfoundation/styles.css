@@ -89,7 +89,7 @@ body {
 }
 
 .top-pre-headline {
-    font-size: 1rem;
+    font-size: clamp(10px, 1.2vw, 1rem);
     font-weight: 600;
     line-height: 1.4;
     color: #ffffff;
@@ -104,7 +104,7 @@ body {
 }
 
 .pre-headline {
-    font-size: 0.95rem;
+    font-size: clamp(10px, 1.1vw, 0.95rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -114,7 +114,7 @@ body {
 }
 
 .main-headline {
-    font-size: 1.5rem;
+    font-size: clamp(16px, 2.5vw, 1.5rem);
     font-weight: 800;
     line-height: 1.15;
     margin-top: -15px;
@@ -205,7 +205,7 @@ body {
 }
 
 .hero-subheadline {
-    font-size: 1.12rem;
+    font-size: clamp(11px, 1.3vw, 1.12rem);
     line-height: 1.2;
     color: #333;
     max-width: 500px;
@@ -214,7 +214,7 @@ body {
 }
 
 .hero-subheadline strong {
-    font-size: 1.5rem;
+    font-size: clamp(14px, 2vw, 1.5rem);
     color: #10BDA7;
     font-weight: 700;
     display: block;
@@ -289,7 +289,7 @@ body {
 }
 
 .speaker-name {
-    font-size: 0.95rem;
+    font-size: clamp(10px, 1.1vw, 0.95rem);
     font-weight: 600;
     color: #FFFFFF;
     white-space: normal;
@@ -366,7 +366,7 @@ body {
 }
 
 .detail-label {
-    font-size: 0.55rem;
+    font-size: clamp(8px, 0.7vw, 0.55rem);
     font-weight: 700;
     color: #10BDA7;
     text-transform: uppercase;
@@ -374,7 +374,7 @@ body {
 }
 
 .detail-value {
-    font-size: 0.7rem;
+    font-size: clamp(9px, 0.9vw, 0.7rem);
     font-weight: 600;
     color: #101111;
     line-height: 1.2;
@@ -385,7 +385,7 @@ body {
     background: linear-gradient(180deg, #222222 0%, #0a0a0a 100%);
     color: #ffffff;
     padding: 16px 45px;
-    font-size: 1.3rem;
+    font-size: clamp(14px, 1.5vw, 1.3rem);
     font-weight: 500;
     letter-spacing: 1px;
     text-decoration: none;
@@ -415,7 +415,7 @@ body {
 
 .urgency {
     margin-top: 15px;
-    font-size: 1rem;
+    font-size: clamp(11px, 1.2vw, 1rem);
     color: #000000;
     font-weight: 700;
     /* animation: formalPulse 3s ease-in-out infinite; */
@@ -440,7 +440,7 @@ body {
 
 .who-should-attend h2 {
     text-align: center;
-    font-size:1.5rem;
+    font-size: clamp(16px, 2.5vw, 1.5rem);
     color: #101111;
     margin-bottom: 60px;
     font-weight: 800;
@@ -463,7 +463,7 @@ body {
 
 .audience-intro {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
     color: #333;
     max-width: 700px;
     margin: 0 auto 40px;
@@ -484,7 +484,7 @@ body {
     background: #FFFFFF;
     border-radius: 12px;
     border: 2px solid rgba(16, 189, 167, 0.15);
-    font-size: 1rem;
+    font-size: clamp(11px, 1.2vw, 1rem);
     color: #101111;
     line-height: 1.4;
     transition: all 0.3s ease;
@@ -571,7 +571,7 @@ body {
 }
 
 .audience-card h3 {
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
     color: #101111;
     margin-bottom: 10px;
     font-weight: 700;
@@ -580,7 +580,7 @@ body {
 
 .audience-card p {
     color: #6B7280;
-    font-size: 0.85rem;
+    font-size: clamp(10px, 1vw, 0.85rem);
     line-height: 1.2;
     margin: 0;
 }
@@ -594,7 +594,7 @@ body {
 
 .why-attend h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: clamp(18px, 3vw, 2rem);
     margin-bottom: 40px;
     font-weight: 800;
     color: #FFFFFF;
@@ -621,7 +621,7 @@ body {
 .section-intro {
     text-align: left;
     margin: 0 0 20px;
-    font-size: 1rem;
+    font-size: clamp(11px, 1.2vw, 1rem);
     opacity: 0.95;
     line-height: 1;
     color: #FFFFFF;
@@ -669,7 +669,7 @@ body {
 }
 
 .benefit-item p {
-    font-size: 0.95rem;
+    font-size: clamp(11px, 1.1vw, 0.95rem);
     line-height: 1.2;
     color: #101111;
     font-weight: 600;
@@ -687,7 +687,7 @@ body {
 
 .speakers h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: clamp(16px, 2.5vw, 1.5rem);
     color: #101111;
     margin-bottom: 5px;
     font-weight: 800;
@@ -712,7 +712,7 @@ body {
     text-align: center;
     color: #101111;
     opacity: 0.7;
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
     margin-bottom: 60px;
     max-width: 600px;
     margin-left: auto;
@@ -748,7 +748,7 @@ body {
     color: #FCFCFC;
     padding: 6px 14px;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: clamp(9px, 0.9vw, 0.75rem);
     font-weight: 600;
     z-index: 2;
 }
@@ -803,7 +803,7 @@ body {
 }
 
 .speaker-card h3 {
-    font-size: 1rem;
+    font-size: clamp(11px, 1.2vw, 1rem);
     color: #FCFCFC;
     margin-bottom: 4px;
     font-weight: 700;
@@ -812,7 +812,7 @@ body {
 .speaker-title {
     color: #10BDA7;
     font-weight: 500;
-    font-size: 0.75rem;
+    font-size: clamp(9px, 0.9vw, 0.75rem);
     line-height: 1;
 }
 
@@ -849,7 +849,7 @@ body {
 }
 
 .about h2 {
-    font-size: 2.5rem;
+    font-size: clamp(20px, 3.5vw, 2.5rem);
     color: #101111;
     margin-bottom: 0;
 }
@@ -862,7 +862,7 @@ body {
 .about-text {
     max-width: 900px;
     margin: 0 auto 20px;
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
     color: #101111;
     line-height: 1;
     opacity: 0.85;
@@ -882,13 +882,13 @@ body {
 
 .stat-number {
     display: block;
-    font-size: 3rem;
+    font-size: clamp(24px, 4vw, 3rem);
     font-weight: 800;
     color: #10BDA7;
 }
 
 .stat-label {
-    font-size: 1rem;
+    font-size: clamp(11px, 1.2vw, 1rem);
     color: #101111;
     font-weight: 500;
     opacity: 0.7;
@@ -921,12 +921,12 @@ body {
 }
 
 .register h2 {
-    font-size: 2.5rem;
+    font-size: clamp(20px, 3.5vw, 2.5rem);
     margin-bottom: 15px;
 }
 
 .register-intro {
-    font-size: 1.2rem;
+    font-size: clamp(12px, 1.4vw, 1.2rem);
     opacity: 0.9;
     margin-bottom: 40px;
 }
@@ -943,7 +943,7 @@ body {
 .form-group input {
     width: 100%;
     padding: 18px 25px;
-    font-size: 1rem;
+    font-size: clamp(12px, 1.2vw, 1rem);
     border: none;
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -965,7 +965,7 @@ body {
     width: 100%;
     position: relative;
     padding: 18px;
-    font-size: 1.3rem;
+    font-size: clamp(14px, 1.5vw, 1.3rem);
     font-weight: 500;
     letter-spacing: 1px;
     background: linear-gradient(180deg, #222222 0%, #0a0a0a 100%);
@@ -1009,7 +1009,7 @@ body {
 
 .faq h2 {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: clamp(20px, 3.5vw, 2.5rem);
     color: #FCFCFC;
     margin-bottom: 60px;
 }
@@ -1047,7 +1047,7 @@ body {
 }
 
 .faq-question h3 {
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
     color: #101111;
     font-weight: 600;
     margin: 0;
@@ -1099,7 +1099,7 @@ body {
 
 .footer .about-branding h2 {
     color: #FCFCFC;
-    font-size: 1.5rem;
+    font-size: clamp(14px, 2vw, 1.5rem);
     font-weight: 500;
 }
 
@@ -1109,7 +1109,7 @@ body {
 
 .copyright {
     color: rgba(252, 252, 252, 0.7);
-    font-size: 0.85rem;
+    font-size: clamp(10px, 1vw, 0.85rem);
     margin-top: 30px;
 }
 
@@ -1131,7 +1131,7 @@ body {
 }
 
 .sticky-ticker {
-    font-size: 0.75rem;
+    font-size: clamp(9px, 0.9vw, 0.75rem);
     color: #10BDA7;
     font-weight: 500;
     margin-bottom: 8px;
@@ -1175,7 +1175,7 @@ body {
 
 .sticky-urgency {
     color: #F4FEFD;
-    font-size: 0.8rem;
+    font-size: clamp(10px, 1vw, 0.8rem);
     font-weight: 600;
     margin-top: 8px;
     animation: stickyPulse 2s infinite;
@@ -1191,7 +1191,7 @@ body {
     max-width: 400px;
     padding: 12px;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: clamp(12px, 1.3vw, 1.1rem);
 }
 
 /* Responsive Styles */
