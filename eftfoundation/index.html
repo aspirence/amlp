@@ -1309,6 +1309,7 @@
         border-radius: 10px 10px 10px 10px;
         padding-right: 0px;
         padding-left: 0px;
+        margin: 50px;
       }
       #iyii7 {
         background-color: #ffffff;
@@ -6561,18 +6562,21 @@
           </p>
         </div>
       </section>
-      <section id="ip6n8f" class="gjs-ft-section ft-section-box" style="padding-top: 40px; padding-bottom: 40px; background: #ffffff;">
+      <section id="ip6n8f" class="gjs-ft-section ft-section-box" style="padding: 40px 20px; background: #ffffff;">
         <div id="i60jp" class="gjs-ft-wrapper gjs-ft-wrap-normal ft-wrapper-box">
           
           <style>
             .modern-workshop-head {
               font-family: 'Montserrat', sans-serif;
-              font-size: 34px;
+              font-size: clamp(10px, 2vw, 34px);
               font-weight: 800;
               color: #1a1a2e;
               text-align: center;
-              margin-bottom: 45px;
-              line-height: 1.4;
+              margin-bottom: 20px;
+              line-height: 1;
+            }
+            .modern-workshop-head i {
+              color: #1a1a2e;
             }
             .modern-workshop-head span {
               color: #ff7f00;
@@ -6585,7 +6589,7 @@
               bottom: 2px;
               left: 0;
               width: 100%;
-              height: 4px;
+              height: 3px;
               background: #ff7f00;
               opacity: 0.2;
               border-radius: 2px;
@@ -6593,60 +6597,75 @@
             .modern-workshop-grid {
               display: grid;
               grid-template-columns: repeat(3, 1fr);
-              gap: 25px;
-              max-width: 1050px;
-              margin: 0 auto 40px auto;
+              gap: 16px;
+              max-width: 100%;
+              margin: 0 auto;
             }
             .modern-workshop-card {
-              background: #111116; /* Deep premium black */
-              border-radius: 20px;
-              padding: 30px;
+              background: #111116;
+              border-radius: 14px;
+              padding: 24px 16px;
               text-align: center;
-              position: relative;
-              border: 1px solid rgba(255, 127, 0, 0.15);
-              box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+              border: 1px solid rgba(255, 127, 0, 0.12);
               display: flex;
               flex-direction: column;
               align-items: center;
               justify-content: center;
+              gap: 12px;
             }
             .modern-workshop-icon-wrap {
-              width: 95px;
-              height: 95px;
-              background: linear-gradient(135deg, rgba(255,127,0,0.1) 0%, rgba(255,127,0,0.05) 100%);
+              width: 56px;
+              height: 56px;
+              background: linear-gradient(135deg, rgba(255,127,0,0.12) 0%, rgba(255,127,0,0.04) 100%);
               border-radius: 50%;
               display: flex;
               justify-content: center;
               align-items: center;
-              margin-bottom: 25px;
-              box-shadow: inset 0 0 15px rgba(255,127,0,0.1);
-            }
-            .modern-workshop-icon-wrap img {
-              width: 65px;
-              height: 65px;
-              object-fit: contain;
             }
             .modern-workshop-title {
               color: #f1f2f6;
-              font-family: 'Poppins', sans-serif;
-              font-size: 15px;
+              font-family: 'Montserrat', sans-serif;
+              font-size: clamp(12px, 1.5vw, 15px);
               font-weight: 500;
-              line-height: 1.7;
+              line-height: 1.6;
               margin: 0;
             }
             .modern-workshop-title span {
-              color: #ffa502;
-              font-weight: 800;
-              font-size: 16px;
+              color: #ff7f00;
+              font-weight: 700;
             }
-            @media (max-width: 900px) {
-              .modern-workshop-grid { grid-template-columns: 1fr; max-width: 380px; }
-              .modern-workshop-head { font-size: 26px; padding: 0 15px; }
+            @media (max-width: 768px) {
+              .modern-workshop-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                gap: 10px;
+              }
+              .modern-workshop-card {
+                flex-direction: row;
+                padding: 14px 16px;
+                border-radius: 10px;
+                gap: 14px;
+                text-align: left;
+              }
+              .modern-workshop-icon-wrap {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+              }
+              .modern-workshop-icon-wrap i {
+                font-size: 20px !important;
+              }
+              .modern-workshop-title {
+                font-size: 12px;
+              }
+              .modern-workshop-title br { display: none; }
+              .modern-workshop-head { margin-bottom: 20px; padding: 0 10px; }
             }
           </style>
 
+          <div class="modern-workshop-container" style="margin: 0 30px;">
           <h1 class="modern-workshop-head">
-            Start Giving Transformation & Results To Your <i>Friends & Family</i>,<br>
+            Start Giving Transformation & Results To Your <i>Friends & Family,</i><br>
             <span>Even Before The 3 Day Workshop Is Over!</span>
           </h1>
 
@@ -6654,34 +6673,35 @@
             <!-- Card 1 -->
             <div class="modern-workshop-card">
               <div class="modern-workshop-icon-wrap">
-                <i class="fas fa-calendar-alt" style="font-size: 42px; color: #ff7f00;"></i>
+                <i class="fas fa-calendar-alt" style="font-size: 26px; color: #ff7f00;"></i>
               </div>
               <h2 class="modern-workshop-title">
-                <span>27th Mar (Fri)</span> 7PM-8PM<br>
-                <span>28th Mar (Sat)</span> 9:30AM-12:30PM<br>
-                <span>29th Mar (Sun)</span> 9:30AM-12:30PM
+                <span>27th Mar (Fri)</span> 7PM–8PM<br>
+                <span>28th Mar (Sat)</span> 9:30AM–12:30PM<br>
+                <span>29th Mar (Sun)</span> 9:30AM–12:30PM
               </h2>
             </div>
 
             <!-- Card 2 -->
             <div class="modern-workshop-card">
               <div class="modern-workshop-icon-wrap">
-                <i class="fas fa-award" style="font-size: 42px; color: #ff7f00;"></i>
+                <i class="fas fa-award" style="font-size: 26px; color: #ff7f00;"></i>
               </div>
-              <h2 class="modern-workshop-title" style="font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 800; margin-top: 15px;">
-                Get <br><span style="font-size: 26px; letter-spacing: 1px;">Certified</span>
+              <h2 class="modern-workshop-title">
+                Get <span style="font-size: clamp(16px, 2vw, 22px); letter-spacing: 0.5px;">Certified</span>
               </h2>
             </div>
 
             <!-- Card 3 -->
             <div class="modern-workshop-card">
-              <div class="modern-workshop-icon-wrap" style="background: linear-gradient(135deg, rgba(255, 71, 87, 0.1) 0%, rgba(255, 71, 87, 0.05) 100%); border: 1px solid rgba(255,71,87,0.1); display: flex; align-items: center; justify-content: center;">
-                <i class="fas fa-gift" style="font-size: 42px; color: #ff4757;"></i>
+              <div class="modern-workshop-icon-wrap" style="background: linear-gradient(135deg, rgba(255,71,87,0.12) 0%, rgba(255,71,87,0.04) 100%);">
+                <i class="fas fa-gift" style="font-size: 26px; color: #ff4757;"></i>
               </div>
-              <h2 class="modern-workshop-title" style="font-size: 16px;">
-                Get <span style="color: #ff4757; font-size: 18px; font-weight: 800;">FREE</span> bonuses<br>worth Rs 6896
+              <h2 class="modern-workshop-title">
+                Get <span style="color: #ff4757;">FREE</span> bonuses worth ₹6,896
               </h2>
             </div>
+          </div>
           </div>
 
         </div>
