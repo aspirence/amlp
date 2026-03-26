@@ -1785,31 +1785,31 @@
         text-transform: capitalize;
       }
       /* Cards for How EFT Solves section */
-      #ik1vg9 .ftheadline { color: #ffffff !important; text-shadow: 0 0 20px rgba(255,127,0,0.3); }
+      #ik1vg9 .ftheadline {
+        color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: clamp(20px, 3.5vw, 42px) !important;
+        font-weight: 900 !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+      }
       #ik1vg9 #i7d68x .gjs-ft-col-md,
       #ik1vg9 #i7d68x ~ .gjs-ft-row .gjs-ft-col-md {
         background: rgba(20, 20, 25, 0.7) !important;
         backdrop-filter: blur(10px);
-        border-radius: 20px !important;
-        border: 1px solid rgba(255, 127, 0, 0.2) !important;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.5) !important;
-        padding: 30px 25px !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 127, 0, 0.12) !important;
+        padding: 20px !important;
         margin: 0 !important;
         text-align: left !important;
         position: relative;
         overflow: hidden;
-        transition: all 0.4s ease;
-      }
-      #ik1vg9 #i7d68x .gjs-ft-col-md:hover {
-        border-color: rgba(255, 127, 0, 0.6) !important;
-        background: rgba(30, 30, 35, 0.8) !important;
-        transform: translateY(-5px);
       }
 
       #ik1vg9 #i7d68x,
       #ik1vg9 #ipn6a8 {
-        gap: 40px;
-        margin-bottom: 40px;
+        gap: 14px;
+        margin-bottom: 14px;
       }
       #ik1vg9 #ipn6a8 .gjs-ft-col-md {
         background-color: transparent !important;
@@ -1818,49 +1818,48 @@
         padding: 0 !important;
         backdrop-filter: none !important;
       }
-      #ik1vg9 #ipn6a8 .gjs-ft-col-md:hover {
-        transform: none !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        border-color: transparent !important;
-      }
       #ik1vg9 .ftsub_heading {
         color: #ffffff !important;
+        font-family: 'Montserrat', sans-serif !important;
+        font-size: clamp(13px, 1.5vw, 20px) !important;
+        font-weight: 800 !important;
+        margin-bottom: 8px !important;
+      }
+      #ik1vg9 .ftsub_heading i {
+        font-size: clamp(18px, 2vw, 28px) !important;
       }
       #ik1vg9 .ftparagraph {
-        color: #bbbbbb !important;
-        font-size: 15px !important;
-        line-height: 1.7 !important;
+        color: #cccccc !important;
+        font-size: clamp(11px, 1.2vw, 15px) !important;
+        line-height: 1.5 !important;
         text-transform: none !important;
-      }
-      #ik1vg9 .ft_image {
-        width: 55px !important;
-        margin-bottom: 15px !important;
+        font-family: 'Poppins', sans-serif !important;
       }
 
       #ixhdql:after {
         content: "";
         display: block;
-        width: 80px;
-        height: 4px;
+        width: 60px;
+        height: 3px;
         background: #ff7f00;
-        margin: 25px auto 0;
+        margin: 15px auto 0;
         border-radius: 2px;
       }
 
       #i3uwzu {
         max-width: 1000px;
+        padding: 0 20px;
       }
       /* Numbered card counter */
       #ik1vg9 #i7d68x .gjs-ft-col-md:before,
       #ik1vg9 #i7d68x ~ .gjs-ft-row .gjs-ft-col-md:before {
         position: absolute;
-        top: 15px;
-        right: 20px;
+        top: 10px;
+        right: 15px;
         font-family: Montserrat, sans-serif;
-        font-size: 60px;
+        font-size: clamp(36px, 4vw, 60px);
         font-weight: 900;
-        color: rgba(255,127,0,0.08);
+        color: rgba(255,127,0,0.06);
         line-height: 1;
       }
 
@@ -1873,8 +1872,25 @@
 
       #ik1vg9 #i8ty9j,
       #ik1vg9 #itk439 {
-        gap: 40px;
-        margin-bottom: 40px;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      @media (max-width: 768px) {
+        #ik1vg9 #i7d68x,
+        #ik1vg9 #i8ty9j,
+        #ik1vg9 #itk439,
+        #ik1vg9 #ipn6a8 {
+          flex-direction: column;
+          gap: 10px;
+          margin-bottom: 10px;
+        }
+        #ik1vg9 #i7d68x .gjs-ft-col-md,
+        #ik1vg9 #i7d68x ~ .gjs-ft-row .gjs-ft-col-md {
+          padding: 14px 16px !important;
+          border-radius: 10px !important;
+        }
+        #i3uwzu { padding: 0 15px; }
+        #ixhdql:after { margin: 10px auto 0; }
       }
       #itqd7p {
         border-radius: 20px;
@@ -6708,153 +6724,155 @@
         </div>
       </section>
       <style>
-        .coach-stuck-wrapper { padding-top: 20px; }
+        .coach-stuck-section {
+          background-color: #f8f8f8;
+          background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23000000' fill-opacity='0.07'/%3E%3C/svg%3E");
+          padding: 50px 20px;
+        }
+        .coach-stuck-inner {
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+        .coach-stuck-heading {
+          font-family: 'Montserrat', sans-serif;
+          font-size: clamp(20px, 3.5vw, 42px);
+          font-weight: 900;
+          color: #1a1a2e;
+          text-align: center;
+          margin-bottom: clamp(20px, 3vw, 40px);
+          line-height: 1.2;
+        }
+        .coach-stuck-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
+        }
         .coach-stuck-card {
-          background: #000000;
-          border-radius: 20px;
-          padding: 25px 20px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          height: 100%;
+          background: #0a0a0f;
+          border-radius: 12px;
+          padding: 20px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          border: 1px solid rgba(255, 127, 0, 0.3);
+          border: 1px solid rgba(255, 127, 0, 0.12);
         }
         .coach-stuck-header {
           display: flex;
           align-items: center;
-          gap: 15px;
-          margin-bottom: 20px;
+          gap: 12px;
+          margin-bottom: 10px;
           width: 100%;
         }
         .coach-stuck-icon-wrapper {
-          width: 50px;
-          height: 50px;
-          background: rgba(255, 127, 0, 0.1);
-          border-radius: 12px;
+          width: 40px;
+          height: 40px;
+          background: rgba(255, 127, 0, 0.08);
+          border-radius: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          border: 1px solid rgba(255, 127, 0, 0.3);
         }
         .coach-stuck-icon-wrapper i {
-          font-size: 24px;
+          font-size: clamp(16px, 1.5vw, 22px);
           color: #ff7f00;
         }
         .coach-stuck-title {
           font-family: 'Montserrat', sans-serif;
-          font-weight: 900;
-          font-size: 20px;
+          font-weight: 800;
+          font-size: clamp(12px, 1.5vw, 18px);
           color: #ffffff;
           margin: 0;
           text-align: left;
-          line-height: 1.3;
+          line-height: 1.2;
           text-transform: uppercase;
-          letter-spacing: -0.2px;
         }
         .coach-stuck-desc {
           font-family: 'Poppins', sans-serif;
-          font-size: 15px;
-          color: #eeeeee;
-          line-height: 1.7;
+          font-size: clamp(10px, 1.2vw, 14px);
+          color: #cccccc;
+          line-height: 1.5;
           text-align: left;
           margin: 0;
-          opacity: 0.9;
         }
         @media (max-width: 768px) {
-          .coach-stuck-card { padding: 25px 15px; }
-          .coach-stuck-title { font-size: 17px; }
-          .coach-stuck-desc { font-size: 14px; }
-          .coach-stuck-header { gap: 12px; }
-          .coach-stuck-icon-wrapper { width: 45px; height: 45px; }
-          .coach-stuck-icon-wrapper i { font-size: 20px; }
+          .coach-stuck-section { padding: 30px 15px; }
+          .coach-stuck-grid { grid-template-columns: 1fr; gap: 10px; }
+          .coach-stuck-card { padding: 14px 16px; flex-direction: row; align-items: flex-start; gap: 12px; }
+          .coach-stuck-header { margin-bottom: 0; flex-direction: column; gap: 0; width: auto; }
+          .coach-stuck-icon-wrapper { width: 36px; height: 36px; }
+          .coach-stuck-title { font-size: 12px; }
+          .coach-stuck-desc { font-size: 11px; line-height: 1.4; }
+          .coach-stuck-card-content { flex: 1; }
         }
       </style>
-      <section id="ifwu4" class="gjs-ft-section ft-section-box" style="background: linear-gradient(180deg, #ffffff 0%, #faf8ff 100%);">
-        <div id="ie0uj" class="gjs-ft-wrapper gjs-ft-wrap-normal ft-wrapper-box coach-stuck-wrapper">
-          <div id="i5i87y" class="gjs-ft-row" style="margin-bottom: 40px;">
-            <div id="ik3wkb" class="gjs-ft-column gjs-ft-col-md">
-              <h1 id="i5sv6i" class="ftheadline" style="font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 900; color: #1a1a2e;">
-                <font draggable="true" id="iz3ehc">Where are coaches stuck today?</font><br draggable="true" data-highlightable="1" id="ivonbk" />
-              </h1>
-            </div>
-          </div>
-          <div id="isheai" class="gjs-ft-row" style="margin-bottom: 25px; align-items: stretch;">
-            <div id="iuqdzc" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-user-slash"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">Most Coaches AREN'T good</h2>
-                </div>
+      <section class="coach-stuck-section">
+        <div class="coach-stuck-inner">
+          <h1 class="coach-stuck-heading">Where are coaches stuck today?</h1>
+
+          <div class="coach-stuck-grid">
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-user-slash"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">Most Coaches AREN'T good</h2>
                 <p class="coach-stuck-desc">For a lot of reasons, coaches aren't really GOOD at what they do, which is- the skill of coaching. They don't have a proper roadmap &amp; a community.</p>
               </div>
             </div>
-            <div id="iy8ulb" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-puzzle-piece"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">Complicated Modalities</h2>
-                </div>
+
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">Complicated Modalities</h2>
                 <p class="coach-stuck-desc">It takes TOO MUCH time for coaches to get good, because most modalities are complicated, eg- NLP, which takes months/years to even understand.</p>
               </div>
             </div>
-          </div>
-          <div id="iiyuue" class="gjs-ft-row" style="margin-bottom: 25px; align-items: stretch;">
-            <div id="iq7kjo" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-ban"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">Ineffective Modalities</h2>
-                </div>
-                <p class="coach-stuck-desc">Other Modalities, Like Affirmations Or General Motivational Sessions Are Simply Ineffective For Coaches As Well As Their Clients. Coaches Don't Know What To Suggest To Their Clients.</p>
+
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-ban"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">Ineffective Modalities</h2>
+                <p class="coach-stuck-desc">Other Modalities, Like Affirmations Or General Motivational Sessions Are Simply Ineffective For Coaches As Well As Their Clients.</p>
               </div>
             </div>
-            <div id="ikvjic" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-certificate"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">Too Many Certifications</h2>
-                </div>
+
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">Too Many Certifications</h2>
                 <p class="coach-stuck-desc">But Not Having Expertise In Any Of Them. Not Taking Enough Action To Help And Giving Results To Clients.</p>
               </div>
             </div>
-          </div>
-          <div id="irfov9" class="gjs-ft-row" style="margin-bottom: 40px; align-items: stretch;">
-            <div id="id8yys" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-dollar-sign"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">Not able to market &amp; monetise</h2>
-                </div>
+
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">Not able to market &amp; monetise</h2>
                 <p class="coach-stuck-desc">Most coaches are just one among the big crowd of coaches, without a unique offer, positioning and monetisation strategy.</p>
               </div>
             </div>
-            <div id="ivszbs" class="gjs-ft-column gjs-ft-col-md" style="padding: 10px;">
-              <div class="coach-stuck-card">
-                <div class="coach-stuck-header">
-                  <div class="coach-stuck-icon-wrapper">
-                    <i class="fas fa-times-circle"></i>
-                  </div>
-                  <h2 class="coach-stuck-title">No client results</h2>
-                </div>
-                <p class="coach-stuck-desc">And because of all the above factors, coaches don't get success stories, or results</p>
+
+            <div class="coach-stuck-card">
+              <div class="coach-stuck-icon-wrapper">
+                <i class="fas fa-times-circle"></i>
+              </div>
+              <div class="coach-stuck-card-content">
+                <h2 class="coach-stuck-title">No client results</h2>
+                <p class="coach-stuck-desc">And because of all the above factors, coaches don't get success stories, or results.</p>
               </div>
             </div>
           </div>
 
-          <div id="coach_cta_container" class="ft_com_div ft_com_box" style="margin-top: 50px; text-align: center;">
+          <div id="coach_cta_container" style="margin-top: 30px; text-align: center;">
             <a href="https://actionmasterclass.in/checkout-eft" data-popup="flexiPoup_iNwR8f" class="gjs-btn" style="background:#ff7f00 !important; color:#ffffff; border-radius:12px; box-shadow: 0 10px 20px rgba(255, 127, 0, 0.4); padding: 15px 40px; display: inline-block;">
               <span class="ffbtnmaintxt"><span class="ffbtntxt" style="font-size: 22px; font-weight: 800; display: block;">Register Now Just @Rs 199</span></span>
               <span class="ffbtnsubtxt" style="font-size: 14px; display: block; margin-top: 5px;">Limited Seats| Offer Expires Soon!</span>
@@ -9288,7 +9306,7 @@
               radial-gradient(at 0% 0%, rgba(255, 127, 0, 0.2) 0px, transparent 60%),
               radial-gradient(at 100% 0%, rgba(255, 71, 87, 0.15) 0px, transparent 60%),
               radial-gradient(at 50% 100%, rgba(255, 127, 0, 0.1) 0px, transparent 80%) !important;
-            padding: 60px 0 100px !important; position: relative; overflow: hidden; 
+            padding: 20px 0 100px !important; position: relative; overflow: hidden; 
           }
           #ik1vg9::before { 
             content: ''; position: absolute; width: 100%; height: 100%; top: 0; left: 0; 
