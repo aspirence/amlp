@@ -1295,7 +1295,7 @@
       #i5ynkl {
         font-family: Montserrat, sans-serif;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 18px;
         text-transform: capitalize;
         color: #ffffff;
         margin-right: 150px;
@@ -1317,7 +1317,7 @@
         font-family: Montserrat, sans-serif;
         font-weight: 500;
         color: #ffffff;
-        font-size: 28px;
+        font-size: 18px;
       }
       #ityd5 {
         padding: 0;
@@ -5550,7 +5550,7 @@
         }
         #iza352 {
           text-align: center;
-          font-size: 23px;
+          font-size: 18px;
         }
         #i5ynkl {
           padding-right: 0px;
@@ -6130,86 +6130,75 @@
       <div id="ipew4" class="ft-cus-session">
         <style>
           .bar-v6 {
-            background: linear-gradient(135deg, #ff7f00 0%, #e67200 100%);
-            padding: 12px 20px;
+            background: #0a0a0a;
+            border-bottom: 2px solid #ff7f00;
+            padding: 10px 20px;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            overflow: hidden;
-          }
-          .bar-v6::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(
-              circle,
-              rgba(255, 255, 255, 0.1) 0%,
-              transparent 70%
-            );
-            animation: rotate 10s linear infinite;
-          }
-          @keyframes rotate {
-            to {
-              transform: rotate(360deg);
-            }
           }
           .bar-v6 .content {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
+            gap: 8px;
             position: relative;
             z-index: 1;
-            font-family: "Poppins", sans-serif;
+            font-family: "Montserrat", sans-serif;
           }
           .bar-v6 .text {
-            color: #fff;
-            font-size: 14px;
-            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
           }
           .bar-v6 .text .g {
-            color: #ffd700;
+            color: #ff7f00;
             font-weight: 700;
           }
           .bar-v6 .sc {
-            background: #ffd700;
-            color: #d32f2f;
+            background: #ff7f00;
+            color: #000;
             padding: 2px 10px;
-            border-radius: 20px;
+            border-radius: 4px;
             font-weight: 800;
+            font-size: 13px;
             display: inline-block;
           }
           .bar-v6 .sc.f {
             animation: pop 0.5s ease;
           }
+          .bar-v6 .dot {
+            width: 6px;
+            height: 6px;
+            background: #ff4444;
+            border-radius: 50%;
+            display: inline-block;
+            animation: blink 1.5s ease-in-out infinite;
+          }
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+          }
           @keyframes pop {
-            0%,
-            100% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.2);
-              background: #fff;
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
           }
           @media (max-width: 600px) {
-            .bar-v6 .text {
-              font-size: 12px;
-            }
+            .bar-v6 { padding: 8px 12px; }
+            .bar-v6 .text { font-size: 11px; letter-spacing: 0.3px; }
+            .bar-v6 .sc { font-size: 11px; padding: 1px 7px; }
           }
         </style>
         <div class="bar-v6">
           <div class="content">
-            <span class="text"
-              >⚠️ <span class="g">WARNING:</span> Only
-              <span class="sc" id="sc">29</span> Seats Left!
-              <span class="g">EFT Foundation Workshop</span></span
-            >
+            <span class="text">
+              <span class="dot"></span>
+              <span class="g">LIMITED SEATS</span> — Only
+              <span class="sc" id="sc">29</span> spots left for
+              <span class="g">EFT Foundation Workshop</span>
+            </span>
           </div>
         </div>
         <script>
@@ -6489,7 +6478,7 @@
           font-style: italic;
           font-weight: 700;
           font-size: 15px;
-          margin-bottom: 10px !important;
+          margin-bottom: 40px !important;
         }
 
         @media (max-width: 900px) {
@@ -6501,10 +6490,11 @@
           .sk-cta-pill, .gjs-btn { width: 100% !important; max-width: 480px !important; margin: 15px auto !important; padding: 15px 10px !important; display: flex !important; }
           .sk-hero-header { margin-bottom: 30px; }
           .sk-hero-header h1 { font-size: clamp(1px, 4vw, 42px); }
-          #i5ynkl { margin-left: 0 !important; margin-right: 0 !important; padding: 0 15px !important; line-height: 1.4 !important; font-size: 19px !important; }
+          .sk-hero-header .main-desc { font-size: clamp(10px, 2vw, 20px); font-weight: 800; line-height: 1.4; margin-bottom: 12px; }
+          #i5ynkl { margin-left: 0 !important; margin-right: 0 !important; padding: 0 15px !important; line-height: 1.4 !important; font-size: 10px !important; }
 
           /* New Banner Overlay Style */
-          .sk-banner-container { position: relative; width: 100%; max-width: 1100px; margin: 80px auto 40px !important; }
+          .sk-banner-container { position: relative; width: 100%; max-width: 1100px; margin: 20px auto 40px !important; }
           .sk-banner-img { width: 100%; height: auto; display: block; }
           .sk-banner-bar { 
             position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%);
@@ -6536,20 +6526,20 @@
           <img src="assets/page_files/etf_trainer_banner.webp" alt="EFT Trainer Banner" class="sk-banner-img" style="border: 2px solid #ff7f00; border-bottom: 0; border-radius: 12px 12px 0 0; width: 100%; display: block;" />
           <div class="sk-banner-footer" style="background: #000000; border-left: 2px solid #ff7f00; border-right: 2px solid #ff7f00; border-bottom: 2px solid #ff7f00; border-top: none; border-radius: 0 0 12px 12px; padding: 10px; display: flex; justify-content: space-around; align-items: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
             <div class="sk-footer-item" style="text-align: center; flex: 1; border-right: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="margin: 0; font-size: 0.9rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Delivery</h4>
-              <p style="margin: 4px 0 0; font-size: 0.8rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">Live Workshop</p>
+              <h4 style="margin: 0; font-size: 0.8rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Delivery</h4>
+              <p style="margin: 4px 0 0; font-size: 0.6rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">Live Workshop</p>
             </div>
             <div class="sk-footer-item" style="text-align: center; flex: 1; border-right: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="margin: 0; font-size: 0.9rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Duration</h4>
-              <p style="margin: 4px 0 0; font-size: 0.8rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">3 Days</p>
+              <h4 style="margin: 0; font-size: 0.8rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Duration</h4>
+              <p style="margin: 4px 0 0; font-size: 0.6rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">3 Days</p>
             </div>
             <div class="sk-footer-item" style="text-align: center; flex: 1; border-right: 1px solid rgba(255,255,255,0.1);">
-              <h4 style="margin: 0; font-size: 0.9rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Language</h4>
-              <p style="margin: 4px 0 0; font-size: 0.8rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">English</p>
+              <h4 style="margin: 0; font-size: 0.8rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Language</h4>
+              <p style="margin: 4px 0 0; font-size: 0.6rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">English</p>
             </div>
             <div class="sk-footer-item" style="text-align: center; flex: 1;">
-              <h4 style="margin: 0; font-size: 0.9rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Total Time</h4>
-              <p style="margin: 4px 0 0; font-size: 0.8rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">7 Hours</p>
+              <h4 style="margin: 0; font-size: 0.8rem; line-height: 1; font-weight: 700; color: #ff7f00; font-family: 'Montserrat', sans-serif;">Total Time</h4>
+              <p style="margin: 4px 0 0; font-size: 0.6rem; opacity: 0.8; font-weight: 500; text-transform: uppercase; color: #ffffff;">7 Hours</p>
             </div>
           </div>
 
