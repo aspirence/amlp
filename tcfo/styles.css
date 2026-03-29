@@ -336,7 +336,7 @@ body {
 .section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
 
 /* Service Cards */
-.services-section { padding: 80px 0;  }
+.services-section { padding: 80px 0 250px;  }
 .service-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
 
 .audience-grid {
@@ -553,6 +553,8 @@ body {
 .impact-card:nth-child(3) { --card-gradient: linear-gradient(to bottom, rgba(60,35,20,0) 0%, rgba(60,35,20,0.35) 30%, rgba(50,28,15,0.75) 55%, rgba(40,22,12,0.93) 80%, rgba(32,18,8,0.98) 100%); }
 .impact-card:nth-child(4) { --card-gradient: linear-gradient(to bottom, rgba(70,50,10,0) 0%, rgba(70,50,10,0.35) 30%, rgba(58,42,8,0.75) 55%, rgba(48,35,5,0.93) 80%, rgba(38,28,3,0.98) 100%); }
 .impact-card:nth-child(5) { --card-gradient: linear-gradient(to bottom, rgba(60,20,50,0) 0%, rgba(60,20,50,0.35) 30%, rgba(50,15,42,0.75) 55%, rgba(40,10,34,0.93) 80%, rgba(30,6,26,0.98) 100%); }
+.impact-card:nth-child(6) { --card-gradient: linear-gradient(to bottom, rgba(20,30,65,0) 0%, rgba(20,30,65,0.35) 30%, rgba(15,24,55,0.75) 55%, rgba(10,18,45,0.93) 80%, rgba(6,12,35,0.98) 100%); }
+.impact-card:nth-child(7) { --card-gradient: linear-gradient(to bottom, rgba(45,55,30,0) 0%, rgba(45,55,30,0.35) 30%, rgba(38,46,24,0.75) 55%, rgba(30,38,18,0.93) 80%, rgba(22,28,12,0.98) 100%); }
 
 .impact-card-body {
     position: absolute;
@@ -568,7 +570,7 @@ body {
 
 .impact-card blockquote {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: #fff;
     line-height: 1.45;
     margin-bottom: 24px;
@@ -1082,12 +1084,40 @@ body {
 .coach-points i { color: #000; font-size: 1.2rem; }
 
 @media (max-width: 991px) {
-    .mentor-ref-box { flex-direction: column; padding: 250px 30px 60px; text-align: center; border-radius: 30px; }
-    .coach-pop-portrait { width: 100%; min-height: 0; }
-    .coach-pop-portrait img { left: 50%; transform: translateX(-50%); top: -300px; width: 450px; bottom: auto; }
-    .coach-details { padding-left: 0; }
-    .coach-details h2 { font-size: 2.5rem; }
-    .coach-points li { justify-content: center; }
+    .mentor-ref-box {
+        flex-direction: column;
+        padding: 30px 24px 40px;
+        text-align: center;
+        border-radius: 24px;
+    }
+    .coach-pop-portrait {
+        display: none;
+    }
+    .coach-pop-portrait img {
+        position: relative;
+        left: auto;
+        top: 0;
+        bottom: auto;
+        transform: translateY(-20px); /* Slight pop-up default */
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        display: block;
+        object-fit: contain; /* Don't crop if we have space */
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    .coach-details {
+        padding-left: 0;
+        position: relative;
+        z-index: 5;
+    }
+    .coach-details .section-tag { font-size: 0.8rem; }
+    .coach-details h2 { font-size: 2rem !important; color: #000; margin-bottom: 12px; }
+    .coach-details p { font-size: 1rem; margin-bottom: 20px; max-width: 100%; }
+    .coach-points { margin-bottom: 24px; }
+    .coach-points li { justify-content: center; font-size: 0.95rem; gap: 10px; margin-bottom: 8px; }
+    .coach-details .btn-pill, .coach-details .btn-black { font-size: 0.85rem; }
 }
 
 /* TRUSTED BY LEADERS */
@@ -1524,4 +1554,144 @@ body {
     .sticky-center-info { display: none; }
     .sticky-price .current { font-size: 1.8rem; }
     .reg-btn-v3 { width: 100%; justify-content: center; }
+}
+
+/* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    body { font-size: 1rem; }
+
+    /* Header */
+    .main-header { padding: 10px 16px; }
+    .header-logo img { height: 32px; }
+
+    /* Hero */
+    .hero { padding-top: 10px; padding-bottom: 5px; }
+    .hero-grid {
+        flex-direction: column;
+        padding: 24px 16px 0;
+        border-radius: 20px;
+        margin: 0 8px;
+        gap: 10px;
+        height: auto;
+        text-align: center;
+    }
+    .hero-text { align-items: center; margin-bottom: 10px; }
+    .hero-text .section-tag { font-size: 0.72rem !important; line-height: 1.3; }
+    .hero-text h1 { font-size: 1.6rem !important; margin: 8px 0 10px; }
+    .hero-text p { font-size: 0.72rem; line-height: 1.4; margin-bottom: 8px; }
+    .hero-text h2 { font-size: 1.3rem !important; }
+    .hero-text .btn-pill { font-size: 0.85rem; padding: 8px 8px 8px 20px; gap: 16px; }
+    .hero-text .btn-pill i { width: 30px; height: 30px; }
+    .hero-image-wrap { width: 100%; }
+    .hero-portrait { max-height: 40vh; }
+    .portrait-label { padding: 8px 18px; bottom: 16px; }
+    .portrait-label h4 { font-size: 0.85rem; }
+    .portrait-label p { font-size: 0.65rem !important; }
+
+    /* Trusted section */
+    .trusted-outer { padding: 8px; }
+    .trusted-container { padding: 8px; border-radius: 16px; }
+    .logo-marquee-track { gap: 40px; }
+    .logo-marquee-track img { height: 20px; }
+    .auth-block h4 { font-size: 0.95rem !important; }
+    .trusted-authority-grid { gap: 20px; padding-top: 8px; margin-top: 8px; }
+
+    /* Pain points */
+    .section-pain-points { padding: 30px 0; }
+    .pain-container { padding: 24px 16px; border-radius: 20px; }
+    .pain-split-grid { grid-template-columns: 1fr; gap: 24px; }
+    .pain-title-side h2 { font-size: 1.6rem !important; text-align: center; }
+    .pain-cta-wrap { text-align: center; margin-top: 24px; }
+    .pain-cta-wrap p { font-size: 0.9rem; }
+    .pain-item { gap: 14px; }
+    .pain-icon { width: 36px; height: 36px; }
+    .pain-item p { font-size: 0.9rem; }
+    .pain-dots-texture { display: none; }
+
+    /* Audience section */
+    .section-audience { padding: 40px 0; }
+    .audience-accordion-box { padding: 30px 16px; border-radius: 20px; }
+    .accordion-split-grid { gap: 24px; }
+    .accordion-title-col h2 { font-size: 1.6rem !important; }
+    .persona-content h3 { font-size: 1.15rem; }
+    .persona-content p { font-size: 0.88rem; }
+    .persona-icon { width: 32px; height: 32px; }
+    .audience-persona-list { gap: 24px; }
+
+    /* Curriculum */
+    .metrics-section { padding: 0; }
+    .metrics-section > .container > div:first-child { margin-bottom: 40px !important; }
+    .curriculum-header { font-size: 1.5rem !important; }
+    .curriculum-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+    .curriculum-card { padding: 24px 18px; border-radius: 18px; }
+    .curriculum-card h3 { font-size: 1.25rem !important; }
+    .curriculum-card p { font-size: 0.82rem; }
+    .curriculum-icon-wrap { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 18px; }
+
+    /* Impact testimonials */
+    .impact-section { padding: 40px 0; }
+    .impact-card { width: 240px; }
+    .impact-card-body { padding: 16px; }
+    .impact-card blockquote { font-size: 0.82rem; margin-bottom: 14px; line-height: 1.45; }
+    .impact-card-footer h4 { font-size: 0.72rem; }
+
+    /* Testimonial carousel */
+    .testimonial-section { padding: 40px 0; }
+    .testimonial-header { font-size: 1.6rem !important; margin-bottom: 30px; }
+    .testimonial-carousel { padding: 10px 0 80px; gap: 12px; }
+    .card-leader { flex: 0 0 200px; height: 340px; }
+    .leader-quote { font-size: 0.8rem; }
+    .leader-meta { font-size: 0.65rem; }
+
+    /* Mentor section */
+    .mentor-ref-section { padding: 60px 0; }
+    .mentor-ref-box { padding: 40px 20px; border-radius: 24px; margin: 0 8px; }
+    .coach-pop-portrait { display: none; }
+    .coach-details h2 { font-size: 2rem !important; }
+    .coach-details p { font-size: 1rem; }
+    .coach-points li { font-size: 0.9rem; }
+
+    /* FAQ */
+    .services-section { padding: 40px 0 150px; }
+    .faq-header h3 { font-size: 1rem !important; }
+    .faq-header { padding: 20px 12px; gap: 16px; }
+    .faq-content p { padding: 0 12px 24px; font-size: 0.88rem; }
+    .faq-question h3 { font-size: 1rem; }
+    .faq-header-split { font-size: 1.5rem !important; }
+
+    /* Sticky CTA */
+    .sticky-bar-wrapper {
+        bottom: 8px;
+        width: 94%;
+        padding: 12px;
+        border-radius: 16px;
+        gap: 10px;
+    }
+    .sticky-price { gap: 12px; }
+    .sticky-price .original { font-size: 0.8rem; }
+    .sticky-price .current { font-size: 1.5rem; }
+    .reg-btn-v3 { padding: 12px 24px; font-size: 0.85rem; }
+    .icon-circle-v3 { width: 28px; height: 28px; }
+
+    /* Global typography caps */
+    h2 { font-size: 1.5rem !important; }
+    .section-tag { font-size: 0.85rem; }
+    .btn-pill { font-size: 0.85rem; padding: 8px 8px 8px 20px; gap: 16px; }
+    .btn-pill i { width: 30px; height: 30px; }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 { font-size: 1.35rem !important; }
+    .hero-text .section-tag { font-size: 0.65rem !important; }
+    .pain-title-side h2 { font-size: 1.35rem !important; }
+    .accordion-title-col h2 { font-size: 1.35rem !important; }
+    .curriculum-header { font-size: 1.25rem !important; }
+    .impact-card { width: 220px; }
+    .impact-card blockquote { font-size: 0.78rem; }
+    .card-leader { flex: 0 0 180px; height: 300px; }
+    .mentor-ref-box { padding: 32px 16px; }
+    .coach-pop-portrait { display: none; }
+    .coach-details h2 { font-size: 1.6rem !important; }
+    .sticky-price .current { font-size: 1.3rem; }
+    .reg-btn-v3 { padding: 10px 20px; font-size: 0.8rem; }
 }
