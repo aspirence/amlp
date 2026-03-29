@@ -1169,9 +1169,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    .trusted-authority-grid { flex-direction: column; text-align: center; gap: 40px; }
-    .auth-v-line { display: none; }
-    .auth-block { width: 100%; text-align: center; }
+    .trusted-authority-grid { flex-direction: row; justify-content: space-between; gap: 10px; align-items: center; }
+    .auth-v-line { display: block; height: 40px; opacity: 0.5; }
+    .auth-block { flex: 1; text-align: center; }
+    .auth-block h4 { font-size: 0.55rem !important; }
 }
 
 .trusted-header {
@@ -1544,16 +1545,32 @@ body {
     .faq-item { padding: 20px 25px; }
 
     .sticky-bar-wrapper {
-        border-radius: 20px;
-        padding: 15px;
-        flex-direction: column;
-        gap: 15px;
-        bottom: 10px;
-        width: 90%;
+        border-radius: 100px; /* Pill style */
+        padding: 10px 10px 10px 20px;
+        flex-direction: row;
+        gap: 8px;
+        bottom: 12px;
+        width: 96%;
+        max-width: none;
+        justify-content: space-between;
     }
-    .sticky-center-info { display: none; }
-    .sticky-price .current { font-size: 1.8rem; }
-    .reg-btn-v3 { width: 100%; justify-content: center; }
+    .sticky-center-info { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center; 
+        font-size: 0.55rem; 
+        color: rgba(255,255,255,0.7); 
+        gap: 0;
+        flex: 1.5;
+    }
+    .urgency-badge { font-size: 0.55rem !important; margin-bottom: 0; gap: 4px; }
+    .pulsate-dot { width: 5px; height: 5px; }
+    .sticky-price { gap: 8px; flex: 1; justify-content: flex-start; }
+    .sticky-price .current { font-size: 1.1rem !important; }
+    .sticky-price .original { font-size: 0.7rem !important; }
+    .reg-btn-v3 { width: auto; font-size: 0.7rem !important; padding: 8px 12px; border-radius: 50px; gap: 8px; }
+    .icon-circle-v3 { width: 24px; height: 24px; }
+    .icon-circle-v3 i svg { width: 12px; height: 12px; }
 }
 
 /* ===== COMPREHENSIVE MOBILE RESPONSIVE ===== */
@@ -1593,8 +1610,8 @@ body {
     .trusted-container { padding: 8px; border-radius: 16px; }
     .logo-marquee-track { gap: 40px; }
     .logo-marquee-track img { height: 20px; }
-    .auth-block h4 { font-size: 0.95rem !important; }
-    .trusted-authority-grid { gap: 20px; padding-top: 8px; margin-top: 8px; }
+    .auth-block h4 { font-size: 0.6rem !important; }
+    .trusted-authority-grid { gap: 10px; padding-top: 8px; margin-top: 8px; flex-direction: row; }
 
     /* Pain points */
     .section-pain-points { padding: 30px 0; }
@@ -1662,16 +1679,30 @@ body {
     /* Sticky CTA */
     .sticky-bar-wrapper {
         bottom: 8px;
-        width: 94%;
-        padding: 12px;
-        border-radius: 16px;
-        gap: 10px;
+        width: 98%;
+        padding: 5px 8px 5px 15px;
+        border-radius: 100px;
+        gap: 5px;
+        flex-direction: row;
+        justify-content: space-between;
     }
-    .sticky-price { gap: 12px; }
-    .sticky-price .original { font-size: 0.8rem; }
-    .sticky-price .current { font-size: 1.5rem; }
-    .reg-btn-v3 { padding: 12px 24px; font-size: 0.85rem; }
-    .icon-circle-v3 { width: 28px; height: 28px; }
+    .sticky-center-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        flex: 2;
+        margin: 0;
+        font-size: 0.5rem;
+        line-height: 1.1;
+    }
+    .urgency-badge { font-size: 0.5rem !important; gap: 3px; }
+    .sticky-price { gap: 5px; flex: 1; }
+    .sticky-price .original { display: none; }
+    .sticky-price .current { font-size: 1rem !important; }
+    .reg-btn-v3 { padding: 8px 12px; font-size: 0.72rem !important; gap: 6px; }
+    .icon-circle-v3 { width: 22px; height: 22px; }
+    .icon-circle-v3 i svg { width: 10px; height: 10px; }
 
     /* Global typography caps */
     h2 { font-size: 1.5rem !important; }
@@ -1687,7 +1718,7 @@ body {
     .accordion-title-col h2 { font-size: 1.35rem !important; }
     .curriculum-header { font-size: 1.25rem !important; }
     .impact-card { width: 220px; }
-    .impact-card blockquote { font-size: 0.78rem; }
+    .impact-card blockquote { font-size: 0.6rem; }
     .card-leader { flex: 0 0 180px; height: 300px; }
     .mentor-ref-box { padding: 32px 16px; }
     .coach-pop-portrait { display: none; }
