@@ -253,13 +253,13 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(10, 10, 10, 0.65);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-image: url("https://www.lamcon.in/wp-content/uploads/2025/09/Frame-1171277981.png");
+    background-size: cover;
+    background-position: center;
     padding: 12px 28px;
     border-radius: 16px;
     text-align: center;
-    border: 1px solid rgba(184, 135, 57, 0.3);
+    border: 1px solid #B8B8B869;
     z-index: 15;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     white-space: nowrap;
@@ -333,7 +333,7 @@ body {
 }
 
 .split-text h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; }
-.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
+.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
 
 /* Service Cards */
 .services-section { padding: 80px 0;  }
@@ -402,16 +402,35 @@ body {
 }
 
 .curriculum-card {
-    background: #000;
-    border: 1px solid #1a1a1a;
-    padding: 20px;
-    border-radius: 24px;
-    text-align: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 35px 25px;
+    border-radius: 28px;
+    text-align: left;
     color: #fff;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s ease;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.curriculum-card:nth-child(1) { background: linear-gradient(135deg, rgba(21, 69, 62, 0.92), rgba(14, 43, 39, 0.98)), url("assets/mastery_1.png"); background-size: cover; background-position: top center; }
+.curriculum-card:nth-child(2) { background: linear-gradient(135deg, rgba(16, 50, 46, 0.92), rgba(8, 26, 24, 0.98)), url("assets/mastery_2.png"); background-size: cover; background-position: top center; }
+.curriculum-card:nth-child(3) { background: linear-gradient(135deg, rgba(37, 30, 54, 0.92), rgba(21, 18, 30, 0.98)), url("assets/mastery_3.png"); background-size: cover; background-position: top center; }
+.curriculum-card:nth-child(4) { background: linear-gradient(135deg, rgba(66, 27, 22, 0.92), rgba(42, 17, 14, 0.98)), url("assets/mastery_4.png"); background-size: cover; background-position: top center; }
+
+.curriculum-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    font-family: var(--font-heading);
+}
+
+.curriculum-card p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
 }
 
 .curriculum-card:hover { transform: translateY(-5px); border-color: #222; }
@@ -430,7 +449,7 @@ body {
 }
 
 .curriculum-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     color: #fff;
     margin-bottom: 15px;
     font-weight: 700;
@@ -503,28 +522,41 @@ body {
     z-index: 2000;
 }
 
-/* NEW TESTIMONIALS UI */
-.testimonial-new-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    margin-top: 50px;
+/* ELITE TESTIMONIAL CAROUSEL (MASTERCLASS 1868 UI) */
+.testimonial-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0 120px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none;
 }
 
 .card-leader {
-    position: relative;
-    border-radius: 24px;
+    flex: 0 0 240px;
+    height: 420px;
+    border-radius: 18px;
     overflow: hidden;
-    aspect-ratio: 1 / 1.6;
+    position: relative;
+    scroll-snap-align: start;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255,255,255,0.05);
     background-size: cover;
     background-position: top center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 .leader-overlay {
-    flex: 1;
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -533,44 +565,47 @@ body {
     color: #fff;
 }
 
-/* Individual Card Colors from Mockup */
-.leader-1 { background-color: #0b3d3d; }
-.leader-1 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(11, 61, 61, 0) 20%, #0b3d3d 70%, #0b3d3d 100%); }
-
-.leader-2 { background-color: #0c2d2d; }
-.leader-2 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(12, 45, 45, 0) 20%, #0c2d2d 70%, #0c2d2d 100%); }
-
-.leader-3 { background-color: #1a142e; }
-.leader-3 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(26, 20, 46, 0) 20%, #1a142e 70%, #1a142e 100%); }
-
-.leader-4 { background-color: #0d2a2a; }
-.leader-4 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(13, 42, 42, 0) 20%, #0d2a2a 70%, #0d2a2a 100%); }
-
-.leader-5 { background-color: #432215; }
-.leader-5 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(67, 34, 21, 0) 20%, #432215 70%, #432215 100%); }
+/* Individual Gradient Logic mapped to Ref 1857 Sequence */
+.leader-1 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(35, 33, 13, 0.98) 75%, rgba(35, 33, 13, 1) 100%); } /* Mr Sen: Gold */
+.leader-2 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(46, 12, 28, 0.98) 75%, rgba(46, 12, 28, 1) 100%); } /* Ms Jindal: Purple */
+.leader-3 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(13, 42, 42, 0.98) 75%, rgba(13, 42, 42, 1) 100%); } /* Dr Chaudhari: Teal */
+.leader-4 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(12, 45, 45, 0.98) 75%, rgba(12, 45, 45, 1) 100%); } /* Mr Sehgal: Dark Green */
+.leader-5 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(26, 22, 38, 0.98) 75%, rgba(26, 22, 38, 1) 100%); } /* Dr Joshi: Midnight */
+.leader-6 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(11, 33, 31, 0.98) 75%, rgba(11, 33, 31, 1) 100%); } /* Dr Sancheti: Forest */
+.leader-7 .leader-overlay { background: linear-gradient(to bottom, transparent 0%, rgba(67, 34, 21, 0.98) 75%, rgba(67, 34, 21, 1) 100%); } /* Mr Kalyani: Rust */
 
 .leader-quote {
-    font-size: 0.85rem;
-    font-weight: 400;
-    line-height: 1.4;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    line-height: 1.5;
     margin-bottom: 25px;
-    opacity: 0.95;
+    font-weight: 300;
+    opacity: 0.9;
+    font-style: normal;
 }
 
 .leader-meta {
-    font-size: 0.65rem;
     font-weight: 700;
-    text-transform: capitalize;
-    color: rgba(255,255,255,1);
-    letter-spacing: 0.5px;
+    font-size: 0.7rem;
+    display: block;
+    line-height: 1.4;
+    color: #fff;
+    opacity: 1;
 }
 
-.leader-meta span { 
-    display: block; 
-    font-weight: 400; 
-    opacity: 0.7; 
-    margin-top: 3px;
-    font-size: 0.6rem;
+.leader-meta span {
+    display: inline;
+    font-weight: 400;
+    font-size: 0.7rem;
+    opacity: 0.8;
+}
+
+.carousel-hint {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
 }
 
 /* Accordion Styles */
@@ -813,18 +848,18 @@ body {
 }
 
 .pain-icon {
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(135deg, #8a6528, #b88739);
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000;
-    font-weight: 800;
-    font-size: 1.1rem;
     flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(184, 135, 57, 0.2);
+}
+
+.pain-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .pain-item p {
@@ -955,9 +990,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 40px;
+    padding-top: 10px;
     border-top: 1px solid rgba(255,255,255,0.08); /* Divider after logos */
-    margin-top: 30px;
+    margin-top: 10px;
     gap: 30px;
 }
 
@@ -1056,6 +1091,10 @@ body {
 
 .audience-accordion-box {
     background: #0a0a0a;
+    background-image: url('assets/audience_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 40px;
     padding: 80px 60px;
     border: 1px solid rgba(255,255,255,0.05);
@@ -1092,11 +1131,10 @@ body {
 }
 
 .persona-icon {
-    font-size: 2rem;
-    color: var(--brand-gold);
-    width: 45px;
-    margin-top: 5px;
-    text-align: center;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .persona-content h3 {
