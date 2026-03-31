@@ -91,16 +91,14 @@ body {
     background: #000;
     padding: 15px 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     z-index: 1500;
     border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 @media (max-width: 768px) {
-    .main-header { padding: 15px 20px; justify-content: center; }
-    .header-cta { display: none; }
-    .header-logo { position: static; transform: none; }
+    .main-header { padding: 15px 20px; }
 }
 
 .header-logo {
@@ -209,7 +207,7 @@ body {
 .hero-text p {
     font-size: 0.9rem; 
     color: var(--text-muted);
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 5px; 
 }
 
@@ -246,6 +244,8 @@ body {
     max-height: 100%; /* Fully scale to the bottom border */
     object-fit: contain;
     border-radius: 15px 15px 0 0; /* Square bottom to match container edge */
+    transform: scale(1.15); /* Scale up as requested */
+    transform-origin: bottom right;
 }
 
 .portrait-label {
@@ -268,9 +268,10 @@ body {
 .portrait-label h4 {
     margin: 0;
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    line-height: 1;
 }
 
 .portrait-label p {
@@ -280,6 +281,8 @@ body {
     font-weight: 600;
     text-transform: none;
     letter-spacing: 1px;
+        color: var(--text-muted) !important;
+
 }
 
 /* Stats Cards */
@@ -333,7 +336,7 @@ body {
 }
 
 .split-text h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; }
-.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.2rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
+.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.3rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
 
 /* Service Cards */
 .services-section { padding: 80px 0 250px;  }
@@ -506,6 +509,8 @@ body {
     scrollbar-width: none;
     margin: 0 -20px;
     padding: 0 20px 20px;
+    cursor: grab;
+    user-select: none;
 }
 
 .impact-scroll-wrap::-webkit-scrollbar { display: none; }
@@ -570,7 +575,7 @@ body {
 
 .impact-card blockquote {
     font-family: var(--font-heading);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     color: #fff;
     line-height: 1.45;
     margin-bottom: 24px;
@@ -652,6 +657,8 @@ body {
     padding: 20px 0 120px;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    cursor: grab;
+    user-select: none;
 }
 
 .testimonial-carousel::-webkit-scrollbar {
@@ -764,7 +771,6 @@ body {
 }
 
 .faq-header {
-    padding: 35px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -911,104 +917,227 @@ body {
 }
 
 /* SPLIT PAIN POINTS (THEME UNIFIED) */
+/* ORBIT PAIN POINTS (REF STYLE) */
 .section-pain-points {
-    padding: 60px 0;
+    padding: 0px 0;
     background: #000;
 }
 
 .pain-container {
-    background: #000;
-    border-radius: 40px;
-    padding: 40px 30px;
+    padding: 40px 0;
     position: relative;
-    box-shadow: 0 0 20px rgba(184, 135, 57, 0.05); /* Subtle gold ambient glow */
-    overflow: hidden;
 }
 
-.pain-dots-texture {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1; /* Above background, but below grid */
-    pointer-events: none;
-}
-
-.pain-split-grid {
+.orbit-layout {
     position: relative;
-    z-index: 2; /* Ensure text is above dots */
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: start;
-    max-content: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
-}
-
-.pain-title-side h2 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.2;
-    color: #fff;
-    font-family: var(--font-heading);
-}
-
-.pain-title-side h2 span {
-    color: var(--brand-gold);
-}
-
-.pain-list-side {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.pain-item {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.pain-icon {
-    width: 50px;
-    height: 50px;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
-.pain-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+.orbit-center {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    width: 320px;
 }
 
-.pain-item p {
-    font-size: 1.2rem;
-    font-weight: 500;
+.orbit-title-wrap h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
     color: #fff;
-    line-height: 1.4;
-    font-family: var(--font-body);
+    line-height: 1.2;
+    font-family: var(--font-heading);
 }
 
-.pain-cta-wrap {
-    margin-top: 40px;
-    text-align: left;
+.orbit-title-wrap h2 span {
+    color: var(--brand-gold);
 }
 
-.pain-cta-wrap p {
-    font-size: 1.1rem;
+.orbit-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    pointer-events: none;
+}
+
+.ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255,255,255,0.15); /* More visible */
+    border-radius: 50%;
+}
+
+.ring:nth-child(1) { width: 220px; height: 220px; border-style: dashed; opacity: 0.6; }
+.ring:nth-child(2) { width: 360px; height: 360px; }
+.ring:nth-child(3) { width: 500px; height: 500px; opacity: 0.4; }
+
+.orbit-items-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 85%; /* Even closer together */
+    max-width: 1000px;
+    position: relative;
+    z-index: 20;
+}
+
+.orbit-side {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Tighter gap */
+    width: 280px;
+}
+
+.orbit-side.left { align-items: flex-end; text-align: right; }
+.orbit-side.right { align-items: flex-start; text-align: left; }
+
+.orbit-card {
+    padding: 10px;
+    width: auto;
+    max-width: 320px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.orbit-side.left .orbit-card { flex-direction: row; } /* Standard Icon-Text for left */
+.orbit-side.right .orbit-card { flex-direction: row; } /* Standard Icon-Text for right */
+
+/* OR, if we want icons closer to center: 
+.orbit-side.left .orbit-card { flex-direction: row-reverse; } 
+.orbit-side.right .orbit-card { flex-direction: row; } 
+Let's use icons on the inner side for better visual orbit. */
+
+.orbit-side.left .orbit-card { flex-direction: row-reverse; text-align: right; }
+.orbit-side.right .orbit-card { flex-direction: row; text-align: left; }
+
+.orbit-card:hover {
+    transform: scale(1.05) translateY(-3px);
+}
+
+.orbit-card-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--brand-gold) 0%, #8A6126 100%); /* Premium gold gradient */
+    border: none;
+    border-radius: 50%;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(184, 135, 57, 0.3);
+}
+
+.orbit-card-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Ensure icon is white on gold gradient */
+}
+
+.orbit-card p {
+    font-size: 1rem; /* Slightly reduced for better fit */
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+    margin: 0;
+}
+
+/* Specific item offsets for "orbit" feel - subtler offsets */
+.left .orbit-card:nth-child(1) { transform: translateX(-20px); }
+.left .orbit-card:nth-child(3) { transform: translateX(-20px); }
+.right .orbit-card:nth-child(1) { transform: translateX(20px); }
+.right .orbit-card:nth-child(3) { transform: translateX(20px); }
+
+.pain-bottom-cta {
+    margin-top: 10px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.pain-bottom-cta p {
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--brand-gold);
-    margin-bottom: 25px;
-    line-height: 1.3;
+    margin-bottom: 30px;
+    line-height: 1;
 }
 
 @media (max-width: 991px) {
-    .pain-container { padding: 40px 20px; border-radius: 24px; }
-    .pain-split-grid { grid-template-columns: 1fr; gap: 40px; }
-    .pain-title-side h2 { font-size: 2.22rem; }
-    .pain-item p { font-size: 1.1rem; }
+    .orbit-layout {
+        min-height: 420px;
+        padding: 40px 5px;
+        gap: 5px;
+    }
+    .orbit-center {
+        width: 130px;
+        margin-bottom: 0;
+    }
+    .orbit-rings { 
+        width: 260px; 
+        height: 260px;
+        opacity: 0.8; /* Make rings more visible on mobile */
+    }
+    .ring { border-width: 1px; border-color: rgba(255,255,255,0.2); }
+    .ring:nth-child(1) { width: 130px; height: 130px; }
+    .ring:nth-child(2) { width: 195px; height: 195px; }
+    .ring:nth-child(3) { width: 260px; height: 260px; }
+    
+    .orbit-title-wrap h2 { font-size: 0.75rem; line-height: 1.1; }
+    
+    .orbit-items-wrap {
+        gap: 0;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .orbit-side {
+        width: 130px; /* Increased for row layout */
+        gap: 35px; /* Tighter gap */
+    }
+    .orbit-card {
+        padding: 5px;
+        max-width: 130px;
+        gap: 8px; /* Tighter gap for mobile row */
+        align-items: center;
+    }
+    .orbit-card-icon { 
+        width: 32px; 
+        height: 32px; 
+        background: linear-gradient(135deg, var(--brand-gold) 0%, #8A6126 100%);
+        border: none;
+        box-shadow: 0 3px 8px rgba(184, 135, 57, 0.2);
+    }
+    .orbit-card-icon img {
+        width: 16px;
+        height: 16px;
+        filter: brightness(0) invert(1);
+    }
+    .orbit-card p { 
+        font-size: 0.8rem; 
+        line-height: 1;
+    }
+    
+    /* Subtle offsets for mobile */
+    .left .orbit-card:nth-child(1) { transform: translateX(-10px); }
+    .left .orbit-card:nth-child(3) { transform: translateX(-10px); }
+    .right .orbit-card:nth-child(1) { transform: translateX(10px); }
+    .right .orbit-card:nth-child(3) { transform: translateX(10px); }
+    
+    .pain-bottom-cta { margin-top: 50px; }
+    .pain-bottom-cta p { font-size: 1.1rem; }
 }
 
 /* MENTOR REDESIGN (REF STYLE) */
@@ -1030,6 +1159,23 @@ body {
     position: relative;
     margin: 0 20px;
     visibility: visible;
+    /* overflow: hidden removed to allow portrait pop-out */
+}
+
+.mentor-ref-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/hero_texture.png');
+    background-size: 800px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.coach-pop-portrait, .mentor-ref-content {
+    position: relative;
+    z-index: 2; /* Keep above texture */
 }
 
 .coach-pop-portrait {
@@ -1240,14 +1386,23 @@ body {
 }
 
 .audience-accordion-box {
-    background: #0a0a0a;
-    background-image: url('assets/audience_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 40px;
-    padding: 80px 60px;
-    border: 1px solid rgba(255,255,255,0.05);
+    background: var(--brand-gold);
+    border-radius: 48px;
+    padding: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.audience-accordion-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/hero_texture.png');
+    background-size: 800px;
+    opacity: 0.05; /* Reduced opacity for more subtle effect */
+    pointer-events: none;
+    z-index: 1;
 }
 
 .accordion-split-grid {
@@ -1255,17 +1410,20 @@ body {
     grid-template-columns: 0.8fr 1.2fr;
     gap: 80px;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .accordion-title-col h2 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-family: var(--font-heading);
-    color: #fff;
+    color: #000;
     line-height: 1.1;
 }
 
 .accordion-title-col h2 span {
-    color: var(--brand-gold);
+    color: #000;
+    opacity: 0.7;
 }
 
 .audience-persona-list {
@@ -1276,28 +1434,31 @@ body {
 
 .persona-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 25px;
 }
 
 .persona-icon {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
     flex-shrink: 0;
+    filter: brightness(0); /* Make icons black on gold */
 }
 
 .persona-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.6rem;
-    color: #fff;
+    font-size: 1.65rem;
+    color: #000;
     line-height: 1.2;
-    margin-bottom: 8px;
+    margin-bottom: 0;
+    font-weight: 700;
 }
 
 .persona-content p {
     font-size: 1.1rem;
-    color: #888;
+    color: #000;
+    opacity: 0.8;
     line-height: 1.5;
 }
 
@@ -1718,7 +1879,7 @@ body {
     .accordion-title-col h2 { font-size: 1.35rem !important; }
     .curriculum-header { font-size: 1.25rem !important; }
     .impact-card { width: 220px; }
-    .impact-card blockquote { font-size: 0.6rem; }
+    .impact-card blockquote { font-size: 0.8rem; }
     .card-leader { flex: 0 0 180px; height: 300px; }
     .mentor-ref-box { padding: 32px 16px; }
     .coach-pop-portrait { display: none; }
