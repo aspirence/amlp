@@ -1653,40 +1653,44 @@ Let's use icons on the inner side for better visual orbit. */
     box-shadow: 0 40px 80px rgba(0,0,0,0.9);
 }
 
-.sticky-price {
+.sticky-info-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
-}
-
-.sticky-date {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    white-space: nowrap;
+    flex: 1;
 }
 
 .sticky-timer-wrap {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     color: #ff4d4d;
     font-weight: 700;
+    font-size: 1.4rem;
     font-family: monospace;
+    flex: 1;
+    justify-content: center; /* Center on desktop */
 }
 
-.sticky-price .original {
+.sticky-info-group .original {
     color: #888;
     text-decoration: line-through;
-    font-size: 1rem;
-    margin-right: 8px;
+    font-size: 1.1rem;
 }
 
-.sticky-price .current {
+.sticky-info-group .current {
     font-family: var(--font-heading);
     color: var(--brand-gold);
-    font-size: 2.2rem;
+    font-size: 2.3rem; 
     font-weight: 800;
+    line-height: 1;
+}
+
+.sticky-date {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
 }
 
 .sticky-center-info {
@@ -1842,14 +1846,17 @@ Let's use icons on the inner side for better visual orbit. */
         transform-origin: bottom center; /* Centered growth */
     }
     .portrait-label { 
-        padding: 10px 20px; 
-        bottom: 10px; 
-        width: 90%; 
+        padding: 12px 15px; 
+        bottom: 12px; 
+        width: auto;
+        min-width: 180px;
+        max-width: 260px; 
         left: 50%; 
-        transform: translateX(-50%); /* Perfectly centered */
+        transform: translateX(-50%); 
+        text-align: center;
     }
-    .portrait-label h4 { font-size: 0.95rem; }
-    .portrait-label p { font-size: 0.75rem !important; }
+    .portrait-label h4 { font-size: 0.95rem; margin-bottom: 4px; }
+    .portrait-label p { font-size: 0.72rem !important; line-height: 1.35; white-space: normal; }
 
     /* Trusted section */
     .trusted-outer { padding: 8px; }
@@ -1953,55 +1960,46 @@ Let's use icons on the inner side for better visual orbit. */
 
     /* Sticky CTA */
     .sticky-bar-wrapper {
-        bottom: 12px;
-        width: 96%;
-        padding: 8px 10px;
-        border-radius: 100px;
-        flex-direction: row;
-        gap: 5px;
-        justify-content: space-between;
-        align-items: center;
-        background-image: linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)), url("https://www.lamcon.in/wp-content/uploads/2025/09/Frame-1171277981.png");
-        box-sizing: border-box;
+        bottom: 15px;
+        width: 90%;
+        padding: 15px;
+        border-radius: 20px;
+        flex-direction: column;
+        gap: 0px;
+        text-align: center;
     }
     
-    .sticky-price { 
-        flex-direction: column; 
-        align-items: flex-start; 
-        flex: 1.5; 
-        gap: 0;
-    }
-    .sticky-price .original { display: none; }
-    .sticky-price .current { font-size: 1rem !important; margin-bottom: 2px; }
-    .sticky-date { display: block; font-size: 0.55rem; color: rgba(255,255,255,0.7); }
-    
-    .sticky-timer-wrap { 
-        font-size: 0.7rem; 
-        white-space: nowrap; 
-        flex: 1; 
-        display: flex; 
-        align-items: center; 
+    .sticky-info-group { 
+        flex-direction: row; 
         justify-content: center; 
-        gap: 4px; 
-        border-right: 1px solid rgba(255,255,255,0.1); 
-        padding: 0 5px; 
-        font-family: monospace;
-        color: #ff4d4d;
-        font-weight: 700;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .sticky-info-group .original { font-size: 0.8rem; }
+    .sticky-info-group .current { font-size: 1.1rem !important; }
+    .sticky-date { font-size: 0.72rem; color: #fff; opacity: 1; }
+    
+    .sticky-timer-wrap {
+        order: 2; /* Center of 3 items */
+        font-size: 0.8rem;
+        margin: 5px 0;
+        gap: 8px;
     }
     
     .reg-btn-v3 { 
-        width: auto; 
-        padding: 8px 12px; 
-        font-size: 0.75rem !important; 
+        width: 100%;
+        max-width: 250px;
+        margin: 5px auto 0;
+        justify-content: center; 
+        padding: 12px 20px; 
+        font-size: 1rem !important; 
         border-radius: 100px;
-        gap: 5px;
-        flex: 1.2;
-        justify-content: center;
-        white-space: nowrap;
+        order: 3;
     }
-    .icon-circle-v3 { width: 20px; height: 20px; flex-shrink: 0; }
-    .icon-circle-v3 i svg { width: 9px; height: 9px; }
+    .icon-circle-v3 { width: 20px; height: 20px; background: rgba(0,0,0,0.1); }
+    .icon-circle-v3 i { color: #000; font-size: 0.8rem; }
 
     /* Global typography caps */
     h2 { font-size: 1.5rem !important; }
