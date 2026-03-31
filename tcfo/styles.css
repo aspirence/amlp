@@ -506,11 +506,12 @@ body {
 
 .curriculum-card p {
     font-size: 0.95rem;
-    opacity: 0.85;
+    opacity: 1; /* Maximized for perfect clarity */
     line-height: 1.5;
+    font-weight: 500;
 }
 
-.curriculum-card:hover { transform: translateY(-5px); border-color: #222; }
+/* Removed curriculum hover as requested */
 
 .curriculum-icon-wrap {
     width: 100px;
@@ -527,7 +528,7 @@ body {
 
 .curriculum-card h3 {
     font-size: 1.8rem;
-    color: #fff;
+    color: var(--brand-gold);
     margin-bottom: 15px;
     font-weight: 700;
     line-height: 1.3;
@@ -535,9 +536,9 @@ body {
 
 .curriculum-card p {
     font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 25px;
+    color: #FFFFFF;
+    line-height: 1.2;
+    margin-bottom: 0px;
 }
 
 .curriculum-arrow {
@@ -1260,7 +1261,7 @@ Let's use icons on the inner side for better visual orbit. */
     inset: 0;
     background-image: url('assets/hero_texture.png');
     background-size: 800px;
-    opacity: 0.15;
+    opacity: 0.08; /* Reduced for better text legibility as requested */
     pointer-events: none;
     z-index: 1;
 }
@@ -1926,7 +1927,7 @@ Let's use icons on the inner side for better visual orbit. */
     .curriculum-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
     .curriculum-card { padding: 24px 18px; border-radius: 18px; }
     .curriculum-card h3 { font-size: 1.25rem !important; }
-    .curriculum-card p { font-size: 0.82rem; }
+    .curriculum-card p { font-size: 0.9rem; font-weight: 500; opacity: 1; }
     .curriculum-icon-wrap { width: 60px; height: 60px; font-size: 1.8rem; margin-bottom: 18px; }
 
     /* Impact testimonials */
@@ -1982,7 +1983,7 @@ Let's use icons on the inner side for better visual orbit. */
     .coach-points li { font-size: 0.85rem; }
 
     /* FAQ */
-    .services-section { padding:40px 0 150px; }
+    .services-section { padding:40px 0 200px; }
     .faq-header h3 { font-size: 1rem !important; }
     .faq-header {  gap: 16px; }
     .faq-content p { padding: 0 12px 24px; font-size: 0.88rem; }
@@ -1990,45 +1991,61 @@ Let's use icons on the inner side for better visual orbit. */
     .faq-header-split { font-size: 1.5rem !important; }
 
     /* Sticky CTA */
+    /* Sticky CTA Mobile Optimized Row Layout */
     .sticky-bar-wrapper {
         bottom: 15px;
-        width: 90%;
-        padding: 15px;
-        border-radius: 20px;
-        flex-direction: column;
-        gap: 0px;
-        text-align: center;
+        width: 92%;
+        padding: 16px 20px;
+        border-radius: 24px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
     }
     
     .sticky-info-group { 
+        flex: 1;
         flex-direction: column; 
-        align-items: center; 
+        align-items: flex-start; 
         gap: 2px;
-        width: 100%;
-        margin-bottom: 2px;
+        margin-bottom: 0;
+        min-width: 120px;
     }
-    .sticky-info-group .current { font-size: 1.4rem !important; }
+    
+    .sticky-price-row {
+        gap: 8px !important;
+    }
+    .sticky-info-group .current { font-size: 1.3rem !important; }
+    .sticky-info-group .original { font-size: 0.9rem !important; }
     
     .sticky-center-date {
-        font-size: 0.78rem;
+        flex: 1;
+        font-size: 0.8rem;
         color: #fff;
-        opacity: 0.8;
-        order: 2;
-        margin: 4px 0;
+        opacity: 0.9;
+        text-align: right;
+        margin: 0;
+        font-weight: 700;
+        letter-spacing: 0.2px;
     }
     
     .sticky-timer-wrap {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         gap: 6px;
+        margin-top: 4px !important;
     }
     
     .reg-btn-v3 { 
         width: 100%;
-        max-width: 250px;
-        margin: 5px auto 0;
+        max-width: 100%; /* Full width force */
+        margin: 4px 0 0 0;
         justify-content: center; 
         order: 3;
+        font-size: 0.95rem !important;
+        padding: 12px 12px 12px 25px !important;
     }
+    .reg-btn-v3 i { width: 34px !important; height: 34px !important; }
     .icon-circle-v3 { width: 20px; height: 20px; background: rgba(0,0,0,0.1); }
     .icon-circle-v3 i { color: #000; font-size: 0.8rem; }
 
