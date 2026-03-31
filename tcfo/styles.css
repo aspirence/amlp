@@ -46,10 +46,44 @@ body {
     font-weight: 700;
     text-decoration: none;
     font-size: 1.05rem;
-    gap: 40px; /* Consistent spacing as per image */
+    gap: 16px; 
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    /* Pulsing background glow */
+    box-shadow: 0 0 15px rgba(184, 135, 57, 0.4);
+    animation: btn-pulse 2s infinite ease-in-out;
+}
+
+@keyframes btn-pulse {
+    0%, 100% { box-shadow: 0 0 15px rgba(184, 135, 57, 0.4); }
+    50% { box-shadow: 0 0 30px rgba(184, 135, 57, 0.7); }
+}
+
+.btn-pill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg, 
+        rgba(255, 255, 255, 0) 0%, 
+        rgba(255, 255, 255, 0.6) 50%, 
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: btn-shine 3s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes btn-shine {
+    0% { left: -100%; }
+    30% { left: 100%; }
+    100% { left: 100%; }
 }
 
 .btn-pill i {
@@ -339,7 +373,7 @@ body {
 .section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.3rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
 
 /* Service Cards */
-.services-section { padding: 80px 0 250px;  }
+.services-section { padding: 10px 0 250px;  }
 .service-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 60px; }
 
 .audience-grid {
@@ -1078,7 +1112,7 @@ Let's use icons on the inner side for better visual orbit. */
 
 @media (max-width: 991px) {
     .orbit-layout {
-        min-height: 420px;
+        min-height: 0px;
         padding: 40px 5px;
         gap: 5px;
     }
@@ -1096,7 +1130,13 @@ Let's use icons on the inner side for better visual orbit. */
     .ring:nth-child(2) { width: 195px; height: 195px; }
     .ring:nth-child(3) { width: 260px; height: 260px; }
     
-    .orbit-title-wrap h2 { font-size: 0.75rem; line-height: 1.1; }
+    .orbit-title-wrap h2 { 
+        font-size: clamp(0.5rem, 3vw, 0.78rem); 
+        line-height: 1.15; 
+        padding: 0 8px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+    }
     
     .orbit-items-wrap {
         gap: 0;
@@ -1195,7 +1235,7 @@ Let's use icons on the inner side for better visual orbit. */
     pointer-events: none;
     display: block;
     margin: 0;
-    /* Gradient Mask for a 'Mixed' bottom edge */
+    /* Clean transparency mask for a natural merge */
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
@@ -1603,14 +1643,31 @@ Let's use icons on the inner side for better visual orbit. */
 
 .sticky-price {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.sticky-date {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+}
+
+.sticky-timer-wrap {
+    display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 8px;
+    color: #ff4d4d;
+    font-weight: 700;
+    font-family: monospace;
 }
 
 .sticky-price .original {
     color: #888;
     text-decoration: line-through;
     font-size: 1rem;
+    margin-right: 8px;
 }
 
 .sticky-price .current {
@@ -1701,7 +1758,7 @@ Let's use icons on the inner side for better visual orbit. */
     .audience-accordion-box { padding: 40px 25px; }
     .accordion-split-grid { grid-template-columns: 1fr; gap: 40px; }
     .accordion-title-col { text-align: center; }
-    .persona-item { flex-direction: column; align-items: center; text-align: center; }
+    .persona-item { flex-direction: row; align-items: center; text-align: left; gap: 12px; }
     .testimonial-header, .curriculum-header, .faq-header-split { text-align: center; }
     .faq-item { padding: 20px 25px; }
 
@@ -1743,28 +1800,44 @@ Let's use icons on the inner side for better visual orbit. */
     .header-logo img { height: 32px; }
 
     /* Hero */
-    .hero { padding-top: 10px; padding-bottom: 5px; }
+    .hero { padding-top: 10px; padding-bottom: 10px; }
     .hero-grid {
         flex-direction: column;
-        padding: 24px 16px 0;
-        border-radius: 20px;
-        margin: 0 8px;
-        gap: 10px;
+        padding: 40px 16px 0; /* More top padding */
+        border-radius: 24px;
+        margin: 0 10px;
+        gap: 40px; /* Much larger gap to prevent button overlap */
         height: auto;
         text-align: center;
     }
-    .hero-text { align-items: center; margin-bottom: 10px; }
-    .hero-text .section-tag { font-size: 0.72rem !important; line-height: 1.3; }
-    .hero-text h1 { font-size: 1.6rem !important; margin: 8px 0 10px; }
-    .hero-text p { font-size: 0.72rem; line-height: 1.4; margin-bottom: 8px; }
-    .hero-text h2 { font-size: 1.3rem !important; }
-    .hero-text .btn-pill { font-size: 0.85rem; padding: 8px 8px 8px 20px; gap: 16px; }
-    .hero-text .btn-pill i { width: 30px; height: 30px; }
-    .hero-image-wrap { width: 100%; }
-    .hero-portrait { max-height: 40vh; }
-    .portrait-label { padding: 8px 18px; bottom: 16px; }
-    .portrait-label h4 { font-size: 0.85rem; }
-    .portrait-label p { font-size: 0.65rem !important; }
+    .hero-text { align-items: center; margin-bottom: 0; }
+    .hero-text .section-tag { font-size: 0.8rem !important; line-height: 1.4; margin-bottom: 15px; }
+    .hero-text h1 { font-size: 1.8rem !important; margin: 0 0 15px; }
+    .hero-text p { font-size: 0.85rem; line-height: 1.5; margin-bottom: 20px; }
+    .hero-text h2 { font-size: 1.5rem !important; margin-bottom: 10px; }
+    .hero-text .btn-pill { font-size: 0.9rem; padding: 10px 10px 10px 24px; gap: 12px; }
+    .hero-text .btn-pill i { width: 32px; height: 32px; }
+    
+    .hero-image-wrap { 
+        width: 100%; 
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+    .hero-portrait { 
+        max-height: 45vh; 
+        transform: scale(1.05); /* Smaller scale on mobile */
+        transform-origin: bottom center; /* Centered growth */
+    }
+    .portrait-label { 
+        padding: 10px 20px; 
+        bottom: 10px; 
+        width: 90%; 
+        left: 50%; 
+        transform: translateX(-50%); /* Perfectly centered */
+    }
+    .portrait-label h4 { font-size: 0.95rem; }
+    .portrait-label p { font-size: 0.75rem !important; }
 
     /* Trusted section */
     .trusted-outer { padding: 8px; }
@@ -1822,53 +1895,104 @@ Let's use icons on the inner side for better visual orbit. */
     .leader-meta { font-size: 0.65rem; }
 
     /* Mentor section */
-    .mentor-ref-section { padding: 60px 0; }
-    .mentor-ref-box { padding: 40px 20px; border-radius: 24px; margin: 0 8px; }
-    .coach-pop-portrait { display: none; }
-    .coach-details h2 { font-size: 2rem !important; }
-    .coach-details p { font-size: 1rem; }
-    .coach-points li { font-size: 0.9rem; }
+    .mentor-ref-section { padding: 40px 0; }
+    .mentor-ref-box { 
+        flex-direction: column; /* Stacked on mobile */
+        padding: 40px 20px 20px; 
+        border-radius: 24px; 
+        margin: 0 8px; 
+        text-align: center;
+    }
+    .coach-pop-portrait { 
+        display: block; 
+        width: 100%; 
+        min-height: auto; 
+        margin-bottom: 20px;
+        position: relative;
+        border-bottom: 4px solid #000; /* Bold black bottom border */
+        padding-bottom: 0;
+    }
+    .coach-pop-portrait img {
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0 auto -20px; /* Negative margin to offset transform and flush with border */
+        display: block;
+        transform: translateY(-20px); /* Slight pop out of top */
+    }
+    .coach-details { padding-left: 0; flex: none; }
+    .coach-details h2 { font-size: 1.8rem !important; margin-bottom: 15px; }
+    .coach-details p { font-size: 0.9rem; margin-bottom: 25px; }
+    .coach-points { text-align: left; }
+    .coach-points li { font-size: 0.85rem; }
 
     /* FAQ */
-    .services-section { padding: 40px 0 150px; }
+    .services-section { padding:40px 0 150px; }
     .faq-header h3 { font-size: 1rem !important; }
-    .faq-header { padding: 20px 12px; gap: 16px; }
+    .faq-header {  gap: 16px; }
     .faq-content p { padding: 0 12px 24px; font-size: 0.88rem; }
     .faq-question h3 { font-size: 1rem; }
     .faq-header-split { font-size: 1.5rem !important; }
 
     /* Sticky CTA */
     .sticky-bar-wrapper {
-        bottom: 8px;
-        width: 98%;
-        padding: 5px 8px 5px 15px;
+        bottom: 12px;
+        width: 96%;
+        padding: 8px 10px;
+        border-radius: 100px;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        background-image: linear-gradient(rgba(10,10,10,0.95), rgba(10,10,10,0.95)), url("https://www.lamcon.in/wp-content/uploads/2025/09/Frame-1171277981.png");
+        box-sizing: border-box;
+    }
+    
+    .sticky-price { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        flex: 1.5; 
+        gap: 0;
+    }
+    .sticky-price .original { display: none; }
+    .sticky-price .current { font-size: 1rem !important; margin-bottom: 2px; }
+    .sticky-date { display: block; font-size: 0.55rem; color: rgba(255,255,255,0.7); }
+    
+    .sticky-timer-wrap { 
+        font-size: 0.7rem; 
+        white-space: nowrap; 
+        flex: 1; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        gap: 4px; 
+        border-right: 1px solid rgba(255,255,255,0.1); 
+        padding: 0 5px; 
+        font-family: monospace;
+        color: #ff4d4d;
+        font-weight: 700;
+    }
+    
+    .reg-btn-v3 { 
+        width: auto; 
+        padding: 8px 12px; 
+        font-size: 0.75rem !important; 
         border-radius: 100px;
         gap: 5px;
-        flex-direction: row;
-        justify-content: space-between;
+        flex: 1.2;
+        justify-content: center;
+        white-space: nowrap;
     }
-    .sticky-center-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: auto;
-        flex: 2;
-        margin: 0;
-        font-size: 0.5rem;
-        line-height: 1.1;
-    }
-    .urgency-badge { font-size: 0.5rem !important; gap: 3px; }
-    .sticky-price { gap: 5px; flex: 1; }
-    .sticky-price .original { display: none; }
-    .sticky-price .current { font-size: 1rem !important; }
-    .reg-btn-v3 { padding: 8px 12px; font-size: 0.72rem !important; gap: 6px; }
-    .icon-circle-v3 { width: 22px; height: 22px; }
-    .icon-circle-v3 i svg { width: 10px; height: 10px; }
+    .icon-circle-v3 { width: 20px; height: 20px; flex-shrink: 0; }
+    .icon-circle-v3 i svg { width: 9px; height: 9px; }
 
     /* Global typography caps */
     h2 { font-size: 1.5rem !important; }
     .section-tag { font-size: 0.85rem; }
-    .btn-pill { font-size: 0.85rem; padding: 8px 8px 8px 20px; gap: 16px; }
+    .btn-pill { font-size: 0.85rem; padding: 8px 8px 8px 20px; gap: 12px; }
     .btn-pill i { width: 30px; height: 30px; }
 }
 
@@ -1881,8 +2005,9 @@ Let's use icons on the inner side for better visual orbit. */
     .impact-card { width: 220px; }
     .impact-card blockquote { font-size: 0.8rem; }
     .card-leader { flex: 0 0 180px; height: 300px; }
-    .mentor-ref-box { padding: 32px 16px; }
-    .coach-pop-portrait { display: none; }
+    .mentor-ref-box { padding: 32px 16px 10px; }
+    .coach-pop-portrait { min-height: 180px; }
+    .coach-pop-portrait img { transform: translateY(-10px); }
     .coach-details h2 { font-size: 1.6rem !important; }
     .sticky-price .current { font-size: 1.3rem; }
     .reg-btn-v3 { padding: 10px 20px; font-size: 0.8rem; }

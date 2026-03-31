@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. COUNTDOWN TIMER
     function startCountdown(duration) {
         let timer = duration, hours, minutes, seconds;
-        const display = document.getElementById('timer');
+        const display = document.getElementById('timer-v3'); // Updated for V3 ID
+        if (!display) return;
         
         setInterval(() => {
             hours = parseInt(timer / 3600, 10);
@@ -26,11 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             display.textContent = hours + ":" + minutes + ":" + seconds;
 
             if (--timer < 0) {
-                timer = duration;
+                timer = duration; // Reset for demo purposes
             }
         }, 1000);
     }
-    startCountdown(7200); // 2 hours
+    startCountdown(7161); // Start from 01:59:21 specifically
 
     // 3. SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
