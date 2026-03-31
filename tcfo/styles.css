@@ -287,21 +287,21 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    background-image: url("https://www.lamcon.in/wp-content/uploads/2025/09/Frame-1171277981.png");
-    background-size: cover;
-    background-position: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 12px 28px;
     border-radius: 16px;
     text-align: center;
-    border: 1px solid #B8B8B869;
+    border: 1px solid rgba(0,0,0,0.1);
     z-index: 15;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     white-space: nowrap;
 }
 
 .portrait-label h4 {
     margin: 0;
-    color: #fff;
+    color: #000;
     font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -310,13 +310,11 @@ body {
 
 .portrait-label p {
     font-size: 0.75rem !important;
-    color: var(--brand-gold) !important;
+    color: #333 !important;
     margin: 4px 0 0 0 !important;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: none;
-    letter-spacing: 1px;
-        color: var(--text-muted) !important;
-
+    letter-spacing: 0.5px;
 }
 
 .intensive-badge {
@@ -1008,7 +1006,7 @@ body {
     position: relative;
     max-width: 1300px;
     margin: 0 auto;
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1154,7 +1152,7 @@ Let's use icons on the inner side for better visual orbit. */
 
 @media (max-width: 991px) {
     .orbit-layout {
-        min-height: 0px;
+        min-height: 350px;
         padding: 40px 5px;
         gap: 5px;
     }
@@ -1900,8 +1898,8 @@ Let's use icons on the inner side for better visual orbit. */
     .trusted-authority-grid { gap: 10px; padding-top: 8px; margin-top: 8px; flex-direction: row; }
 
     /* Pain points */
-    .section-pain-points { padding: 30px 0; }
-    .pain-container { padding: 24px 16px; border-radius: 20px; }
+    .section-pain-points { padding: 0px 0; }
+    .pain-container { padding: 24px 20px; border-radius: 20px; }
     .pain-split-grid { grid-template-columns: 1fr; gap: 24px; }
     .pain-title-side h2 { font-size: 1.6rem !important; text-align: center; }
     .pain-cta-wrap { text-align: center; margin-top: 24px; }
