@@ -173,7 +173,7 @@ body {
     /* min-height: 620px; */
     /* height: auto; */
         height: 60vh;
-
+    
     overflow: hidden;
 }
 
@@ -230,7 +230,7 @@ body {
 
 .hero-text h1 {
     font-size: clamp(2rem, 4.2vw, 3.2rem); 
-    line-height: 1.1;
+    line-height: 1;
     margin: 15px 0 25px 0;
     color: var(--brand-white);
     font-weight: 800;
@@ -271,14 +271,14 @@ body {
 .hero-portrait {
     position: relative;
     z-index: 3;
-    display: block; /* Essential to remove descending gap */
+    display: block; 
     width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 100%; /* Fully scale to the bottom border */
+    max-width: none; /* Allow image to breathe for scale */
+    height: 100%;
+    max-height: 100%; 
     object-fit: contain;
-    border-radius: 15px 15px 0 0; /* Square bottom to match container edge */
-    transform: scale(1.15); /* Scale up as requested */
+    border-radius: 15px 15px 0 0; 
+    transform: scale(1.08) translateY(2%); /* Pop up slightly without cutting */
     transform-origin: bottom right;
 }
 
@@ -317,6 +317,48 @@ body {
     letter-spacing: 1px;
         color: var(--text-muted) !important;
 
+}
+
+.intensive-badge {
+    position: absolute;
+    top: 35%;
+    left: -40px;
+    background: rgba(15,15,15,0.9);
+    backdrop-filter: blur(10px);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    min-width: 180px;
+}
+
+.intensive-badge h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.intensive-badge .gold-text {
+    color: var(--brand-gold) !important;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 4px 0 0 0 !important;
+    opacity: 1 !important;
+}
+
+/* Mobile responsive for badge */
+@media (max-width: 768px) {
+    .intensive-badge {
+        left: 10px;
+        top: 20px;
+        padding: 10px 15px;
+        min-width: 140px;
+    }
+    .intensive-badge h4 { font-size: 0.9rem; }
+    .intensive-badge .gold-text { font-size: 0.8rem; }
 }
 
 /* Stats Cards */
@@ -370,7 +412,7 @@ body {
 }
 
 .split-text h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; }
-.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.3rem; letter-spacing: 0px; margin-bottom: 10px; display: block; }
+.section-tag { color: var(--brand-gold); font-weight: 700; font-size: 1.2rem;line-height: 1.1; letter-spacing: 0px; margin-bottom: 10px; display: block; }
 
 /* Service Cards */
 .services-section { padding: 10px 0 250px;  }
@@ -1657,19 +1699,26 @@ Let's use icons on the inner side for better visual orbit. */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
+    gap: 0px;
     flex: 1;
 }
 
 .sticky-timer-wrap {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-weight: 100;
-    font-size: 1.4rem;
+    gap: 8px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
     font-family: monospace;
+}
+
+.sticky-center-date {
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
     flex: 1;
-    justify-content: center; /* Center on desktop */
+    text-align: center;
 }
 
 .sticky-info-group .original {
@@ -1683,13 +1732,7 @@ Let's use icons on the inner side for better visual orbit. */
     color: var(--brand-gold);
     font-size: 2.3rem; 
     font-weight: 800;
-    line-height: 1;
-}
-
-.sticky-date {
-    font-size: 0.92rem;
-    color: rgba(255,255,255,0.7);
-    font-weight: 500;
+    line-height: 0.9;
 }
 
 .sticky-center-info {
@@ -1727,17 +1770,11 @@ Let's use icons on the inner side for better visual orbit. */
 }
 
 .reg-btn-v3 {
-    background: var(--brand-gold);
-    color: #000;
-    padding: 15px 45px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1rem;
     display: flex;
     align-items: center;
-    gap: 12px;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    white-space: nowrap;
 }
 
 .icon-circle-v3 {
@@ -1758,11 +1795,8 @@ Let's use icons on the inner side for better visual orbit. */
 .reg-btn-v3 i {
     display: flex;
     align-items: center;
-    transition: transform 0.3s ease;
-}
-
-.reg-btn-v3:hover i {
-    transform: translate(3px, -3px);
+    justify-content: center;
+    transition: all 0.4s ease;
 }
 
 .reg-btn-v3:hover i {
@@ -1969,22 +2003,25 @@ Let's use icons on the inner side for better visual orbit. */
     }
     
     .sticky-info-group { 
-        flex-direction: row; 
-        justify-content: center; 
-        align-items: center;
-        gap: 15px;
+        flex-direction: column; 
+        align-items: center; 
+        gap: 2px;
         width: 100%;
-        margin-bottom: 5px;
+        margin-bottom: 2px;
     }
-    .sticky-info-group .original { font-size: 0.8rem; }
-    .sticky-info-group .current { font-size: 1.1rem !important; }
-    .sticky-date { font-size: 0.72rem; color: #fff; opacity: 1; }
+    .sticky-info-group .current { font-size: 1.4rem !important; }
+    
+    .sticky-center-date {
+        font-size: 0.78rem;
+        color: #fff;
+        opacity: 0.8;
+        order: 2;
+        margin: 4px 0;
+    }
     
     .sticky-timer-wrap {
-        order: 2; /* Center of 3 items */
-        font-size: 0.8rem;
-        margin: 5px 0;
-        gap: 8px;
+        font-size: 0.9rem;
+        gap: 6px;
     }
     
     .reg-btn-v3 { 
@@ -1992,9 +2029,6 @@ Let's use icons on the inner side for better visual orbit. */
         max-width: 250px;
         margin: 5px auto 0;
         justify-content: center; 
-        padding: 12px 20px; 
-        font-size: 1rem !important; 
-        border-radius: 100px;
         order: 3;
     }
     .icon-circle-v3 { width: 20px; height: 20px; background: rgba(0,0,0,0.1); }
