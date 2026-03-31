@@ -1665,8 +1665,7 @@ Let's use icons on the inner side for better visual orbit. */
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #ff4d4d;
-    font-weight: 700;
+    font-weight: 100;
     font-size: 1.4rem;
     font-family: monospace;
     flex: 1;
